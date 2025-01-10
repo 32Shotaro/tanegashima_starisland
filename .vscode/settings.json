@@ -1,0 +1,28 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 9999, // タグ内で改行しないように調整
+  "prettier.singleQuote": true,
+  "prettier.vueIndentScriptAndStyle": true,
+  "prettier.bracketSameLine": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.ignorePath": "/.vscode/.prettierignore",
+  // PHP用の設定
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": true
+  },
+  "scssBracketSpacing": false, // SCSS内の余分なスペースを削除
+  // Live Sass Compilerの設定
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.autoprefix": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      // "format": "compressed",
+      "extensionName": ".css",
+      "savePath": null
+    }
+  ]
+}

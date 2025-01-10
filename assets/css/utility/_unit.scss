@@ -1,0 +1,161 @@
+@charset "utf-8";
+@use '../variables' as vars;
+
+// --------------------
+// 単位のユーティリティ
+// --------------------
+
+// 値を動的に生成する関数（小数点対応）
+@function generate-dynamic-values($start, $end, $step) {
+  $values: ();
+  $current: $start;
+
+  @while $current <= $end {
+    $values: append($values, $current, comma);
+    $current: $current + $step; // 小数点を処理
+  }
+
+  @return $values;
+}
+
+// 文字列置換関数（数値も文字列に変換して処理）
+@function str-replace($input, $search, $replace: '') {
+  $string: inspect($input); // 数値を文字列に変換
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+// ユーティリティクラス生成ミキシン
+@mixin generate-utility($prefix, $property, $min, $max, $step, $unit: '') {
+  // 動的な値を生成
+  $values: generate-dynamic-values($min, $max, $step);
+
+  // グローバルクラス生成
+  @each $value in $values {
+    $sanitized-value: str-replace($value, '.', ''); // ピリオドを削除してクラス名に適用
+
+    @if type-of($property) == 'list' {
+      // 複数プロパティの場合
+      .#{$prefix}#{$sanitized-value} {
+        @each $prop in $property {
+          #{$prop}: #{$value}#{$unit};
+        }
+      }
+    } @else {
+      // 単一プロパティの場合
+      .#{$prefix}#{$sanitized-value} {
+        #{$property}: #{$value}#{$unit};
+      }
+    }
+  }
+
+  // 各ブレイクポイント用クラス生成
+  @each $breakpoint, $size in vars.$breakpoints {
+    @include vars.respond-to($breakpoint, 'max') {
+      @each $value in $values {
+        $sanitized-value: str-replace($value, '.', ''); // ピリオドを削除してクラス名に適用
+
+        @if type-of($property) == 'list' {
+          // 複数プロパティの場合
+          .#{$breakpoint}-#{$prefix}#{$sanitized-value} {
+            @each $prop in $property {
+              #{$prop}: #{$value}#{$unit};
+            }
+          }
+        } @else {
+          // 単一プロパティの場合
+          .#{$breakpoint}-#{$prefix}#{$sanitized-value} {
+            #{$property}: #{$value}#{$unit};
+          }
+        }
+      }
+    }
+  }
+}
+
+// オーダー
+@include generate-utility('ord', 'order', 1, 12, 1, null);
+
+// ギャップ
+@include generate-utility('g', 'gap', 0, 15, 5, 'px');
+@include generate-utility('rg', 'row-gap', 0, 150, 5, 'px');
+@include generate-utility('cg', 'column-gap', 0, 150, 5, 'px');
+
+// ボーダーウェイト
+@include generate-utility('bdw', 'border-width', 0, 10, 1, 'px');
+
+// ボーダーラディアス
+@include generate-utility('bdrs', 'border-radius', 0, 30, 1, 'px');
+@include generate-utility('bdrs-tl', 'border-top-left-radius', 0, 30, 1, 'px');
+@include generate-utility('bdrs-tr', 'border-top-right-radius', 0, 30, 1, 'px');
+@include generate-utility('bdrs-br', 'border-bottom-right-radius', 0, 30, 1, 'px');
+@include generate-utility('bdrs-bl', 'border-bottom-left-radius', 0, 30, 1, 'px');
+
+// 幅
+@include generate-utility('w', 'width', 0, 100, 5, '%');
+@include generate-utility('mw', 'max-width', 0, 100, 5, '%');
+@include generate-utility('minw', 'min-width', 0, 100, 5, '%');
+
+// 高さ
+@include generate-utility('h', 'height', 0, 100, 5, '%');
+@include generate-utility('mh', 'max-height', 0, 100, 5, '%');
+@include generate-utility('minh', 'min-height', 0, 100, 5, '%');
+
+// マージン
+@include generate-utility('m', 'margin', -150, 150, 5, 'px');
+@include generate-utility('mt', 'margin-top', -150, 150, 5, 'px');
+@include generate-utility('mr', 'margin-right', -150, 150, 5, 'px');
+@include generate-utility('mb', 'margin-bottom', -150, 150, 5, 'px');
+@include generate-utility('ml', 'margin-left', -150, 150, 5, 'px');
+@include generate-utility('mtb', ('margin-top', 'margin-bottom'), -150, 150, 5, 'px');
+@include generate-utility('mlr', ('margin-left', 'margin-right'), -150, 150, 5, 'px');
+
+// パディング
+@include generate-utility('p', 'padding', 0, 150, 5, 'px');
+@include generate-utility('pt', 'padding-top', 0, 150, 5, 'px');
+@include generate-utility('pr', 'padding-right', 0, 150, 5, 'px');
+@include generate-utility('pb', 'padding-bottom', 0, 150, 5, 'px');
+@include generate-utility('pl', 'padding-left', 0, 150, 5, 'px');
+@include generate-utility('ptb', ('padding-top', 'padding-bottom'), 0, 150, 5, 'px');
+@include generate-utility('plr', ('padding-left', 'padding-right'), 0, 150, 5, 'px');
+
+// フォントサイズ
+@include generate-utility('fz', 'font-size', 50, 300, 10, '%');
+
+// ラインハイト
+@include generate-utility('lh', 'line-height', 1, 2, 0.1, '');
+
+// レタースペーシング
+@include generate-utility('ls', 'letter-spacing', 0, 0.5, 0.05, 'em');
+
+// ポジションプロパティ
+@include generate-utility('t', 'top', -150, 150, 5, 'px');
+@include generate-utility('r', 'right', -150, 150, 5, 'px');
+@include generate-utility('b', 'bottom', -150, 150, 5, 'px');
+@include generate-utility('l', 'left', -150, 150, 5, 'px');
+
+// レイヤー
+@include generate-utility('z', 'z-index', -1, 10, 1, null);
+
+// 不透明度
+@include generate-utility('op', 'opacity', 0, 1, 0.05, '');
+
+// ズーム
+[class*='scale'] {
+  // iOSでのバグ回避
+  text-size-adjust: auto;
+  -webkit-text-size-adjust: auto;
+}
+@include generate-utility('zoom', 'zoom', 0.5, 1, 0.05, '');
+
+// ラインクランプ
+[class*='line-clamp'] {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+@include generate-utility('lc', ('-webkit-line-clamp', 'line-clamp'), 1, 5, 1, '');

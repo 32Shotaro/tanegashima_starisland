@@ -1,0 +1,21 @@
+@charset "utf-8";
+@use 'variables' as vars;
+
+html {
+  // font-size: 71.43%;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: vars.color(background);
+  font: normal 400 1.4rem / 1.6 'Roboto', 'Noto Sans JP', sans-serif;
+  letter-spacing: normal;
+  font-feature-settings: 'palt';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: vars.color(typography);
+  overflow-x: hidden;
+}

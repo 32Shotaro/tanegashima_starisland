@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+// --------------------
+// ブレイクポイント
+// --------------------
+
+// 使用例
+// @include vars.respond-to(sm, 'max') {} // 768px以下の場合のスタイル
+// @include vars.respond-to(sm, 'min') {} // 767px以下の場合のスタイル
+
+// ブレイクポイントをマップで管理
+$breakpoints: (
+  md: 1080px,
+  sm: 768px,
+);
+
+// メディアクエリ用のミキシン
+@mixin respond-to($breakpoint, $type: 'max') {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if $type == 'max' {
+    @media (max-width: calc($size - 1px)) {
+      @content;
+    }
+  } @else if $type == 'min' {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+// --------------------
+// 色
+// --------------------
+
+// 使用例
+// background-color: vars.color(primary); // デフォルトの青
+// color: vars.color(background, dark); // 背景の暗い色
+
+// 色の定義をマップで管理
+$colors: (
+  background: #fff,
+  typography: #000,
+  gray: (
+    default: #333,
+    light: #777,
+    lighter: #eee,
+    dark: #1e1e1e,
+  ),
+  red: #ff0000,
+);
+
+// 色を取得する関数
+@function color($category, $variant: default) {
+  $map: map-get($colors, $category);
+
+  @if type-of($map) == 'map' {
+    @return map-get($map, $variant);
+  } @else {
+    @return $map; // 直接色が定義されている場合
+  }
+}

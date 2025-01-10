@@ -1,0 +1,64 @@
+@charset "utf-8";
+@use '../variables' as vars;
+
+// --------------------
+// 色のユーティリティクラス生成ミキシン
+// --------------------
+
+// トランジションの時間とイージングを定義
+$transition-duration: 600ms;
+$transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+// 色のユーティリティクラス生成ミキシン
+@mixin generate-color-utilities($properties) {
+  @each $prefix, $property in $properties {
+    @each $category, $variants in vars.$colors {
+      @if type-of($variants) == 'map' {
+        // サブマップがある場合（例: gray: { default, light, dark }）
+        @each $variant, $value in $variants {
+          @if $variant == 'default' {
+            // `default`の場合はクラス名から`-default`を省略
+            .#{$prefix}-#{$category} {
+              #{$property}: $value !important;
+            }
+            // hover時のクラスも生成
+            .hov-#{$prefix}-#{$category}:hover {
+              #{$property}: $value !important;
+              transition: #{$property} $transition-duration $transition-timing-function;
+            }
+          } @else {
+            // 通常の場合
+            .#{$prefix}-#{$category}-#{$variant} {
+              #{$property}: $value !important;
+            }
+            // hover時のクラスも生成
+            .hov-#{$prefix}-#{$category}-#{$variant}:hover {
+              #{$property}: $value !important;
+              transition: #{$property} $transition-duration $transition-timing-function;
+            }
+          }
+        }
+      } @else {
+        // サブマップがない場合（例: background: #fff）
+        .#{$prefix}-#{$category} {
+          #{$property}: $variants !important;
+        }
+        // hover時のクラスも生成
+        .hov-#{$prefix}-#{$category}:hover {
+          #{$property}: $variants !important;
+          transition: #{$property} $transition-duration $transition-timing-function;
+        }
+      }
+    }
+  }
+}
+
+// 色のプロパティをマップで定義
+$color-properties: (
+  c: 'color',
+  bgc: 'background-color',
+  bdc: 'border-color',
+);
+
+// 色のユーティリティクラスとhoverクラスを一括生成
+@include generate-color-utilities($color-properties);

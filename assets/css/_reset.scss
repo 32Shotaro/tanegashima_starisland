@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+// 共通リセット
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 隠し要素
+:where([hidden]:not([hidden='until-found'])) {
+  display: none !important;
+}
+
+// html要素のスタイル
+:where(html) {
+  -webkit-text-size-adjust: none;
+  color-scheme: dark light;
+  tab-size: 2;
+  scrollbar-gutter: stable;
+  interpolate-size: allow-keywords;
+  line-height: 1.5;
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:focus-within {
+      scroll-behavior: smooth;
+    }
+  }
+
+  &.has-dialog {
+    overflow: clip;
+  }
+}
+
+// bodyのスタイル
+:where(body) {
+  line-height: inherit;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ボタン・フォーム要素のリセット
+:where(button) {
+  all: unset;
+}
+
+:where(input, button, textarea, select) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  outline: none;
+}
+
+:where(textarea) {
+  resize: vertical;
+}
+
+// カーソルスタイル
+:where(button, label, select, summary, [role='button'], [role='option']) {
+  cursor: pointer;
+}
+
+:where(:disabled, label:has(> :disabled, + disabled)) {
+  cursor: not-allowed;
+}
+
+// リンクスタイル
+:where(a) {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2ex;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// メールアドレスのリンク
+:where([href^='mailto:']) {
+  word-break: break-all;
+}
+
+// 電話番号のリンク
+:where(a[href^='tel:']) {
+  pointer-events: all;
+  @media (any-hover: hover) {
+    pointer-events: none;
+  }
+}
+
+// リストスタイル
+:where(ul, ol) {
+  list-style: none;
+}
+
+// メディア要素のデフォルトスタイル
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, picture, svg, video) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+// 段落・見出しスタイル
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit; /* フォントサイズを継承 */
+  font-weight: inherit; /* フォントウェイトを継承 */
+  line-height: calc(1em + 0.5rem);
+  text-wrap: balance;
+}
+
+// 水平線スタイル
+:where(hr) {
+  border: none;
+  color: inherit;
+  block-size: 0;
+  overflow: visible;
+}
+
+// ダイアログとポップオーバーのスタイル
+:where(dialog, [popover]) {
+  border: none;
+  background: none;
+  color: inherit;
+  inset: unset;
+  max-width: unset;
+  max-height: unset;
+  overflow: unset;
+}
+
+:where(dialog:not([open], [popover]), [popover]:not(:popover-open)) {
+  display: none !important;
+}
+
+// フォーカススタイル
+:where(:focus-visible) {
+  outline: 3px solid CanvasText;
+  box-shadow: 0 0 0 5px Canvas;
+  outline-offset: 1px;
+}
+
+:where(:focus-visible, :target) {
+  scroll-margin-block: 8vh;
+}
+
+// 視覚的に隠すクラス
+:where(.visually-hidden:not(:focus-within, :active)) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  user-select: none !important;
+}

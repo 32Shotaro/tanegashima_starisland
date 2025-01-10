@@ -1,0 +1,416 @@
+@charset "utf-8";
+@use '../variables' as vars;
+
+// --------------------
+// 宣言系のユーティリティ
+// --------------------
+
+// 宣言系ユーティリティクラス生成ミキシン
+@mixin generate-utility($prefix, $property, $values) {
+  // グローバルクラス生成
+  @each $key, $value in $values {
+    @if $key == 'default' {
+      // `default`の場合はクラス名から`-default`を省略
+      @if type-of($property) == 'list' {
+        .#{$prefix} {
+          @each $prop in $property {
+            #{$prop}: $value;
+          }
+        }
+      } @else {
+        .#{$prefix} {
+          #{$property}: $value;
+        }
+      }
+    } @else {
+      // 通常のキーの場合
+      @if type-of($property) == 'list' {
+        .#{$prefix}-#{$key} {
+          @each $prop in $property {
+            #{$prop}: $value;
+          }
+        }
+      } @else {
+        .#{$prefix}-#{$key} {
+          #{$property}: $value;
+        }
+      }
+    }
+  }
+
+  // 各ブレイクポイント用クラス生成
+  @each $breakpoint, $size in vars.$breakpoints {
+    @include vars.respond-to($breakpoint, 'max') {
+      @each $key, $value in $values {
+        @if $key == 'default' {
+          // `default`の場合はクラス名から`-default`を省略
+          @if type-of($property) == 'list' {
+            .#{$breakpoint}-#{$prefix} {
+              @each $prop in $property {
+                #{$prop}: $value;
+              }
+            }
+          } @else {
+            .#{$breakpoint}-#{$prefix} {
+              #{$property}: $value;
+            }
+          }
+        } @else {
+          // 通常のキーの場合
+          @if type-of($property) == 'list' {
+            .#{$breakpoint}-#{$prefix}-#{$key} {
+              @each $prop in $property {
+                #{$prop}: $value;
+              }
+            }
+          } @else {
+            .#{$breakpoint}-#{$prefix}-#{$key} {
+              #{$property}: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ディスプレイ
+@include generate-utility(
+  'd',
+  'display',
+  (
+    n: none,
+    i: inline,
+    ib: inline-block,
+    b: block,
+    if: inline-flex,
+    f: flex,
+    g: grid,
+    fr: flow-root,
+  )
+);
+
+// アラインアイテムズ
+@include generate-utility(
+  'ai',
+  'align-items',
+  (
+    s: start,
+    e: end,
+    c: center,
+    b: baseline,
+    st: stretch,
+  )
+);
+
+// フレックス方向
+@include generate-utility(
+  'fd',
+  'flex-direction',
+  (
+    r: row,
+    rr: row-reverse,
+    c: column,
+    cr: column-reverse,
+  )
+);
+
+// フレックスラップ
+@include generate-utility(
+  'fxw',
+  'flex-wrap',
+  (
+    n: nowrap,
+    w: wrap,
+    wr: wrap-reverse,
+  )
+);
+
+// ジャスティファイコンテント
+@include generate-utility(
+  'jc',
+  'justify-content',
+  (
+    s: start,
+    e: end,
+    c: center,
+    sb: space-between,
+    sa: space-around,
+    se: space-evenly,
+  )
+);
+
+// ボーダー
+$border-properties: (
+  'bd': 'border',
+  'bdt': 'border-top',
+  'bdr': 'border-right',
+  'bdb': 'border-bottom',
+  'bdl': 'border-left',
+);
+@each $prefix, $property in $border-properties {
+  @include generate-utility(
+    $prefix,
+    $property,
+    (
+      default: 1px solid transparent,
+      n: none,
+    )
+  );
+}
+
+// ボーダースタイル
+@include generate-utility(
+  'bds',
+  'border-style',
+  (
+    n: none,
+    s: solid,
+    d: dashed,
+    db: double,
+    dt: dotted,
+  )
+);
+
+// shame：ボックスシャドウ
+
+// 幅
+@include generate-utility(
+  'w',
+  'width',
+  (
+    a: auto,
+    fc: fit-content,
+  )
+);
+
+// 高さ
+@include generate-utility(
+  'h',
+  'height',
+  (
+    a: auto,
+    fc: fit-content,
+  )
+);
+
+// フロート
+@include generate-utility(
+  'flt',
+  'float',
+  (
+    l: left,
+    r: right,
+    n: none,
+  )
+);
+
+// マージン
+$margin-properties: (
+  'm': 'margin',
+  'mt': 'margin-top',
+  'mr': 'margin-right',
+  'mb': 'margin-bottom',
+  'ml': 'margin-left',
+  'mtb': (
+    'margin-top',
+    'margin-bottom',
+  ),
+  'mlr': (
+    'margin-left',
+    'margin-right',
+  ),
+);
+@each $prefix, $property in $margin-properties {
+  @include generate-utility(
+    $prefix,
+    $property,
+    (
+      a: auto,
+    )
+  );
+}
+
+// フォントスタイル
+@include generate-utility(
+  'fs',
+  'font-style',
+  (
+    n: normal,
+    i: italic,
+    o: oblique,
+  )
+);
+
+// フォントウェイト
+@include generate-utility(
+  'fw',
+  'font-weight',
+  (
+    n: normal,
+    b: bold,
+    l: lighter,
+    100: 100,
+    200: 200,
+    300: 300,
+    400: 400,
+    500: 500,
+    600: 600,
+    700: 700,
+    800: 800,
+    900: 900,
+  )
+);
+
+// 垂直方向の配置
+@include generate-utility(
+  'va',
+  'vertical-align',
+  (
+    t: top,
+    m: middle,
+    b: bottom,
+    bl: baseline,
+    sb: sub,
+    sp: super,
+  )
+);
+
+// テキストアライン
+@include generate-utility(
+  'ta',
+  'text-align',
+  (
+    l: left,
+    c: center,
+    r: right,
+    j: justify,
+  )
+);
+
+// テキストデコレーション
+@include generate-utility(
+  'td',
+  'text-decoration',
+  (
+    n: none,
+    u: underline,
+    l: line-through,
+    o: overline,
+  )
+);
+
+// ホワイトスペース
+@include generate-utility(
+  'ws',
+  'white-space',
+  (
+    n: normal,
+    p: pre,
+    nw: nowrap,
+    pw: pre-wrap,
+    pl: pre-line,
+  )
+);
+
+// ワードブレイク
+@include generate-utility(
+  'wb',
+  'word-break',
+  (
+    n: normal,
+    bw: break-word,
+    ba: break-all,
+    ka: keep-all,
+  )
+);
+
+// ポジション
+@include generate-utility(
+  'pos',
+  'position',
+  (
+    s: static,
+    r: relative,
+    a: absolute,
+    f: fixed,
+    sticky: sticky,
+  )
+);
+
+// ポジションプロパティ
+$position-properties: (
+  't': 'top',
+  'r': 'right',
+  'b': 'bottom',
+  'l': 'left',
+);
+@each $prefix, $property in $position-properties {
+  @include generate-utility(
+    $prefix,
+    $property,
+    (
+      a: auto,
+    )
+  );
+}
+
+// オーバーフロー
+@include generate-utility(
+  'ov',
+  'overflow',
+  (
+    v: visible,
+    h: hidden,
+    s: scroll,
+    a: auto,
+  )
+);
+
+// ビシビリティ
+@include generate-utility(
+  'v',
+  'visibility',
+  (
+    v: visible,
+    h: hidden,
+    c: collapse,
+  )
+);
+
+// カーソル
+@include generate-utility(
+  'cur',
+  'cursor',
+  (
+    d: default,
+    p: pointer,
+  )
+);
+
+// オブジェクトカバー
+@include generate-utility(
+  'ob',
+  'object-fit',
+  (
+    cv: cover,
+    ct: contain,
+    f: fill,
+    n: none,
+    sc: scale-down,
+  )
+);
+
+// アスペクト比
+@include generate-utility(
+  'asp',
+  'aspect-ratio',
+  (
+    '1': 1,
+    '16-9': '16 / 9',
+    '4-3': '4 / 3',
+    '3-2': '3 / 2',
+    '8-5': '8 / 5',
+    '5-3': '5 / 3',
+  )
+);

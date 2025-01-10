@@ -1,0 +1,193 @@
+@charset "utf-8";
+@use '../variables' as vars;
+@use 'sass:math'; // math.divを使用
+
+// --------------------
+// ベゼルとガターの設定
+// --------------------
+
+$container-width: 1080px; // コンテナサイズ
+$columns-count: 12; // カラム数
+$bezel-sm: 20px; // 小サイズデバイスの余白
+$bezel-md: 30px; // 中サイズデバイスの余白
+$gutter-width: 15px; // デフォルトのガターサイズ
+$gutter-range: (0, 150, 5); // ガターサイズの範囲（最小値, 最大値, ステップ）
+
+// --------------------
+// 基本スタイル
+// --------------------
+
+.cols,
+.cols-full,
+.cols-fluid,
+.cols-fluid-full {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+
+  // ネガティブマージン対応
+  &.nega {
+    margin-left: -#{$gutter-width};
+    margin-right: -#{$gutter-width};
+    width: auto;
+    max-width: none;
+  }
+
+  > * {
+    width: 100%;
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+    position: relative;
+    min-height: 1px;
+  }
+}
+
+// コンテナサイズ調整
+.cols {
+  max-width: $container-width;
+  width: 100%;
+}
+
+.cols-fluid,
+.cols-fluid-full {
+  width: 100%;
+  > * {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.cols-fluid {
+  max-width: math.div($container-width - ($gutter-width * 2), 1);
+}
+
+.nega[class*='gutter'] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// --------------------
+// グローバルカラムスタイル
+// --------------------
+
+@for $num from 1 through $columns-count {
+  .col-#{$num} {
+    flex: 0 0 #{math.div(100% * $num, $columns-count)};
+    max-width: #{math.div(100% * $num, $columns-count)};
+  }
+}
+
+// ガターサイズ調整
+$gutter-min: nth($gutter-range, 1);
+$gutter-max: nth($gutter-range, 2);
+$gutter-step: nth($gutter-range, 3);
+
+@while $gutter-min <= $gutter-max {
+  .gutter#{$gutter-min} {
+    > * {
+      padding-left: #{math.div($gutter-min, 2)}px;
+      padding-right: #{math.div($gutter-min, 2)}px;
+    }
+
+    &.nega {
+      margin-left: #{math.div(-$gutter-min, 2)}px;
+      margin-right: #{math.div(-$gutter-min, 2)}px;
+    }
+  }
+  $gutter-min: $gutter-min + $gutter-step;
+}
+
+// --------------------
+// レスポンシブ対応
+// --------------------
+
+@each $breakpoint, $size in vars.$breakpoints {
+  @include vars.respond-to($breakpoint, 'max') {
+    @for $num from 1 through $columns-count {
+      // レスポンシブカラムの幅指定
+      .#{$breakpoint}-col-#{$num} {
+        flex: 0 0 #{math.div(100% * $num, $columns-count)};
+        max-width: #{math.div(100% * $num, $columns-count)};
+      }
+
+      // ネガティブマージン指定
+      .#{$breakpoint}-return-#{$num} {
+        margin-left: #{math.div(-100% * $num, $columns-count)};
+      }
+    }
+
+    // ネガティブマージンリセット
+    .#{$breakpoint}-return-0 {
+      margin-left: auto;
+    }
+
+    // ガターサイズ調整
+    $gutter-min: nth($gutter-range, 1);
+    $gutter-max: nth($gutter-range, 2);
+    $gutter-step: nth($gutter-range, 3);
+
+    @while $gutter-min <= $gutter-max {
+      .#{$breakpoint}-gutter#{$gutter-min} {
+        > * {
+          padding-left: #{math.div($gutter-min, 2)}px;
+          padding-right: #{math.div($gutter-min, 2)}px;
+        }
+
+        &.nega {
+          margin-left: #{math.div(-$gutter-min, 2)}px;
+          margin-right: #{math.div(-$gutter-min, 2)}px;
+        }
+      }
+      $gutter-min: $gutter-min + $gutter-step;
+    }
+  }
+}
+
+// --------------------
+// ベゼル調整
+// --------------------
+
+@each $breakpoint, $size in vars.$breakpoints {
+  @include vars.respond-to($breakpoint, 'max') {
+    // ベゼルのサイズを動的に取得
+    $bezel-size: if($breakpoint == 'sm', $bezel-sm, if($breakpoint == 'md', $bezel-md, 0));
+
+    // `.cols` および `.cols-full` のスタイル
+    .cols,
+    .cols-full {
+      padding-left: math.div($bezel-size - $gutter-width, 1);
+      padding-right: math.div($bezel-size - $gutter-width, 1);
+
+      .cols,
+      .cols-full,
+      .cols-fluid,
+      .cols-fluid-full {
+        &.nega {
+          &:not([class*='gutter']) {
+            margin-left: math.div(-$bezel-size, 1);
+            margin-right: math.div(-$bezel-size, 1);
+          }
+        }
+      }
+    }
+
+    // `.cols-fluid` および `.cols-fluid-full` のスタイル
+    .cols-fluid,
+    .cols-fluid-full {
+      .cols,
+      .cols-full,
+      .cols-fluid,
+      .cols-fluid-full {
+        &.nega {
+          &:not([class*='gutter']) {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
