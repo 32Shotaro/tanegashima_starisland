@@ -6,6 +6,10 @@
 // --------------------
 
 .wp-content {
+  font-size: 105%;
+  line-height: 1.8;
+
+  // 上下の余白を整える
   > *:first-child {
     margin-top: 0;
   }
@@ -26,6 +30,7 @@
   }
 
   h2 {
+    // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
     width: fit-content;
     margin: 2em auto 1em;
@@ -38,6 +43,7 @@
   }
 
   h3 {
+    // shame：複数行時のレイアウトがきになる
     display: flex;
     align-items: center;
     column-gap: 0.5em;
@@ -60,6 +66,7 @@
   }
 
   h4 {
+    // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
     border-radius: 10px;
     width: fit-content;
@@ -118,12 +125,10 @@
   blockquote {
     background-color: rgba(vars.color(typography), 0.04);
     border-radius: 10px;
-    padding: 3em;
+    padding: 3em 3.5em;
     margin: 3em 0;
-    font-size: 105%;
     @include vars.respond-to(sm, 'max') {
-      padding: 1.5em;
-      font-size: 95%;
+      padding: 2em;
     }
     p {
       margin: 0;

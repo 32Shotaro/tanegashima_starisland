@@ -24698,6 +24698,10 @@ main {
   max-height: 600px;
 }
 
+.wp-content {
+  font-size: 105%;
+  line-height: 1.8;
+}
 .wp-content > *:first-child {
   margin-top: 0;
 }
@@ -24797,14 +24801,12 @@ main {
 .wp-content blockquote {
   background-color: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  padding: 3em;
+  padding: 3em 3.5em;
   margin: 3em 0;
-  font-size: 105%;
 }
 @media (max-width: 767px) {
   .wp-content blockquote {
-    padding: 1.5em;
-    font-size: 95%;
+    padding: 2em;
   }
 }
 .wp-content blockquote p {
