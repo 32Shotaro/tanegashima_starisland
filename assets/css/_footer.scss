@@ -1,4 +1,103 @@
 @charset "utf-8";
 @use 'variables' as vars;
 
-// .footer {}
+.footer {
+  // フッターCTA
+  &-cta {
+    height: 980px;
+    overflow: visible;
+    @include vars.respond-to(md, 'max') {
+      height: 1400px;
+    }
+    &-inner {
+      max-width: 1440px;
+      margin: auto;
+      height: inherit;
+    }
+    // 星空鑑賞におすすめのグッズ
+    // 星空撮影のテクニック
+    &-item_list,
+    &-photo_technique {
+      border-radius: 50%;
+      overflow: hidden;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      &::after {
+        content: '';
+        background: url(../images/common/main-bg.webp);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.6;
+      }
+    }
+    &-item_list {
+      width: 578px;
+      height: 590px;
+      padding-top: 20px; // テキストの位置調整
+      inset: 40% auto auto 16%;
+      @include vars.respond-to(md, 'max') {
+        width: 425px;
+        height: 412px;
+        padding-top: 20px; // テキストの位置調整
+        inset: 39% auto auto 40%;
+      }
+    }
+    &-photo_technique {
+      width: 512px;
+      height: 523px;
+      padding-top: 60px; // テキストの位置調整
+      inset: 58% auto auto 56%;
+      @include vars.respond-to(md, 'max') {
+        width: 425px;
+        height: 412px;
+        padding-top: 20px; // テキストの位置調整
+        inset: 73% auto auto 50%;
+      }
+    }
+    &-pic1 {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 512px;
+      height: 523px;
+      inset: 18% auto auto 86%;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      @include vars.respond-to(md, 'max') {
+        width: 350px;
+        height: 357px;
+        inset: 8% auto auto 68%;
+      }
+    }
+    // 流れ星のシェイプ
+    .shape-shootingStar {
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      &:nth-of-type(1) {
+        inset: 18% auto auto 29%;
+        @include vars.respond-to(md, 'max') {
+          inset: 27% auto auto 71%;
+        }
+      }
+      &:nth-of-type(2) {
+        inset: 80% auto auto 40%;
+        @include vars.respond-to(md, 'max') {
+          inset: 86% auto auto 17%;
+        }
+      }
+    }
+  }
+
+  // ハッシュタグ
+  &-hushTug {
+    font-size: 140px;
+    @include vars.respond-to(md, 'max') {
+      font-size: 105px;
+    }
+    @include vars.respond-to(sm, 'max') {
+      font-size: 70px;
+    }
+  }
+}

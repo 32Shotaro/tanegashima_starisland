@@ -22,9 +22,15 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
               #{$property}: $value !important;
             }
             // hover時のクラスも生成
-            .hov-#{$prefix}-#{$category}:hover {
+            @media (any-hover: hover) {
+              .hov-#{$prefix}-#{$category}:hover {
+                #{$property}: $value !important;
+                transition: #{$property} $transition-duration $transition-timing-function;
+              }
+            }
+            // アクティブ時のクラスも生成
+            .is-active.active-#{$prefix}-#{$category} {
               #{$property}: $value !important;
-              transition: #{$property} $transition-duration $transition-timing-function;
             }
           } @else {
             // 通常の場合
@@ -32,9 +38,15 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
               #{$property}: $value !important;
             }
             // hover時のクラスも生成
-            .hov-#{$prefix}-#{$category}-#{$variant}:hover {
+            @media (any-hover: hover) {
+              .hov-#{$prefix}-#{$category}-#{$variant}:hover {
+                #{$property}: $value !important;
+                transition: #{$property} $transition-duration $transition-timing-function;
+              }
+            }
+            // アクティブ時のクラスも生成
+            .is-active.active-#{$prefix}-#{$category}-#{$variant} {
               #{$property}: $value !important;
-              transition: #{$property} $transition-duration $transition-timing-function;
             }
           }
         }
@@ -44,9 +56,15 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
           #{$property}: $variants !important;
         }
         // hover時のクラスも生成
-        .hov-#{$prefix}-#{$category}:hover {
+        @media (any-hover: hover) {
+          .hov-#{$prefix}-#{$category}:hover {
+            #{$property}: $variants !important;
+            transition: #{$property} $transition-duration $transition-timing-function;
+          }
+        }
+        // アクティブ時のクラスも生成
+        .is-active.active-#{$prefix}-#{$category} {
           #{$property}: $variants !important;
-          transition: #{$property} $transition-duration $transition-timing-function;
         }
       }
     }

@@ -39,15 +39,14 @@ $breakpoints: (
 
 // 色の定義をマップで管理
 $colors: (
-  background: #fff,
-  typography: #000,
-  gray: (
-    default: #333,
-    light: #777,
-    lighter: #eee,
-    dark: #1e1e1e,
-  ),
-  red: #ff0000,
+  // background: null,
+  typography:
+    (
+      default: #fff,
+      alpha5: rgba(#fff, 0.05),
+    ),
+  midnight: #0c142b,
+  butter: #fff7c9
 );
 
 // 色を取得する関数

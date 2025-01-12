@@ -105,7 +105,7 @@
 
 // フレックス方向
 @include generate-utility(
-  'fd',
+  'fxd',
   'flex-direction',
   (
     r: row,
@@ -137,6 +137,22 @@
     sb: space-between,
     sa: space-around,
     se: space-evenly,
+  )
+);
+
+// アラインセルフ
+@include generate-utility(
+  'as',
+  'align-self',
+  (
+    c: center,
+    s: start,
+    e: end,
+    ss: self-start,
+    se: self-end,
+    fs: flex-start,
+    fe: flex-end,
+    ac: anchor-center,
   )
 );
 
@@ -172,6 +188,15 @@ $border-properties: (
   )
 );
 
+// ボーダーラディアス
+@include generate-utility(
+  'bdrs',
+  'border-radius',
+  (
+    max: 9999px,
+  )
+);
+
 // shame：ボックスシャドウ
 
 // 幅
@@ -181,6 +206,7 @@ $border-properties: (
   (
     a: auto,
     fc: fit-content,
+    max: 100%,
   )
 );
 
@@ -191,6 +217,7 @@ $border-properties: (
   (
     a: auto,
     fc: fit-content,
+    max: 100%,
   )
 );
 

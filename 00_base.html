@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/common.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap" rel="stylesheet" />
+    <meta name="robots" content="index, follow" />
+    <title></title>
+  </head>
+
+  <body>
+    <!-- ヘッダー -->
+    <header class="header w-max pos-f t0 r0 l0 z10">
+      <h1 class="header-logo">
+        <a class="d-b hov-op65" href="/"><img class="md-zoom075 sm-zoom055" src="./assets/images/common/logo.svg" width="80" height="198" alt="星の島、種子島" /></a>
+      </h1>
+      <!-- グローバルナビ -->
+      <!-- shame：インタラクション実装、ホバーでbutterにする -->
+      <div class="gNav-trigger d-f ai-c cg20 pos-a t30 sm-t15 r30 sm-r15 z2 cur-p js-gNav-trigger">
+        <span class="sm-d-n ff-enSans fz85 lh12 ls02">MENU</span>
+        <div class="gNav-trigger-icon d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w70 sm-w60 h70 sm-h60"><i></i><i></i><i></i></div>
+      </div>
+      <nav class="gNav d-f ai-c jc-c pos-f t0 b0 r0 z1 ov-h">
+        <div class="p20">
+          <ul class="ff-jaSerif fz185 md-fz145 sm-fz120 lh14">
+            <!-- shame：インタラクションの実装、要検討 -->
+            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/">トップページ</a></li>
+            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/spot">星空スポット</a></li>
+            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/event">星空の体験</a></li>
+            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/photo">星空撮影のテクニック</a></li>
+            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/item">星空鑑賞にすすめのグッズ</a></li>
+          </ul>
+          <!-- shame：インタラクションの実装、after要素でリップルみたいなやつ実装したい -->
+          <ul class="d-f cg5 pt15">
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><img src="./assets/images/common/icon-facebook.svg" width="21" height="21" alt="facebook" /></a>
+            </li>
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><img src="./assets/images/common/icon-youtube.svg" width="21" height="21" alt="youtube" /></a>
+            </li>
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><img src="./assets/images/common/icon-instagram.svg" width="21" height="21" alt="instagram" /></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- メイン -->
+    <main class="main">
+      <!-- 星空スポット詳細 -->
+      <article>
+        <div class="cms-sentence">
+          <h2>地元ガイドが提供する、特別な星空体験</h2>
+          <h3>星空鑑賞をもっと特別にする工夫</h3>
+          <blockquote>
+            <p>快適に星空を楽しむために、リラックスチェアや双眼鏡、クーラーボックス、冬場はブランケットなどをご用意。さらに、種子島産安納芋を使ったおやつとドリンクサービスが、ツアーをより贅沢なものにしてくれます。リラクゼーションBGMで癒されるのもよし、自然の音に耳を澄ませるのもよし。自分たちだけの特別な時間を過ごせます！日常では味わえない幻想的なひとときをぜひ楽しんでみてください。</p>
+          </blockquote>
+        </div>
+      </article>
+      <!-- shame：CTAブロック -->
+      <div class="pt160 md-fz110 sm-pt45 pb200 md-pb130 sm-pb60"></div>
+      <!-- パンくずリスト（schema.org対応） -->
+      <nav class="breadcrumbs ptb10 plr20" aria-label="breadcrumb">
+        <ol class="fz85 lh120 lc1" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a class="td-n hov-op65" href="/" itemprop="item"><span itemprop="name">TOP</span></a>
+            <meta itemprop="position" content="1" />｜
+          </li>
+          <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a class="td-n hov-op65" href="/category" itemprop="item"><span itemprop="name">カテゴリ</span></a>
+            <meta itemprop="position" content="2" />｜
+          </li>
+          <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <span itemprop="name">現在のページ</span>
+            <meta itemprop="position" content="3" />
+          </li>
+        </ol>
+      </nav>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer ov-h">
+      <!-- フッターCTA -->
+      <!-- shame：はみ出た写真のデザイン差異解決 -->
+      <div class="footer-cta pos-r">
+        <div class="footer-cta-inner pos-r">
+          <!-- 星空鑑賞におすすめのグッズ -->
+          <section class="footer-cta-item_list d-f ai-c jc-c pos-a z1">
+            <div>
+              <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">ITEM LIST</p>
+              <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空鑑賞に<br />おすすめのグッズ</h2>
+              <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
+                種子島の夜を快適に過ごすためのグッズを<br />
+                リストアップしました。<br />
+                これらを準備すれば、<br class="d-n md-d-i" />
+                星空鑑賞がより楽しくなります！
+              </p>
+              <div class="pt30 sm-pt15 ta-r">
+                <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/item">
+                  <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
+                  <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- 星空撮影のテクニック -->
+          <section class="footer-cta-photo_technique d-f ai-c jc-c pos-a z1">
+            <div>
+              <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">PHOTO TECHNIQUE</p>
+              <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空撮影の<br class="d-n sm-d-i" />テクニック</h2>
+              <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
+                星空写真家 成澤広幸さんの<br class="d-n md-d-i" />アドバイスをもとに、<br />
+                一眼カメラとスマホを使った星空撮影の<br class="d-n md-d-i" />ポイントを<br class="md-d-n" />わかりやすく解説します。
+              </p>
+              <div class="pt30 sm-pt15 ta-r">
+                <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/photo">
+                  <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
+                  <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
+                </a>
+              </div>
+            </div>
+          </section>
+          <!-- 写真 -->
+          <div class="footer-cta-pic1 pos-a z1"><img src="./assets/images/common/footer-cta-pic1.webp" width="512" height="523" alt="写真" /></div>
+          <!-- 流れ星のシェイプ -->
+          <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+          <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+        </div>
+        <img class="img-bg" src="./assets/images/common/footer-cta-bg.webp" width="1440" height="1572" alt="夜空の背景" />
+      </div>
+      <div class="cols jc-c pt120 sm-pt75 pos-r">
+        <p class="footer-hushTug d-b w-fc mlr-a ff-enSerif lh1 td-n lc1 pos-a t-80 md-t-65 sm-t-45 r0 l0 z1">#tanetabi</p>
+        <div class="col-10 sm-col-11">
+          <!-- SNSシェア -->
+          <div class="cols nega jc-c rg20">
+            <div class="col-6 sm-col-12">
+              <a class="d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n hov-bdc-butter hov-c-butter" href=""><span class="ff-jaSerif fz115 sm-fz95">#星の種子島 で投稿してね！</span><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></a>
+            </div>
+            <div class="col-6 sm-col-12">
+              <a class="d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n hov-bdc-butter hov-c-butter" href=""><span class="ff-jaSerif fz115 sm-fz95">観光協会 公式instagram</span><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></a>
+            </div>
+          </div>
+          <!-- フッターメイン -->
+          <div class="cols nega jc-sb rg60 ptb90 sm-ptb60">
+            <div class="col-5 md-col-6 sm-col-12 d-f sm-ai-c jc-sb">
+              <a class="hov-op65" href="/"><img class="sm-zoom085" src="./assets/images/common/logo.svg" width="80" height="198" alt="星の島、種子島" /></a>
+              <ul class="d-f fxd-c as-fe sm-as-c rg15 sm-rg10 ff-jaSerif fz115 sm-fz95 lh14">
+                <!-- shame：インタラクションの実装、要検討 -->
+                <li><a class="d-b td-n hov-c-butter hov-bgc-typography-alpha5" href="/">トップページ</a></li>
+                <li><a class="d-b td-n hov-c-butter hov-bgc-typography-alpha5" href="/spot">星空スポット</a></li>
+                <li><a class="d-b td-n hov-c-butter hov-bgc-typography-alpha5" href="/event">星空の体験</a></li>
+                <li><a class="d-b td-n hov-c-butter hov-bgc-typography-alpha5" href="/photo">星空撮影のテクニック</a></li>
+                <li><a class="d-b td-n hov-c-butter hov-bgc-typography-alpha5" href="/item">星空鑑賞にすすめのグッズ</a></li>
+              </ul>
+            </div>
+            <div class="col-12 d-n sm-d-b"><i class="d-b bdt bdw1 bdc-typography"></i></div>
+            <div class="col-5 md-col-6 sm-col-12">
+              <div class="d-f ai-c jc-sb">
+                <p class="ff-jaSerif fz180 sm-fz130 c-butter lh14">種子島観光協会</p>
+                <!-- shame：インタラクションの実装、after要素でリップルみたいなやつ実装したい -->
+                <ul class="d-f cg10">
+                  <li>
+                    <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><img src="./assets/images/common/icon-facebook.svg" width="21" height="21" alt="facebook" /></a>
+                  </li>
+                  <li>
+                    <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><img src="./assets/images/common/icon-youtube.svg" width="21" height="21" alt="youtube" /></a>
+                  </li>
+                  <li>
+                    <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><img src="./assets/images/common/icon-instagram.svg" width="21" height="21" alt="instagram" /></a>
+                  </li>
+                </ul>
+              </div>
+              <p class="pt15 ff-jaSerif fz115 sm-fz95">
+                〒891-3111　鹿児島県西之表市西町49-1<br />
+                西之表港ターミナル（待合所）
+              </p>
+              <p class="pt30 sm-pt25">
+                <a class="d-if ai-c cg10 bdb bdw1 bdc-typography pb10 lh12 td-n" href="tel:0997230111"><img class="sm-zoom085" src="./assets/images/common/icon-tel.svg" width="31" height="26" alt="電話" /><span class="ff-jaSerif fz180 sm-fz150 lts005">0997-23-0111</span></a>
+              </p>
+              <p class="d-f cg15 pt30 sm-pt25">
+                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://tanekan.jp/tanekanoffice/">観光案内所<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
+                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="mailto:tanekankou@y6.dion.ne.jp">MAIL<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ptb20 ff-jaSerif fz95 lh12 ta-c">
+        <small>Copyright <a class="td-n hov-op65" href="https://tanekan.jp/" target="_blank" rel="noopener">© 種子島観光協会.</a> All Rights Reserved.</small>
+      </div>
+    </footer>
+  </body>
+</html>

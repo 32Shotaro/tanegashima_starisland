@@ -6,4 +6,177 @@
 // --------------------
 
 .wp-content {
+  > *:first-child {
+    margin-top: 0;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  // 見出しスタイル
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Zen Old Mincho', serif;
+    color: vars.color(butter);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  h2 {
+    border-bottom: 1px solid vars.color(butter);
+    width: fit-content;
+    margin: 2em auto 1em;
+    padding-bottom: 0.35em;
+    font-size: 250%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 180%;
+    }
+  }
+
+  h3 {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+    width: fit-content;
+    margin: 2em auto 1em;
+    font-size: 180%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 140%;
+    }
+    &::before,
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      background-color: currentColor;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+  h4 {
+    border-bottom: 1px solid vars.color(butter);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 2em auto 1em;
+    padding: 0 1em 1em;
+    font-size: 130%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 115%;
+    }
+  }
+
+  // 段落スタイル
+  p {
+    margin: 0 0 1.5rem;
+  }
+
+  // リストのスタイル
+  ul,
+  ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 2rem;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  // リンク
+  // a {}
+
+  // ボタンスタイル
+  button,
+  .wp-block-button__link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0073aa;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #005177;
+    }
+  }
+
+  // 引用スタイル
+  blockquote {
+    background-color: rgba(vars.color(typography), 0.04);
+    border-radius: 10px;
+    padding: 3em;
+    margin: 3em 0;
+    font-size: 105%;
+    @include vars.respond-to(sm, 'max') {
+      padding: 1.5em;
+      font-size: 95%;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  // コードブロック
+  pre,
+  code {
+    font-family: 'Courier New', monospace;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    white-space: pre-wrap;
+    margin: 1rem 0;
+  }
+
+  // テーブル
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+
+  // 画像
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+  }
+
+  // キャプション
+  .wp-caption {
+    font-size: 0.875rem;
+    text-align: center;
+    color: #777;
+  }
 }
