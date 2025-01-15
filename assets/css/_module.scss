@@ -2,6 +2,19 @@
 @use 'variables' as vars;
 
 // --------------------
+// フレックスボックス
+// --------------------
+
+//
+.fxg1 {
+  flex-grow: 1;
+}
+
+.fxs0 {
+  flex-shrink: 0;
+}
+
+// --------------------
 // 背景
 // --------------------
 
@@ -14,10 +27,20 @@
 // テキスト
 // --------------------
 
+// テキストの縦書き
 .text-v {
   writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
+}
+
+// スマホ時に縦書きの解除
+@include vars.respond-to(sm, 'max') {
+  .sm-text-h {
+    writing-mode: horizontal-tb;
+    -ms-writing-mode: lr-tb;
+    -webkit-writing-mode: horizontal-tb;
+  }
 }
 
 // フォントファミリー

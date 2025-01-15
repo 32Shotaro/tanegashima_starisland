@@ -10,7 +10,7 @@
 
 // ブレイクポイントをマップで管理
 $breakpoints: (
-  md: 1080px,
+  md: 999px,
   sm: 768px,
 );
 
@@ -44,6 +44,7 @@ $colors: (
     (
       default: #fff,
       alpha5: rgba(#fff, 0.05),
+      alpha2: rgba(#fff, 0.02),
     ),
   midnight: #0c142b,
   butter: #fff7c9

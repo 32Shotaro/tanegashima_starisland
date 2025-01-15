@@ -46,6 +46,7 @@ main {
 
 // 流れ星のシェイプ
 .shape-shootingStar {
+  pointer-events: none; // 不意に重なった場合に触れないように
   // shame：アニメーション実装
   img {
     @include vars.respond-to(sm, 'max') {

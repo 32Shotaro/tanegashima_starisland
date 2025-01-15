@@ -99,19 +99,19 @@
 
 // 幅
 @include generate-utility('w', 'width', 0, 20, 1, 'px');
-@include generate-utility('w', 'width', 20, 100, 5, 'px');
+@include generate-utility('w', 'width', 20, 150, 5, 'px');
 @include generate-utility('mw', 'max-width', 0, 20, 1, 'px');
-@include generate-utility('mw', 'max-width', 20, 100, 5, 'px');
+@include generate-utility('mw', 'max-width', 20, 150, 5, 'px');
 @include generate-utility('minw', 'min-width', 0, 20, 1, 'px');
-@include generate-utility('minw', 'min-width', 20, 100, 5, 'px');
+@include generate-utility('minw', 'min-width', 20, 150, 5, 'px');
 
 // 高さ
 @include generate-utility('h', 'height', 0, 20, 1, 'px');
-@include generate-utility('h', 'height', 20, 100, 5, 'px');
+@include generate-utility('h', 'height', 20, 150, 5, 'px');
 @include generate-utility('mh', 'max-height', 0, 20, 1, 'px');
-@include generate-utility('mh', 'max-height', 20, 100, 5, 'px');
+@include generate-utility('mh', 'max-height', 20, 150, 5, 'px');
 @include generate-utility('minh', 'min-height', 0, 20, 1, 'px');
-@include generate-utility('minh', 'min-height', 20, 100, 5, 'px');
+@include generate-utility('minh', 'min-height', 20, 150, 5, 'px');
 
 // マージン
 @include generate-utility('m', 'margin', -200, 200, 5, 'px');
@@ -130,7 +130,9 @@
 @include generate-utility('pr', 'padding-right', 0, 200, 5, 'px');
 @include generate-utility('pb', 'padding-bottom', 0, 200, 5, 'px');
 @include generate-utility('pl', 'padding-left', 0, 200, 5, 'px');
+@include generate-utility('ptb', ('padding-top', 'padding-bottom'), 0, 20, 1, 'px');
 @include generate-utility('ptb', ('padding-top', 'padding-bottom'), 0, 200, 5, 'px');
+@include generate-utility('plr', ('padding-left', 'padding-right'), 0, 20, 1, 'px');
 @include generate-utility('plr', ('padding-left', 'padding-right'), 0, 200, 5, 'px');
 
 // フォントサイズ

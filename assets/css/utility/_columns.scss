@@ -6,10 +6,10 @@
 // ベゼルとガターの設定
 // --------------------
 
-$container-width: 1080px; // コンテナサイズ
+$container-width: 1000px; // コンテナサイズ
 $columns-count: 12; // カラム数
-$bezel-sm: 20px; // 小サイズデバイスの余白
-$bezel-md: 30px; // 中サイズデバイスの余白
+$bezel-sm: 30px; // 小サイズデバイスの余白
+$bezel-md: 45px; // 中サイズデバイスの余白
 $gutter-width: 15px; // デフォルトのガターサイズ
 $gutter-range: (0, 150, 5); // ガターサイズの範囲（最小値, 最大値, ステップ）
 
