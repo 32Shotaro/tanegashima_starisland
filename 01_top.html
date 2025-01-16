@@ -83,7 +83,7 @@
       <!-- FV以下のコンテンツ -->
       <div class="top-fv-after pb120 pos-r">
         <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
-        <section class="top-about ptb60">
+        <section class="top-about pt60">
           <div class="cols jc-c">
             <div class="col-10 sm-col-12">
               <div class="w-fc ml-a pos-r">
@@ -93,7 +93,8 @@
                     <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">宇宙に一番近い島は、<br />日本一の「星空の島」でした。</h2>
                     <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
                       星空の島へ、ようこそ。<br />
-                      種子島は日本で一番星空観測に適していると認定された島。<br />
+                      種子島は日本で一番<br />
+                      星空観測に適していると認定された島。<br />
                       日本でも有数の “公害が少ない島” だから、<br />
                       すごく星空が綺麗に見えるんです。
                     </p>
@@ -109,13 +110,16 @@
           <div class="cols">
             <div class="col-12">
               <div class="pos-r">
-                <h2 class="top-movie-copy d-f fxd-rr ai-s cg30 sm-cg15 pos-a l-40 md-l-20 sm-l20 z2">
-                  <span class="d-b text-v bgc-butter p15 sm-p10 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">日本一の星空を</span>
-                  <span class="d-b text-v bgc-butter p15 sm-p10 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">贅沢に眺めよう</span>
+                <h2 class="top-movie-copy d-f fxd-rr ai-s cg30 sm-cg15 pos-a l-40 md-l-20 sm-l0 z2">
+                  <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">日本一の星空を</span>
+                  <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">贅沢に眺めよう</span>
                 </h2>
-                <!-- shame：動画の仕様を要確認、こだわった動画っぽかったのでもらったサイズのままプリロード禁止してautoplayも切ってます。 -->
-                <video class="img-fluid-full" src="./assets/images/top/movie.mp4" poster="./assets/images/top/movie-poster.webp" preload="none" controls></video>
-                <i class="shape-shootingStar pos-a l-80 b-80 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+                <div class="sm-mlr-30">
+                  <!-- shame：動画の仕様を要確認、こだわった動画っぽかったのでもらったサイズのままプリロード禁止してautoplayも切ってます。 -->
+                  <video class="img-fluid-full" src="./assets/images/top/movie.mp4" poster="./assets/images/top/movie-poster.webp" preload="none" controls></video>
+                </div>
+                <!-- shame：.sm-l-aが機能してない -->
+                <i class="shape-shootingStar pos-a l-80 sm-l-a b-80 sm-r-20 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
               </div>
             </div>
           </div>
@@ -313,8 +317,8 @@
         <div class="cols rg90 md-rg70 sm-rg55 pt80 md-pt45 sm-pt30">
           <div class="col-6 md-col-5 sm-col-12 ord2 sm-ord1 pos-r">
             <picture class="d-f ai-c jc-c w-fc mtb-a mlr-a pos-a sm-pos-s t0 r0 b0 l0">
-              <source srcset="./assets/images/top/access-map-sm.webp" media="(max-width: 767px)" width="156" height="390" type="image/webp">
-              <img class="md-zoom08 sm-zoom1" src="./assets/images/top/access-map.webp" width="268" height="672" alt="種子島の地図">
+              <source srcset="./assets/images/top/access-map-sm.webp" media="(max-width: 767px)" width="156" height="390" type="image/webp" />
+              <img class="md-zoom08 sm-zoom1" src="./assets/images/top/access-map.webp" width="268" height="672" alt="種子島の地図" />
             </picture>
           </div>
           <div class="col-6 md-col-7 sm-col-12 d-f fxd-c rg55 sm-rg45 ord1 sm-ord2">
@@ -365,11 +369,11 @@
               <div class="d-f fxd-c rg15 sm-fz85">
                 <dl class="d-f cg15">
                   <dt class="fxs0 bgc-butter h-max ptb8 sm-ptb5 plr15 sm-plr10 c-midnight lh16">飛行機</dt>
-                  <dd class="ptb8 sm-ptb5 lh16">羽田空港 ー 鹿児島空港 <br class="d-n sm-d-i">約2時間</dd>
+                  <dd class="ptb8 sm-ptb5 lh16">羽田空港 ー 鹿児島空港 <br class="d-n sm-d-i" />約2時間</dd>
                 </dl>
                 <dl class="d-f cg15">
                   <dt class="fxs0 bgc-butter h-max ptb8 sm-ptb5 plr15 sm-plr10 c-midnight lh16">新幹線</dt>
-                  <dd class="ptb8 sm-ptb5 lh16">東京駅 ー 博多 ー 鹿児島中央駅 <br class="d-n sm-d-i">約5時間＋約1時間40分</dd>
+                  <dd class="ptb8 sm-ptb5 lh16">東京駅 ー 博多 ー 鹿児島中央駅 <br class="d-n sm-d-i" />約5時間＋約1時間40分</dd>
                 </dl>
               </div>
             </section>
@@ -385,13 +389,13 @@
                 <span class="d-b text-v bgc-typography p10 ff-jaSerif fz105 c-midnight lh1 ls02">リバーシブルで</span>
                 <span class="d-b text-v bgc-typography p10 ff-jaSerif fz105 c-midnight lh1 ls02">昼夜楽しめる</span>
               </p>
-              <p class="d-n md-d-b w-max pb15 ff-jaSerif fz170 c-butter lh14 ls01">星空の<br>周遊マップ</p>
+              <p class="d-n md-d-b w-max pb15 ff-jaSerif fz170 c-butter lh14 ls01">星空の<br />周遊マップ</p>
               <div class="cols nega gutter15 rg15">
-                <figur class="col-6"><img src="./assets/images/spot/pdf-thumb1.webp" width="284" height="200" alt="星空の周遊マップPDFのサムネイル1" /></figur rg15e>
+                <figure class="col-6"><img src="./assets/images/spot/pdf-thumb1.webp" width="284" height="200" alt="星空の周遊マップPDFのサムネイル1" /></figure>
                 <figure class="col-6"><img src="./assets/images/spot/pdf-thumb2.webp" width="284" height="200" alt="星空の周遊マップPDFのサムネイル2" /></figure>
               </div>
               <div class="md-w-max">
-                <p class="md-d-n ff-jaSerif fz200 c-butter lh14 ls01">星空の<br>周遊マップ</p>
+                <p class="md-d-n ff-jaSerif fz200 c-butter lh14 ls01">星空の<br />周遊マップ</p>
                 <div class="pt15 sm-pt0 ta-r">
                   <div class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="#">
                     <span class="d-b fz95 lh1">PDF ダウンロード</span>
@@ -509,8 +513,8 @@
                 <a class="d-if ai-c cg10 bdb bdw1 bdc-typography pb10 lh12 td-n" href="tel:0997230111"><img class="sm-zoom085" src="./assets/images/common/icon-tel.svg" width="31" height="26" alt="電話" /><span class="ff-jaSerif fz180 sm-fz150 lts005">0997-23-0111</span></a>
               </p>
               <p class="d-f cg15 pt30 sm-pt25">
-                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://tanekan.jp/tanekanoffice/"target="_blank" rel="noopener">観光案内所<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
-                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="mailto:tanekankou@y6.dion.ne.jp"target="_blank" rel="noopener">MAIL<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
+                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://tanekan.jp/tanekanoffice/" target="_blank" rel="noopener">観光案内所<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
+                <a class="d-f ai-c cg20 bd bdw1 bdc-butter bdrs-max h30 plr15 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="mailto:tanekankou@y6.dion.ne.jp" target="_blank" rel="noopener">MAIL<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
               </p>
             </div>
           </div>

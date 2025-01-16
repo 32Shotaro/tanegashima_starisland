@@ -6,16 +6,22 @@
 // --------------------
 
 // 値を動的に生成する関数（小数点対応）
-@function generate-dynamic-values($start, $end, $step) {
+@function generate-dynamic-values($ranges) {
   $values: ();
-  $current: $start;
 
-  @while $current <= $end {
-    // 重複していない場合のみ追加
-    @if not index($values, $current) {
-      $values: append($values, $current, comma);
+  @each $range in $ranges {
+    $start: nth($range, 1);
+    $end: nth($range, 2);
+    $step: nth($range, 3);
+    $current: $start;
+
+    @while $current <= $end {
+      // 重複していない場合のみ追加
+      @if not index($values, $current) {
+        $values: append($values, $current, comma);
+      }
+      $current: $current + $step; // 小数点を処理
     }
-    $current: $current + $step; // 小数点を処理
   }
 
   @return $values;
@@ -32,9 +38,12 @@
 }
 
 // ユーティリティクラス生成ミキシン
-@mixin generate-utility($prefix, $property, $min, $max, $step, $unit: '') {
+@mixin generate-utility($prefix, $property, $ranges, $unit: '') {
   // 動的な値を生成
-  $values: generate-dynamic-values($min, $max, $step);
+  @if type-of($ranges) != 'list' {
+    $ranges: ($ranges);
+  }
+  $values: generate-dynamic-values($ranges);
 
   // グローバルクラス生成
   @each $value in $values {
@@ -80,86 +89,72 @@
 }
 
 // オーダー
-@include generate-utility('ord', 'order', 1, 12, 1, null);
+// shame：コンパイルエラー回避用の(1, 1, 1)が未解決です
+@include generate-utility('ord', 'order', ((1, 1, 1), (1, 12, 1)), null);
 
 // ギャップ
-@include generate-utility('g', 'gap', 0, 15, 5, 'px');
-@include generate-utility('rg', 'row-gap', 0, 150, 5, 'px');
-@include generate-utility('cg', 'column-gap', 0, 150, 5, 'px');
+@include generate-utility('g', 'gap', ((1, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('rg', 'row-gap', ((1, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('cg', 'column-gap', ((1, 20, 1), (25, 150, 5)), 'px');
 
 // ボーダーウェイト
-@include generate-utility('bdw', 'border-width', 0, 10, 1, 'px');
+@include generate-utility('bdw', 'border-width', ((1, 1, 1), (0, 20, 1)), 'px');
 
 // ボーダーラディアス
-@include generate-utility('bdrs', 'border-radius', 0, 40, 1, 'px');
-@include generate-utility('bdrs-tl', 'border-top-left-radius', 0, 40, 1, 'px');
-@include generate-utility('bdrs-tr', 'border-top-right-radius', 0, 40, 1, 'px');
-@include generate-utility('bdrs-br', 'border-bottom-right-radius', 0, 40, 1, 'px');
-@include generate-utility('bdrs-bl', 'border-bottom-left-radius', 0, 40, 1, 'px');
+@include generate-utility('bdrs', 'border-radius', ((1, 1, 1), (0, 40, 1)), 'px');
+@include generate-utility('bdrs-tl', 'border-top-left-radius', ((1, 1, 1), (0, 40, 1)), 'px');
+@include generate-utility('bdrs-tr', 'border-top-right-radius', ((1, 1, 1), (0, 40, 1)), 'px');
+@include generate-utility('bdrs-br', 'border-bottom-right-radius', ((1, 1, 1), (0, 40, 1)), 'px');
+@include generate-utility('bdrs-bl', 'border-bottom-left-radius', ((1, 1, 1), (0, 40, 1)), 'px');
 
 // 幅
-@include generate-utility('w', 'width', 0, 20, 1, 'px');
-@include generate-utility('w', 'width', 20, 150, 5, 'px');
-@include generate-utility('mw', 'max-width', 0, 20, 1, 'px');
-@include generate-utility('mw', 'max-width', 20, 150, 5, 'px');
-@include generate-utility('minw', 'min-width', 0, 20, 1, 'px');
-@include generate-utility('minw', 'min-width', 20, 150, 5, 'px');
+@include generate-utility('w', 'width', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('mw', 'max-width', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('minw', 'min-width', ((0, 20, 1), (25, 150, 5)), 'px');
 
 // 高さ
-@include generate-utility('h', 'height', 0, 20, 1, 'px');
-@include generate-utility('h', 'height', 20, 150, 5, 'px');
-@include generate-utility('mh', 'max-height', 0, 20, 1, 'px');
-@include generate-utility('mh', 'max-height', 20, 150, 5, 'px');
-@include generate-utility('minh', 'min-height', 0, 20, 1, 'px');
-@include generate-utility('minh', 'min-height', 20, 150, 5, 'px');
+@include generate-utility('h', 'height', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('mh', 'max-height', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('minh', 'min-height', ((0, 20, 1), (25, 150, 5)), 'px');
 
 // マージン
-@include generate-utility('m', 'margin', -200, 200, 5, 'px');
-@include generate-utility('mt', 'margin-top', -200, 200, 5, 'px');
-@include generate-utility('mr', 'margin-right', -200, 200, 5, 'px');
-@include generate-utility('mb', 'margin-bottom', -200, 200, 5, 'px');
-@include generate-utility('ml', 'margin-left', -200, 200, 5, 'px');
-@include generate-utility('mtb', ('margin-top', 'margin-bottom'), -200, 200, 5, 'px');
-@include generate-utility('mlr', ('margin-left', 'margin-right'), -200, 200, 5, 'px');
+@include generate-utility('m', 'margin', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('mt', 'margin-top', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('mr', 'margin-right', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('mb', 'margin-bottom', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('ml', 'margin-left', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('mtb', ('margin-top', 'margin-bottom'), ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('mlr', ('margin-left', 'margin-right'), ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
 
 // パディング
-// sahme：重複したスタイルを解決
-@include generate-utility('p', 'padding', 0, 20, 1, 'px');
-@include generate-utility('p', 'padding', 0, 200, 5, 'px');
-@include generate-utility('pt', 'padding-top', 0, 200, 5, 'px');
-@include generate-utility('pr', 'padding-right', 0, 200, 5, 'px');
-@include generate-utility('pb', 'padding-bottom', 0, 200, 5, 'px');
-@include generate-utility('pl', 'padding-left', 0, 200, 5, 'px');
-@include generate-utility('ptb', ('padding-top', 'padding-bottom'), 0, 20, 1, 'px');
-@include generate-utility('ptb', ('padding-top', 'padding-bottom'), 0, 200, 5, 'px');
-@include generate-utility('plr', ('padding-left', 'padding-right'), 0, 20, 1, 'px');
-@include generate-utility('plr', ('padding-left', 'padding-right'), 0, 200, 5, 'px');
+@include generate-utility('p', 'padding', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('pt', 'padding-top', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('pr', 'padding-right', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('pb', 'padding-bottom', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('pl', 'padding-left', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('ptb', ('padding-top', 'padding-bottom'), ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('plr', ('padding-left', 'padding-right'), ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
 
 // フォントサイズ
-@include generate-utility('fz', 'font-size', 50, 500, 5, '%');
+@include generate-utility('fz', 'font-size', ((50, 300, 5), (400, 500, 100)), '%');
 
 // ラインハイト
-@include generate-utility('lh', 'line-height', 1, 2, 0.1, '');
+@include generate-utility('lh', 'line-height', ((1, 1, 1), (1, 2, 0.1)), null);
 
 // レタースペーシング
-@include generate-utility('ls', 'letter-spacing', 0, 0.5, 0.05, 'em');
+@include generate-utility('ls', 'letter-spacing', ((0, 0.5, 0.05), (0.6, 1, 0.1)), 'em');
 
 // ポジションプロパティ
-// sahme：重複したスタイルを解決
-@include generate-utility('t', 'top', -20, 20, 1, 'px');
-@include generate-utility('t', 'top', -200, 200, 5, 'px');
-@include generate-utility('r', 'right', -20, 20, 1, 'px');
-@include generate-utility('r', 'right', -200, 200, 5, 'px');
-@include generate-utility('b', 'bottom', -20, 20, 1, 'px');
-@include generate-utility('b', 'bottom', -200, 200, 5, 'px');
-@include generate-utility('l', 'left', -20, 20, 1, 'px');
-@include generate-utility('l', 'left', -200, 200, 5, 'px');
+@include generate-utility('t', 'top', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('r', 'right', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('b', 'bottom', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('l', 'left', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
 
 // レイヤー
-@include generate-utility('z', 'z-index', -1, 10, 1, null);
+@include generate-utility('z', 'z-index', ((1, 1, 1), (-1, 10, 1)), null);
 
 // 不透明度
-@include generate-utility('op', 'opacity', 0, 1, 0.05, '');
+@include generate-utility('op', 'opacity', ((1, 1, 1), (0, 1, 0.05)), '');
 
 // ズーム
 [class*='zoom'] {
@@ -167,7 +162,7 @@
   text-size-adjust: auto;
   -webkit-text-size-adjust: auto;
 }
-@include generate-utility('zoom', 'zoom', 0.5, 1, 0.05, '');
+@include generate-utility('zoom', 'zoom', ((1, 1, 1), (0.5, 1, 0.05)), '');
 
 // ラインクランプ
 [class*='lc'] {
@@ -176,4 +171,4 @@
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
 }
-@include generate-utility('lc', ('-webkit-line-clamp', 'line-clamp'), 1, 5, 1, '');
+@include generate-utility('lc', ('-webkit-line-clamp', 'line-clamp'), ((1, 1, 1), (1, 5, 1)), '');
