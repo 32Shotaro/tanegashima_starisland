@@ -53,93 +53,96 @@
 
     <!-- メイン -->
     <main class="main">
-      <!-- ファーストビュー -->
-      <div class="top-fv d-f ai-c jc-c pos-r">
-        <div class="cols">
-          <div class="col-12">
-            <div class="w-fc mlr-a"><img class="md-zoom08 sm-zoom06" src="./assets/images/common/logo.svg" width="186" height="961" alt="星の島、種子島" /></div>
-          </div>
-        </div>
-        <!-- shame：インタラクションの実装、after要素でリップルみたいなやつ実装したい -->
-        <ul class="d-f fxd-c rg10 pos-a r30 sm-r15 b60 sm-b30 z1">
-          <li>
-            <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><img src="./assets/images/common/icon-facebook.svg" width="21" height="21" alt="facebook" /></a>
-          </li>
-          <li>
-            <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><img src="./assets/images/common/icon-youtube.svg" width="21" height="21" alt="youtube" /></a>
-          </li>
-          <li>
-            <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><img src="./assets/images/common/icon-instagram.svg" width="21" height="21" alt="instagram" /></a>
-          </li>
-        </ul>
-        <!-- スクロールUI -->
-        <div class="scroll-ui d-f fxd-c ai-c rg15 pos-a l30 sm-l15 b60 sm-b30">
-          <div class="scroll-ui-bar bdl bdc-typography w1 h120 sm-h90 pos-r"></div>
-          <div class="scroll-ui-text ff-enSans fz85 sm-fz70 lh11 ls02">SCROLL DOWN</div>
-        </div>
-        <img class="img-bg" src="./assets/images/top/fv-bgi.webp" width="1440" height="1572" alt="夜空の背景" />
-      </div>
-      <!-- FV以下のコンテンツ -->
-      <div class="top-fv-after pb120 pos-r ov-h">
-        <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
-        <section class="top-about pt60">
-          <div class="cols jc-c">
-            <div class="col-10 sm-col-12">
-              <div class="w-fc ml-a pos-r">
-                <section class="top-about-item d-f ai-c jc-c pos-r z1">
-                  <div>
-                    <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">ABOUT ISLAND</p>
-                    <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">宇宙に一番近い島は、<br />日本一の「星空の島」でした。</h2>
-                    <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
-                      星空の島へ、ようこそ。<br />
-                      種子島は日本で一番<br />
-                      星空観測に適していると認定された島。<br />
-                      日本でも有数の “公害が少ない島” だから、<br />
-                      すごく星空が綺麗に見えるんです。
-                    </p>
-                  </div>
-                </section>
-                <i class="shape-shootingStar pos-a t-90 r30 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- 動画セクション -->
-        <section class="top-movie">
+      <!-- ファーストビューと直下セクションのラッパー -->
+      <div class="top-fv_top-fv-after-wrapper">
+        <!-- ファーストビュー -->
+        <div class="top-fv d-f ai-c jc-c pos-r">
           <div class="cols">
             <div class="col-12">
-              <div class="pos-r">
-                <h2 class="top-movie-copy d-f fxd-rr ai-s cg30 sm-cg15 pos-a l-40 md-l-20 sm-l0 z2">
-                  <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">日本一の星空を</span>
-                  <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">贅沢に眺めよう</span>
-                </h2>
-                <div class="sm-mlr-30">
-                  <!-- shame：動画の仕様を要確認、こだわった動画っぽかったのでもらったサイズのままプリロード禁止してautoplayも切ってます。 -->
-                  <video class="img-fluid-full" src="./assets/images/top/movie.mp4" poster="./assets/images/top/movie-poster.webp" preload="none" controls></video>
+              <div class="w-fc mlr-a"><img class="md-zoom08 sm-zoom06" src="./assets/images/common/logo.svg" width="186" height="961" alt="星の島、種子島" /></div>
+            </div>
+          </div>
+          <!-- shame：インタラクションの実装、after要素でリップルみたいなやつ実装したい -->
+          <ul class="d-f fxd-c rg10 pos-a r30 sm-r15 b60 sm-b30 z1">
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><img src="./assets/images/common/icon-facebook.svg" width="21" height="21" alt="facebook" /></a>
+            </li>
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><img src="./assets/images/common/icon-youtube.svg" width="21" height="21" alt="youtube" /></a>
+            </li>
+            <li>
+              <a class="d-f ai-c jc-c bdrs-max w30 h30 hov-bgc-typography-alpha5" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><img src="./assets/images/common/icon-instagram.svg" width="21" height="21" alt="instagram" /></a>
+            </li>
+          </ul>
+          <!-- スクロールUI -->
+          <div class="scroll-ui d-f fxd-c ai-c rg15 pos-a l30 sm-l15 b60 sm-b30">
+            <div class="scroll-ui-bar bdl bdc-typography w1 h120 sm-h90 pos-r"></div>
+            <div class="scroll-ui-text ff-enSans fz85 sm-fz70 lh11 ls02">SCROLL DOWN</div>
+          </div>
+          <img class="img-bg" src="./assets/images/top/fv-bgi.webp" width="1440" height="1572" alt="夜空の背景" />
+        </div>
+        <!-- FV以下のコンテンツ -->
+        <div class="top-fv-after pb120 pos-r ov-h">
+          <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
+          <section class="top-about pt60">
+            <div class="cols jc-c">
+              <div class="col-10 sm-col-12">
+                <div class="w-fc ml-a pos-r">
+                  <section class="top-about-item d-f ai-c jc-c pos-r z1">
+                    <div>
+                      <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">ABOUT ISLAND</p>
+                      <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">宇宙に一番近い島は、<br />日本一の「星空の島」でした。</h2>
+                      <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
+                        星空の島へ、ようこそ。<br />
+                        種子島は日本で一番<br />
+                        星空観測に適していると認定された島。<br />
+                        日本でも有数の “公害が少ない島” だから、<br />
+                        すごく星空が綺麗に見えるんです。
+                      </p>
+                    </div>
+                  </section>
+                  <i class="shape-shootingStar pos-a t-90 r30 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
                 </div>
-                <!-- shame：.sm-l-aが機能してない -->
-                <i class="shape-shootingStar pos-a l-80 sm-l-a b-80 sm-r-20 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
               </div>
             </div>
-          </div>
-        </section>
-        <!-- 種子島の星空が美しい理由 -->
-        <section class="pt100 sm-pt60">
-          <div class="cols ai-e rg30">
-            <div class="col-6 sm-col-12">
-              <p class="ff-enSerif fz500 md-fz400 sm-fz315 lh11">
-                Why are the<br />
-                Stars beautiful ?
-              </p>
-              <h2 class="pt25 sm-pt15 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls015">種子島の星空が美しい理由</h2>
+          </section>
+          <!-- 動画セクション -->
+          <section class="top-movie">
+            <div class="cols">
+              <div class="col-12">
+                <div class="pos-r">
+                  <h2 class="top-movie-copy d-f fxd-rr ai-s cg30 sm-cg15 pos-a l-40 md-l-20 sm-l0 z2">
+                    <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">日本一の星空を</span>
+                    <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r">贅沢に眺めよう</span>
+                  </h2>
+                  <div class="sm-mlr-30">
+                    <!-- shame：動画の仕様を要確認、こだわった動画っぽかったのでもらったサイズのままプリロード禁止してautoplayも切ってます。 -->
+                    <video class="img-fluid-full" src="./assets/images/top/movie.mp4" poster="./assets/images/top/movie-poster.webp" preload="none" controls></video>
+                  </div>
+                  <!-- shame：.sm-l-aが機能してない -->
+                  <i class="shape-shootingStar pos-a l-80 sm-l-a b-80 sm-r-20 z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+                </div>
+              </div>
             </div>
-            <div class="col-6 sm-col-12">
-              <p class="fz105 sm-fz100 lh2">種子島は、日本の離島の中でも「光害」が少なく、環境省により「日本一の星空」に認定された、美しい星空を誇る島です。特別な山登りをしなくても、ビーチや公園など身近な場所から気軽に星空を楽しめるのが魅力。 このサイトでは、特に星空観賞に適したスポットを厳選してご紹介しています。 ぜひ参考にして、種子島での星空の旅を満喫してください。</p>
+          </section>
+          <!-- 種子島の星空が美しい理由 -->
+          <section class="pt100 sm-pt60">
+            <div class="cols ai-e rg30">
+              <div class="col-6 sm-col-12">
+                <p class="ff-enSerif fz500 md-fz400 sm-fz315 lh11">
+                  Why are the<br />
+                  Stars beautiful ?
+                </p>
+                <h2 class="pt25 sm-pt15 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls015">種子島の星空が美しい理由</h2>
+              </div>
+              <div class="col-6 sm-col-12">
+                <p class="fz105 sm-fz100 lh2">種子島は、日本の離島の中でも「光害」が少なく、環境省により「日本一の星空」に認定された、美しい星空を誇る島です。特別な山登りをしなくても、ビーチや公園など身近な場所から気軽に星空を楽しめるのが魅力。 このサイトでは、特に星空観賞に適したスポットを厳選してご紹介しています。 ぜひ参考にして、種子島での星空の旅を満喫してください。</p>
+              </div>
             </div>
-          </div>
-        </section>
-        <!-- 特殊シェイプの背景 -->
-        <img class="img-bg" src="./assets/images/top/fv-after-bg.webp" width="1440" height="1640" alt="夜空の背景" />
+          </section>
+          <!-- 特殊シェイプの背景 -->
+          <img class="img-bg" src="./assets/images/top/fv-after-bg.webp" width="1440" height="1640" alt="夜空の背景" />
+        </div>
       </div>
       <!-- 星空スポット -->
       <section class="pt120 sm-pt80 pb120 sm-pb110">

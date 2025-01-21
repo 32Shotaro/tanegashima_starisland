@@ -6,10 +6,14 @@
 // --------------------
 
 .top {
+  // ファーストビューと直下セクションのラッパー
+  &-fv_top-fv-after-wrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin-bottom: -1px;
+  }
   // ファーストビュー
   &-fv {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    min-height: 100svh;
+    min-height: 95svh;
     // スクロールUI
     .scroll-ui {
       &-bar {
@@ -51,13 +55,18 @@
       }
     }
     .img-bg {
-      -webkit-mask: url(../images/top/top-fv-bgi-shape.png) center / 100% 100% no-repeat;
-      mask: url(../images/top/top-fv-bgi-shape.png) center / 100% 100% no-repeat;
       position: fixed;
     }
   }
   // FV以下のコンテンツ
-  // &-fv-after {}
+  &-fv-after {
+    -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
+    mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
+    @include vars.respond-to(sm, 'max') {
+      -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
+      mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
+    }
+  }
   // 宇宙に一番近い島は、日本一の「星空の島」でした。
   &-about {
     &-item {

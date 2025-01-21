@@ -34004,9 +34004,12 @@ body::before {
   }
 }
 
-.top-fv {
+.top-fv_top-fv-after-wrapper {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  min-height: 100svh;
+  margin-bottom: -1px;
+}
+.top-fv {
+  min-height: 95svh;
 }
 .top-fv .scroll-ui-bar::before {
   content: "";
@@ -34045,9 +34048,17 @@ body::before {
   -webkit-writing-mode: vertical-rl;
 }
 .top-fv .img-bg {
-  -webkit-mask: url(../images/top/top-fv-bgi-shape.png) center/100% 100% no-repeat;
-  mask: url(../images/top/top-fv-bgi-shape.png) center/100% 100% no-repeat;
   position: fixed;
+}
+.top-fv-after {
+  -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
+  mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
+}
+@media (max-width: 767px) {
+  .top-fv-after {
+    -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center/100% 100% no-repeat;
+    mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center/100% 100% no-repeat;
+  }
 }
 .top-about-item {
   border-radius: 50%;
