@@ -9,7 +9,7 @@
   // ファーストビュー
   &-fv {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    min-height: 100svh;
+    min-height: calc(100svh - 50px);
     // スクロールUI
     .scroll-ui {
       &-bar {
@@ -52,7 +52,6 @@
         -webkit-writing-mode: vertical-rl;
       }
     }
-    // 背景写真のレイアウト
     .img-bg {
       position: fixed;
     }
@@ -105,6 +104,24 @@
       @include vars.respond-to(sm, 'max') {
         &:nth-child(n + 3) {
           display: none; // 3件以降の記事を非表示
+        }
+      }
+    }
+  }
+  // 星空の体験
+  &-event {
+    // スライド
+    &-slide {
+      width: calc(((100vw - 1000px) / 2) + 100% + 15px);
+      max-width: 1080px;
+      @include vars.respond-to(md, 'max') {
+        width: calc(100% + 45px);
+      }
+      @include vars.respond-to(sm, 'max') {
+        width: calc(100% + 30px);
+      }
+      .swiper {
+        &-slide {
         }
       }
     }

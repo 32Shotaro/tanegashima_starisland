@@ -6,7 +6,6 @@
     <meta name="description" content="" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/common.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap" rel="stylesheet" />
@@ -81,7 +80,7 @@
         <img class="img-bg" src="./assets/images/top/fv-bgi.webp" width="1440" height="1572" alt="夜空の背景" />
       </div>
       <!-- FV以下のコンテンツ -->
-      <div class="top-fv-after pb120 pos-r">
+      <div class="top-fv-after pt50 pb120 pos-r ov-h">
         <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
         <section class="top-about pt60">
           <div class="cols jc-c">
@@ -139,6 +138,7 @@
             </div>
           </div>
         </section>
+        <!-- 特殊シェイプの背景 -->
         <img class="img-bg" src="./assets/images/top/fv-after-bg.webp" width="1440" height="1640" alt="夜空の背景" />
       </div>
       <!-- 星空スポット -->
@@ -274,22 +274,46 @@
         </div>
       </section>
       <!-- 星空の体験 -->
-      <section class="top-event pt85 pb110 pos-r">
+      <section class="top-event pt85 pb110 pos-r ov-h">
         <div class="cols">
-          <div class="col-3 sm-col-12">
-            <h2 class="top-event-copy z2"><span class="d-b text-v sm-text-h bgc-butter w-fc sm-ml-30 p15 sm-p10 ff-jaSerif fz285 md-fz245 sm-fz210 c-midnight lh1 ls02 pos-r">星空の体験</span></h2>
+          <div class="col-2 sm-col-12">
+            <h2 class="top-event-copy z2"><span class="d-b text-v sm-text-h bgc-butter w-fc sm-ml-30 p15 sm-p10 ff-jaSerif fz285 md-fz245 sm-fz200 c-midnight lh1 ls02 pos-r">星空の体験</span></h2>
           </div>
-          <div class="col-9 sm-col-12 mt110 md-mt85 sm-mt60">
+          <div class="col-10 sm-col-12 mt110 md-mt85 sm-mt60">
             <!-- shame：ここってJSスライドですか？ただ横にスワイプできればいいですか？最大何件ですか？ -->
-            <article>
-              <figure><img class="img-fluid-full asp-4-3" src="./assets/images/_sample/event-thumb1.webp" width="360" height="240" alt="サムネイル" /></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">菓子処渡辺</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </article>
+            <div class="top-event-slide js-top-event-slide">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <article class="swiper-slide">
+                    <figure><img class="img-fluid-full asp-4-3" src="./assets/images/_sample/event-thumb1.webp" width="360" height="240" alt="サムネイル" /></figure>
+                    <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">菓子処渡辺</h3>
+                    <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                    <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
+                    </ul>
+                  </article>
+                  <article class="swiper-slide">
+                    <figure><img class="img-fluid-full asp-4-3" src="./assets/images/_sample/event-thumb2.webp" width="360" height="240" alt="サムネイル" /></figure>
+                    <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">星空のチョコレート｜tanesora</h3>
+                    <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                    <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
+                    </ul>
+                  </article>
+                  <article class="swiper-slide">
+                    <figure><img class="img-fluid-full asp-4-3" src="./assets/images/_sample/event-thumb3.webp" width="360" height="240" alt="サムネイル" /></figure>
+                    <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">星を鑑賞！陶芸体験</h3>
+                    <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+                    <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
+                      <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
+                    </ul>
+                  </article>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="cols jc-c pt80 sm-pt60">
@@ -414,54 +438,56 @@
     </main>
 
     <!-- フッター -->
-    <footer class="footer ov-h">
+    <footer class="footer">
       <!-- フッターCTA -->
       <!-- shame：はみ出た写真のデザイン差異解決 -->
-      <div class="footer-cta pos-r">
-        <div class="footer-cta-inner pos-r">
-          <!-- 星空鑑賞におすすめのグッズ -->
-          <section class="footer-cta-item_list d-f ai-c jc-c pos-a z1">
-            <div>
-              <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">ITEM LIST</p>
-              <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空鑑賞に<br />おすすめのグッズ</h2>
-              <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
-                種子島の夜を快適に過ごすためのグッズを<br />
-                リストアップしました。<br />
-                これらを準備すれば、<br class="d-n md-d-i" />
-                星空鑑賞がより楽しくなります！
-              </p>
-              <div class="pt30 sm-pt15 ta-r">
-                <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/item">
-                  <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
-                  <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
-                </a>
+      <div class="footer-cta-wrapper">
+        <div class="footer-cta pos-r">
+          <div class="footer-cta-inner pos-r">
+            <!-- 星空鑑賞におすすめのグッズ -->
+            <section class="footer-cta-item_list d-f ai-c jc-c pos-a z1">
+              <div>
+                <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">ITEM LIST</p>
+                <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空鑑賞に<br />おすすめのグッズ</h2>
+                <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
+                  種子島の夜を快適に過ごすためのグッズを<br />
+                  リストアップしました。<br />
+                  これらを準備すれば、<br class="d-n md-d-i" />
+                  星空鑑賞がより楽しくなります！
+                </p>
+                <div class="pt30 sm-pt15 ta-r">
+                  <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/item">
+                    <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
+                    <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </section>
-          <!-- 星空撮影のテクニック -->
-          <section class="footer-cta-photo_technique d-f ai-c jc-c pos-a z1">
-            <div>
-              <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">PHOTO TECHNIQUE</p>
-              <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空撮影の<br class="d-n sm-d-i" />テクニック</h2>
-              <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
-                星空写真家 成澤広幸さんの<br class="d-n md-d-i" />アドバイスをもとに、<br />
-                一眼カメラとスマホを使った星空撮影の<br class="d-n md-d-i" />ポイントを<br class="md-d-n" />わかりやすく解説します。
-              </p>
-              <div class="pt30 sm-pt15 ta-r">
-                <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/photo">
-                  <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
-                  <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
-                </a>
+            </section>
+            <!-- 星空撮影のテクニック -->
+            <section class="footer-cta-photo_technique d-f ai-c jc-c pos-a z1">
+              <div>
+                <p class="ff-enSans fz105 md-fz85 sm-fz75 lh1 ls015 ta-c">PHOTO TECHNIQUE</p>
+                <h2 class="pt20 ff-jaSerif fz200 md-fz160 sm-fz140 c-butter lh16 ls015 ta-c">星空撮影の<br class="d-n sm-d-i" />テクニック</h2>
+                <p class="pt25 sm-pt15 fz105 sm-fz95 ta-c">
+                  星空写真家 成澤広幸さんの<br class="d-n md-d-i" />アドバイスをもとに、<br />
+                  一眼カメラとスマホを使った星空撮影の<br class="d-n md-d-i" />ポイントを<br class="md-d-n" />わかりやすく解説します。
+                </p>
+                <div class="pt30 sm-pt15 ta-r">
+                  <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/photo">
+                    <span class="d-b ff-enSans fz95 lh1">VIEW MORE</span>
+                    <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </section>
-          <!-- 写真 -->
-          <div class="footer-cta-pic1 pos-a z1"><img src="./assets/images/common/footer-cta-pic1.webp" width="512" height="523" alt="写真" /></div>
-          <!-- 流れ星のシェイプ -->
-          <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
-          <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+            </section>
+            <!-- 写真 -->
+            <div class="footer-cta-pic1 pos-a z1"><img src="./assets/images/common/footer-cta-pic1.webp" width="512" height="523" alt="写真" /></div>
+            <!-- 流れ星のシェイプ -->
+            <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+            <i class="shape-shootingStar pos-a z2"><img src="./assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ" /></i>
+          </div>
+          <img class="img-bg" src="./assets/images/common/footer-cta-bg.webp" width="1440" height="1572" alt="夜空の背景" />
         </div>
-        <img class="img-bg" src="./assets/images/common/footer-cta-bg.webp" width="1440" height="1572" alt="夜空の背景" />
       </div>
       <div class="cols jc-c pt120 sm-pt75 pos-r">
         <p class="footer-hushTug d-b w-fc mlr-a ff-enSerif lh1 td-n lc1 pos-a t-80 md-t-65 sm-t-45 r0 l0 z1">#tanetabi</p>
@@ -524,5 +550,9 @@
         <small>Copyright <a class="td-n hov-op65" href="https://tanekan.jp/" target="_blank" rel="noopener">© 種子島観光協会.</a> All Rights Reserved.</small>
       </div>
     </footer>
+
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./assets/js/swiper.min.css" />
+    <script src="./assets/js/common.js"></script>
   </body>
 </html>

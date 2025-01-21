@@ -108,14 +108,14 @@
 @include generate-utility('bdrs-bl', 'border-bottom-left-radius', ((1, 1, 1), (0, 40, 1)), 'px');
 
 // 幅
-@include generate-utility('w', 'width', ((0, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('mw', 'max-width', ((0, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('minw', 'min-width', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('w', 'width', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
+@include generate-utility('mw', 'max-width', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
+@include generate-utility('minw', 'min-width', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
 
 // 高さ
-@include generate-utility('h', 'height', ((0, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('mh', 'max-height', ((0, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('minh', 'min-height', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('h', 'height', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
+@include generate-utility('mh', 'max-height', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
+@include generate-utility('minh', 'min-height', ((0, 20, 1), (25, 150, 5), (160, 250, 10)), 'px');
 
 // マージン
 @include generate-utility('m', 'margin', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
@@ -136,7 +136,7 @@
 @include generate-utility('plr', ('padding-left', 'padding-right'), ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
 
 // フォントサイズ
-@include generate-utility('fz', 'font-size', ((50, 300, 5), (400, 500, 100)), '%');
+@include generate-utility('fz', 'font-size', ((50, 350, 5), (360, 500, 10)), '%');
 
 // ラインハイト
 @include generate-utility('lh', 'line-height', ((1, 1, 1), (1, 2, 0.1)), null);

@@ -39,9 +39,21 @@ body {
   }
 }
 
-// メイン
-main {
-  overflow: hidden; // 下部コンテンツのはみ出しを処理するため
+// 幅の広いコンテナ
+.cols-1240 {
+  max-width: 1360px;
+  &.cols-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+    @media (max-width: 1359px) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+    @media (max-width: 1359px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
 }
 
 // 流れ星のシェイプ

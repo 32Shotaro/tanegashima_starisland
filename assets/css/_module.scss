@@ -5,11 +5,12 @@
 // フレックスボックス
 // --------------------
 
-//
+// フレックス内で要素を領域いっぱいに広げる
 .fxg1 {
   flex-grow: 1;
 }
 
+// フレックス内で要素が小さくならない
 .fxs0 {
   flex-shrink: 0;
 }
@@ -26,6 +27,15 @@
 // --------------------
 // テキスト
 // --------------------
+
+// テキスト郡
+.texts {
+  > * {
+    &:not(:first-child) {
+      padding-top: 1em;
+    }
+  }
+}
 
 // テキストの縦書き
 .text-v {
@@ -54,6 +64,73 @@
   &-enSans {
     font-family: 'Josefin Sans', serif;
     text-transform: uppercase;
+  }
+}
+
+// --------------------
+// 見出し
+// --------------------
+
+// ./_wordpress-content.scssのスタイルと類似
+
+.title {
+  &-h2,
+  &-h3,
+  &-h4 {
+    font-family: 'Zen Old Mincho', serif;
+    color: vars.color(butter);
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+  }
+
+  &-h2 {
+    // shame：複数行時のレイアウトがきになる
+    border-bottom: 1px solid vars.color(butter);
+    width: fit-content;
+    // margin: auto;
+    padding-bottom: 0.35em;
+    font-size: 250%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 180%;
+    }
+  }
+
+  &-h3 {
+    // shame：複数行時のレイアウトがきになる
+    display: flex;
+    align-items: center;
+    column-gap: 0.5em;
+    width: fit-content;
+    margin: auto;
+    font-size: 180%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 140%;
+    }
+    &::before,
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      background-color: currentColor;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+  &-h4 {
+    // shame：複数行時のレイアウトがきになる
+    border-bottom: 1px solid vars.color(butter);
+    border-radius: 10px;
+    width: fit-content;
+    // margin: auto;
+    padding: 0 1em 1em;
+    font-size: 130%;
+    text-align: center;
+    @include vars.respond-to(sm, 'max') {
+      font-size: 115%;
+    }
   }
 }
 
@@ -92,10 +169,33 @@ img[src$='arrow.svg'] {
 }
 
 // --------------------
-// テーブル
+// リスト
 // --------------------
 
-// .table {}
+.ul {
+  li {
+    padding-left: 1.5em;
+    position: relative;
+    &::before {
+      content: '';
+      background-color: vars.color(butter);
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      inset: calc((0.5em * 1.8) - 3px) auto auto 0;
+    }
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+  }
+  // テキスト群内でのリストごとのマージンを調整
+  @at-root .texts .ul li {
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+}
 
 // --------------------
 // CSSアイコン
