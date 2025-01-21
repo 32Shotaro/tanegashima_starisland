@@ -47,12 +47,12 @@
           @if type-of($property) == 'list' {
             .#{$breakpoint}-#{$prefix} {
               @each $prop in $property {
-                #{$prop}: $value;
+                #{$prop}: $value !important;
               }
             }
           } @else {
             .#{$breakpoint}-#{$prefix} {
-              #{$property}: $value;
+              #{$property}: $value !important;
             }
           }
         } @else {
@@ -60,12 +60,12 @@
           @if type-of($property) == 'list' {
             .#{$breakpoint}-#{$prefix}-#{$key} {
               @each $prop in $property {
-                #{$prop}: $value;
+                #{$prop}: $value !important;
               }
             }
           } @else {
             .#{$breakpoint}-#{$prefix}-#{$key} {
-              #{$property}: $value;
+              #{$property}: $value !important;
             }
           }
         }

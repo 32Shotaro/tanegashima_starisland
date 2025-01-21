@@ -74,13 +74,13 @@
           // 複数プロパティの場合
           .#{$breakpoint}-#{$prefix}#{$sanitized-value} {
             @each $prop in $property {
-              #{$prop}: #{$value}#{$unit};
+              #{$prop}: #{$value}#{$unit} !important;
             }
           }
         } @else {
           // 単一プロパティの場合
           .#{$breakpoint}-#{$prefix}#{$sanitized-value} {
-            #{$property}: #{$value}#{$unit};
+            #{$property}: #{$value}#{$unit} !important;
           }
         }
       }

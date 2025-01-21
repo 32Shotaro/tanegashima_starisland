@@ -9,7 +9,7 @@
   // ファーストビュー
   &-fv {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    min-height: calc(100svh - 50px);
+    min-height: 100svh;
     // スクロールUI
     .scroll-ui {
       &-bar {
@@ -28,7 +28,6 @@
             inset: 0 auto auto -5px;
           }
         }
-
         @keyframes scroll_ui {
           0% {
             transform: translate(0, 0);
@@ -38,7 +37,6 @@
             transform: translate(0, 900%);
           }
         }
-
         @media screen and (max-width: 767px) {
           .top-fv-scroll-ui::before {
             width: 8px;
@@ -53,6 +51,8 @@
       }
     }
     .img-bg {
+      -webkit-mask: url(../images/top/top-fv-bgi-shape.png) center / 100% 100% no-repeat;
+      mask: url(../images/top/top-fv-bgi-shape.png) center / 100% 100% no-repeat;
       position: fixed;
     }
   }
