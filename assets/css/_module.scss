@@ -2,22 +2,16 @@
 @use 'variables' as vars;
 
 // --------------------
-// フレックスボックス
+// グローバルユーティリティ
 // --------------------
 
-// フレックス内で要素を領域いっぱいに広げる
+// フレックスボックス
 .fxg1 {
   flex-grow: 1;
-}
-
-// フレックス内で要素が小さくならない
+} // フレックス内で要素を広げる
 .fxs0 {
   flex-shrink: 0;
-}
-
-// --------------------
-// 背景
-// --------------------
+} // フレックス内で要素を縮小させない
 
 // 背景画像
 .bg-main {
@@ -25,16 +19,12 @@
 }
 
 // --------------------
-// テキスト
+// テキストスタイル
 // --------------------
 
-// テキスト郡
-.texts {
-  > * {
-    &:not(:first-child) {
-      padding-top: 1em;
-    }
-  }
+// テキスト群
+.texts > *:not(:first-child) {
+  padding-top: 1em;
 }
 
 // テキストの縦書き
@@ -44,7 +34,7 @@
   -webkit-writing-mode: vertical-rl;
 }
 
-// スマホ時に縦書きの解除
+// スマホで縦書きを解除
 @include vars.respond-to(sm, 'max') {
   .sm-text-h {
     writing-mode: horizontal-tb;
@@ -68,10 +58,8 @@
 }
 
 // --------------------
-// 見出し
+// 見出しスタイル
 // --------------------
-
-// ./_wordpress-content.scssのスタイルと類似
 
 .title {
   &-h2,
@@ -84,20 +72,18 @@
   }
 
   &-h2 {
-    // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
     width: fit-content;
-    // margin: auto;
     padding-bottom: 0.35em;
     font-size: 250%;
     text-align: center;
+
     @include vars.respond-to(sm, 'max') {
       font-size: 180%;
     }
   }
 
   &-h3 {
-    // shame：複数行時のレイアウトがきになる
     display: flex;
     align-items: center;
     column-gap: 0.5em;
@@ -105,9 +91,11 @@
     margin: auto;
     font-size: 180%;
     text-align: center;
+
     @include vars.respond-to(sm, 'max') {
       font-size: 140%;
     }
+
     &::before,
     &::after {
       content: '';
@@ -120,14 +108,14 @@
   }
 
   &-h4 {
-    // shame：複数行時のレイアウトがきになる
+    // shame：装飾を実現
     border-bottom: 1px solid vars.color(butter);
     border-radius: 10px;
     width: fit-content;
-    // margin: auto;
     padding: 0 1em 1em;
     font-size: 130%;
     text-align: center;
+
     @include vars.respond-to(sm, 'max') {
       font-size: 115%;
     }
@@ -135,22 +123,19 @@
 }
 
 // --------------------
-// 画像
+// 画像スタイル
 // --------------------
 
-// 画像のリサイズ
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
 
-// 画像のリサイズ（幅100%）
 .img-fluid-full {
   width: 100%;
   height: auto;
 }
 
-// imgタグを背景画像として配置
 .img-bg {
   width: 100%;
   height: 100%;
@@ -160,7 +145,6 @@
   z-index: -1;
 }
 
-// 矢印の画像をリサイズ
 img[src$='arrow.svg'] {
   @include vars.respond-to(sm, 'max') {
     width: 16px;
@@ -169,57 +153,150 @@ img[src$='arrow.svg'] {
 }
 
 // --------------------
-// リスト
+// リストスタイル
 // --------------------
 
-.ul {
-  li {
-    padding-left: 1.5em;
-    position: relative;
-    &::before {
-      content: '';
-      background-color: vars.color(butter);
-      border-radius: 50%;
-      width: 6px;
-      height: 6px;
-      position: absolute;
-      inset: calc((0.5em * 1.8) - 3px) auto auto 0;
-    }
-    &:not(:first-child) {
-      margin-top: 1em;
-    }
+.ul li {
+  padding-left: 1.5em;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: vars.color(butter);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    inset: calc((0.5em * 1.8) - 3px) auto auto 0;
   }
-  // テキスト群内でのリストごとのマージンを調整
-  @at-root .texts .ul li {
-    &:not(:first-child) {
-      margin-top: 0;
-    }
+
+  &:not(:first-child) {
+    margin-top: 1em;
   }
 }
 
-// --------------------
-// CSSアイコン
-// --------------------
+// テキスト内リストのマージン調整
+@at-root .texts .ul li:not(:first-child) {
+  margin-top: 0;
+}
 
 // --------------------
 // インタラクション
 // --------------------
 
-// トランジションの時間とイージングを定義
 $transition-duration: 600ms;
 $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 
 @media (any-hover: hover) {
+  // ホバーで透過
   .hov-op65 {
     transition: opacity $transition-duration $transition-timing-function;
     &:hover {
       opacity: 0.65;
     }
   }
+  // ホバーで背景を帯びのように塗りつぶし
+  .hov-animation-bgfill {
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      background-color: vars.color(typography, alpha5);
+      width: 0;
+      height: 100%;
+      position: absolute;
+      inset: 0 auto auto 0;
+      z-index: -1;
+      transition: width $transition-duration $transition-timing-function;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  // ホバーで矢印がアニメーション
+  .hov-hook:hover {
+    .hov-hook-animation-arrowWrapper {
+      .icon-arrow {
+        animation: arrowWrapper-arrow 900ms $transition-timing-function both;
+        @keyframes arrowWrapper-arrow {
+          0% {
+            transform: translate(0, 0);
+          }
+          50% {
+            transform: translate(80%, 0);
+          }
+          50.1% {
+            transform: translate(-80%, 0);
+          }
+          100% {
+            transform: translate(0, 0);
+          }
+        }
+      }
+    }
+  }
+  // ホバーで画像を拡大
+  img.hov-hook-scale {
+    transition: transform $transition-duration $transition-timing-function;
+    transform-origin: center;
+  }
+  .hov-hook:hover {
+    img.hov-hook-scale {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// スクロールでフェードイン
+.scroll-view {
+  animation: scroll-view 900ms $transition-timing-function both paused;
+
+  @keyframes scroll-view {
+    from {
+      opacity: 0;
+      transform: translate(0, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  &.is-scrolled {
+    animation-play-state: running;
+  }
+}
+
+// スクロールで文字が1文字ずつアニメーション
+.js-animation-copy {
+  > span {
+    display: inline-block;
+    animation: copy-view 900ms $transition-timing-function both paused;
+    @keyframes copy-view {
+      from {
+        opacity: 0;
+        -ms-filter: blur(6px);
+        filter: blur(6px);
+      }
+      to {
+        opacity: 1;
+        -ms-filter: blur(0);
+        filter: blur(0);
+      }
+    }
+  }
+  &.js-scroll.is-scrolled {
+    > span {
+      animation-play-state: running;
+    }
+  }
 }
 
 // --------------------
-// WordPress記事用のページネーション
+// ページネーション
 // --------------------
 
+// 現状未定義
 // .wp-pagination {}

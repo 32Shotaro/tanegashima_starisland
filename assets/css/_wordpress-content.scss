@@ -66,14 +66,31 @@
   }
 
   h4 {
+    // shame：装飾を実現
     // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
-    border-radius: 10px;
     width: fit-content;
     margin: 2em auto 1em;
     padding: 0 1em 1em;
     font-size: 130%;
     text-align: center;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      border: 1px solid vars.color(butter);
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: -1px;
+    }
+    &::before {
+      left: -10px;
+    }
+    &::after {
+      right: -10px;
+    }
     @include vars.respond-to(sm, 'max') {
       font-size: 115%;
     }

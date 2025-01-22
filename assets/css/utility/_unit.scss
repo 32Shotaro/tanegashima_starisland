@@ -93,9 +93,9 @@
 @include generate-utility('ord', 'order', ((1, 1, 1), (1, 12, 1)), null);
 
 // ギャップ
-@include generate-utility('g', 'gap', ((1, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('rg', 'row-gap', ((1, 20, 1), (25, 150, 5)), 'px');
-@include generate-utility('cg', 'column-gap', ((1, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('g', 'gap', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('rg', 'row-gap', ((0, 20, 1), (25, 150, 5)), 'px');
+@include generate-utility('cg', 'column-gap', ((0, 20, 1), (25, 150, 5)), 'px');
 
 // ボーダーウェイト
 @include generate-utility('bdw', 'border-width', ((1, 1, 1), (0, 20, 1)), 'px');
@@ -145,10 +145,10 @@
 @include generate-utility('ls', 'letter-spacing', ((0, 0.5, 0.05), (0.6, 1, 0.1)), 'em');
 
 // ポジションプロパティ
-@include generate-utility('t', 'top', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
-@include generate-utility('r', 'right', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
-@include generate-utility('b', 'bottom', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
-@include generate-utility('l', 'left', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5)), 'px');
+@include generate-utility('t', 'top', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5), (210, 300, 10)), 'px');
+@include generate-utility('r', 'right', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5), (210, 300, 10)), 'px');
+@include generate-utility('b', 'bottom', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5), (210, 300, 10)), 'px');
+@include generate-utility('l', 'left', ((-200, -25, 5), (-20, 0, 1), (0, 20, 1), (25, 200, 5), (210, 300, 10)), 'px');
 
 // レイヤー
 @include generate-utility('z', 'z-index', ((1, 1, 1), (-1, 10, 1)), null);

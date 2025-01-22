@@ -1,75 +1,119 @@
-﻿// グローバルナビのトリガー
-document.addEventListener('DOMContentLoaded', function () {
-  const trigger = document.querySelector('.js-gNav-trigger');
-  const nav = document.querySelector('.gNav');
+﻿$(document).ready(function () {
+  // グローバルナビのトリガー
+  const $trigger = $('.js-gNav-trigger');
+  const $nav = $('.gNav');
 
-  if (!trigger || !nav) {
-    console.error('必要な要素が見つかりません: .js-gNav-trigger または .gNav');
-    return; // 要素が存在しない場合は処理を終了
-  }
+  if ($trigger.length && $nav.length) {
+    $trigger.on('click', function () {
+      // トリガーに .is-active をトグル
+      $(this).toggleClass('is-active');
 
-  trigger.addEventListener('click', function () {
-    // トリガーに .is-active をトグル
-    this.classList.toggle('is-active');
-
-    // ナビゲーションに .is-visible をトグル
-    nav.classList.toggle('is-visible');
-  });
-});
-
-// トップページのスワイパー
-// shame：.js-top-event-slideが無いページでのエラー回避
-document.addEventListener('DOMContentLoaded', function () {
-  const topEventSlides = document.querySelectorAll('.js-top-event-slide');
-
-  if (topEventSlides.length > 0) {
-    // .js-top-event-slide が存在する場合のみ処理を進める
-    topEventSlides.forEach((topEventSlide) => {
-      const swiperContainer = topEventSlide.querySelector('.swiper');
-
-      if (swiperContainer) {
-        // スワイパーを初期化
-        const swiper = new Swiper(swiperContainer, {
-          slidesPerView: 1.3,
-          spaceBetween: 15,
-          speed: 1000,
-          autoplay: {
-            delay: 4000,
-          },
-          breakpoints: {
-            999: {
-              slidesPerView: 2.8,
-              spaceBetween: 40,
-            },
-            768: {
-              slidesPerView: 2.095,
-              spaceBetween: 30,
-            },
-          },
-        });
-      }
+      // ナビゲーションに .is-visible をトグル
+      $nav.toggleClass('is-visible');
     });
   }
-});
 
-// ページ内アンカーのスムーススクロール
-document.addEventListener('DOMContentLoaded', function () {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  // ページ内アンカーのスムーススクロール
+  $('a[href^="#"]').on('click', function (e) {
+    const targetId = $(this).attr('href');
+    const $targetElement = $(targetId);
 
-  anchorLinks.forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+    if ($targetElement.length) {
+      e.preventDefault();
 
-      if (targetElement) {
-        e.preventDefault();
+      // スムーススクロール
+      $('html, body').animate(
+        {
+          scrollTop: $targetElement.offset().top,
+        },
+        600 // アニメーションの速度 (ミリ秒)
+      );
+    }
+  });
 
-        // スムーススクロール
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth',
+  //// 読み込み時、スクロール時にアニメーションさせるためのクラス付与
+  // 読み込み時に画面内に入っていたら、要素の順番にアニメーション表示
+  Position = $(window).height() + $(window).scrollTop();
+  $('.js-scroll').each(function (i) {
+    if (Position > $(this).offset().top) {
+      $(this)
+        .delay(60 * i)
+        .queue(function () {
+          $(this).addClass('is-scrolled');
         });
+    }
+  });
+  // スクロールして、画面内にきたらclass付与
+  $(window).scroll(function () {
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    $('.js-scroll').each(function () {
+      if (scrollPosition - 150 > $(this).offset().top) {
+        $(this).addClass('is-scrolled');
       }
     });
   });
+
+  // トップページ：コピーライトのアニメーション用JS
+  if ($('.js-animation-copy').length) {
+    $('.js-animation-copy').each(function () {
+      var $this = $(this);
+      var htmlContent = $this.html();
+      var newText = '';
+      var delay = 0;
+      var animationDuration = 800;
+
+      // <br> または <br をそのまま維持しつつ、文字だけを処理
+      var charArray = htmlContent.split(/(<br\s*\/?>)/gi);
+
+      charArray.forEach(function (chunk) {
+        if (chunk.match(/<br\s*\/?>/gi)) {
+          // <br> タグはそのまま追加
+          newText += chunk;
+        } else {
+          // 通常の文字を1文字ずつ処理
+          for (var i = 0; i < chunk.length; i++) {
+            var char = chunk[i] === ' ' ? '&nbsp;' : chunk[i];
+            newText += `<span style="animation-delay: ${delay}ms">${char}</span>`;
+            delay += animationDuration / htmlContent.replace(/<br\s*\/?>/gi, '').length;
+          }
+        }
+      });
+
+      // 処理後のHTMLを設定
+      $this.html(newText);
+    });
+  }
+
+  // パララックス
+  // 別プラグインを検討
+  // if (document.querySelectorAll('.js-parallax').length) {
+  //   const images = document.querySelectorAll('.js-parallax');
+  //   images.forEach((image) => {
+  //     new simpleParallax(image, {
+  //       scale: 1.1,
+  //     });
+  //   });
+  // }
+
+  // トップページのスワイパー
+  if ($('.js-top-event-slide').length) {
+    var swiper = new Swiper('.js-top-event-slide .swiper', {
+      slidesPerView: 1.3,
+      spaceBetween: 15,
+      speed: 1000,
+      autoplay: {
+        delay: 4000,
+      },
+      breakpoints: {
+        999: {
+          slidesPerView: 2.8,
+          spaceBetween: 40,
+        },
+        768: {
+          slidesPerView: 2.095,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
 });

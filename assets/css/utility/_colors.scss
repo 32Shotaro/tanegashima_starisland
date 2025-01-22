@@ -43,6 +43,12 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
                 #{$property}: $value !important;
                 transition: #{$property} $transition-duration $transition-timing-function;
               }
+              .hov-hook:hover {
+                .hov-hook-#{$prefix}-#{$category}-#{$variant} {
+                  #{$property}: $value !important;
+                  transition: #{$property} $transition-duration $transition-timing-function;
+                }
+              }
             }
             // アクティブ時のクラスも生成
             .is-active.active-#{$prefix}-#{$category}-#{$variant} {
@@ -60,6 +66,12 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
           .hov-#{$prefix}-#{$category}:hover {
             #{$property}: $variants !important;
             transition: #{$property} $transition-duration $transition-timing-function;
+          }
+          .hov-hook:hover {
+            .hov-hook-#{$prefix}-#{$category} {
+              #{$property}: $variants !important;
+              transition: #{$property} $transition-duration $transition-timing-function;
+            }
           }
         }
         // アクティブ時のクラスも生成

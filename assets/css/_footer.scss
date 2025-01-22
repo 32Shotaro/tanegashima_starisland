@@ -18,6 +18,9 @@
     &-wrapper {
       padding-top: 84px;
       overflow: hidden;
+      @include vars.respond-to(sm, 'max') {
+        padding-top: 68px;
+      }
     }
     // 星空鑑賞におすすめのグッズ
     // 星空撮影のテクニック
@@ -27,6 +30,17 @@
       overflow: hidden;
       transform-origin: center center;
       transform: translate(-50%, -50%);
+      animation: scroll-view-footer_cta-item 900ms $transition-timing-function both paused;
+      @keyframes scroll-view-footer_cta-item {
+        from {
+          opacity: 0;
+          transform: translate(-50%, calc(-50% - 20px));
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
       &::after {
         content: '';
         background: url(../images/common/main-bg.webp);
@@ -36,6 +50,10 @@
         inset: 0;
         z-index: -1;
         opacity: 0.6;
+      }
+      // スクロールでフェードイン
+      &.is-scrolled {
+        animation-play-state: running;
       }
     }
     &-item_list {
@@ -70,10 +88,15 @@
       inset: 18% auto auto 86%;
       transform-origin: center center;
       transform: translate(-50%, -50%);
+      animation: scroll-view-footer_cta-item 900ms $transition-timing-function both paused;
       @include vars.respond-to(md, 'max') {
         width: 350px;
         height: 357px;
         inset: 8% auto auto 68%;
+      }
+      // スクロールでフェードイン
+      &.is-scrolled {
+        animation-play-state: running;
       }
     }
     // 流れ星のシェイプ

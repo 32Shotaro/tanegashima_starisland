@@ -13,6 +13,10 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
     "editor.formatOnSave": true
   },
+  // html用の設定
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "scssBracketSpacing": false, // SCSS内の余分なスペースを削除
   // Live Sass Compilerの設定
   "liveSassCompile.settings.generateMap": false,

@@ -1,96 +1,75 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/common.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap" rel="stylesheet" />
-    <meta name="robots" content="index, follow" />
-    <title></title>
-  </head>
 
-  <body>
-    <!-- ヘッダー -->
-    <header class="header w-max pos-f t0 r0 l0 z10">
-      <h1 class="header-logo">
-        <a class="d-b hov-op65" href="/"><img class="md-zoom075 sm-zoom055" src="./assets/images/common/logo.svg" width="80" height="198" alt="星の島、種子島" /></a>
-      </h1>
-      <!-- グローバルナビ -->
-      <!-- shame：インタラクション実装、ホバーでbutterにする -->
-      <div class="gNav-trigger d-f ai-c cg20 pos-a t30 sm-t15 r30 sm-r15 z2 cur-p js-gNav-trigger">
-        <span class="sm-d-n ff-enSans fz85 lh12 ls02">MENU</span>
-        <div class="gNav-trigger-icon d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w70 sm-w60 h70 sm-h60"><i></i><i></i><i></i></div>
-      </div>
-      <nav class="gNav d-f ai-c jc-c pos-f t0 b0 r0 z1 ov-h">
-        <div class="p20">
-          <ul class="ff-jaSerif fz185 md-fz145 sm-fz120 lh14">
-            <!-- shame：インタラクションの実装、要検討 -->
-            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/">トップページ</a></li>
-            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/spot">星空スポット</a></li>
-            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/event">星空の体験</a></li>
-            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/photo">星空撮影のテクニック</a></li>
-            <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-bgc-typography-alpha5" href="/item">星空鑑賞にすすめのグッズ</a></li>
-          </ul>
-          <!-- shame：インタラクションの実装、after要素でリップルみたいなやつ実装したい -->
-          <ul class="d-f cg5 pt15">
-            <li>
-              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><img src="./assets/images/common/icon-facebook.svg" width="21" height="21" alt="facebook" /></a>
-            </li>
-            <li>
-              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><img src="./assets/images/common/icon-youtube.svg" width="21" height="21" alt="youtube" /></a>
-            </li>
-            <li>
-              <a class="d-f ai-c jc-c bdrs-max w60 h60 hov-bgc-typography-alpha5" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><img src="./assets/images/common/icon-instagram.svg" width="21" height="21" alt="instagram" /></a>
-            </li>
-          </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/jquery3.7.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow">
+  <title></title>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <!-- <header></header> -->
+
+  <!-- shame：SNSリンク？ページごとにありなし切り替わる？ -->
+
+  <!-- メイン -->
+  <main class="main">
+    <!-- ファーストビュー -->
+    <div class="pt185 md-pt130 sm-pt80">
+      <div class="cols">
+        <div class="col-12">
+          <p class="ff-enSerif fz500 md-fz395 sm-fz285 lh1 ta-c js-animation-copy js-scroll">404 ERROR</p>
+          <h2 class="pt20 sm-pt10 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls01 ta-c js-animation-copy js-scroll">ページが見つかりません</h2>
         </div>
-      </nav>
-    </header>
-
-    <!-- メイン -->
-    <main class="main">
-      <!-- ファーストビュー -->
-      <div class="pt185 md-pt130 sm-pt80">
-        <div class="cols">
-          <div class="col-12">
-            <p class="ff-enSerif fz500 md-fz395 sm-fz285 lh1 ta-c">404 ERROR</p>
-            <h2 class="pt20 sm-pt10 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls01 ta-c">ページが見つかりません</h2>
+      </div>
+    </div>
+    <!-- メインコンテンツ -->
+    <div class="mt120 sm-mt100">
+      <div class="cols">
+        <div class="col-12 js-scroll scroll-view">
+          <p class="ta-c">ご覧いただいているURLにはページはありません。<br>
+            URLの入力間違いか、ページが移動している可能性があります。</p>
+          <div class="pt100 sm-pt50 ta-c">
+            <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/">
+              <span class="d-b ff-jaSerif fz95 lh1">トップページへもどる</span>
+              <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50 ov-h hov-hook-animation-arrowWrapper"><i class="icon-arrow fz150"></i></span>
+            </a>
           </div>
         </div>
       </div>
-      <!-- メインコンテンツ -->
-      <div class="mt120 sm-mt100">
-        <div class="cols">
-          <div class="col-12 ta-c">
-            <p>ご覧いただいているURLにはページはありません。<br>URLの入力間違いか、ページが移動している可能性があります。</p>
-            <div class="mt100 sm-mt50">
-              <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="/">
-                <span class="d-b ff-jaSerif fz95 lh1">トップページへもどる</span>
-                <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50"><img src="./assets/images/common/arrow.svg" width="20" height="16" alt="矢印" /></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- パンくずリスト（schema.org対応） -->
-      <nav class="breadcrumbs mt120 sm-mt100 ptb10 plr20" aria-label="breadcrumb">
-        <ol class="fz85 lh120 lc1" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a class="td-n hov-op65" href="/" itemprop="item"><span itemprop="name">TOP</span></a>
-            <meta itemprop="position" content="1" />｜
-          </li>
-          <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span itemprop="name">404 NOT <FOUND></FOUND></span>
-            <meta itemprop="position" content="3" />
-          </li>
-        </ol>
-      </nav>
-    </main>
+    </div>
+    <!-- パンくずリスト（schema.org対応） -->
+    <nav class="breadcrumbs mt120 sm-mt100 ptb10 plr20" aria-label="breadcrumb">
+      <ol class="fz85 lh120 lc1" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a class="td-n hov-op65" href="/" itemprop="item"><span itemprop="name">TOP</span></a>
+          <meta itemprop="position" content="1">｜
+        </li>
+        <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <!-- sahme：「404 NOT FONUD」？ -->
+          <span itemprop="name">404 NOT <FOUND></FOUND></span>
+          <meta itemprop="position" content="3">
+        </li>
+      </ol>
+    </nav>
+  </main>
 
-  </body>
+  <!-- フッター -->
+  <!-- <footer></footer> -->
+  <script src="./assets/js/jquery3.7.0.min.js"></script>
+  <script src="./assets/js/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./assets/js/swiper.min.css">
+  <script src="./assets/js/simpleParallax.min.js"></script>
+  <script src="./assets/js/common.js"></script>
+</body>
+
 </html>
