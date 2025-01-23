@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 9999, // タグ内で改行しないように調整
   "prettier.singleQuote": true,
