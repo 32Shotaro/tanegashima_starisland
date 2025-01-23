@@ -32,6 +32,11 @@
   writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
+  &.ff-enSans {
+    position: relative;
+    top: auto;
+    right: 0.2em;
+  }
 }
 
 // スマホで縦書きを解除
@@ -54,6 +59,8 @@
   &-enSans {
     font-family: 'Josefin Sans', serif;
     text-transform: uppercase;
+    position: relative;
+    top: 0.2em;
   }
 }
 
@@ -262,24 +269,15 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
   // ホバーで矢印がアニメーション
+  .hov-hook-animation-arrowWrapper {
+    .icon-arrow {
+      transition: transform $transition-duration $transition-timing-function;
+    }
+  }
   .hov-hook:hover {
     .hov-hook-animation-arrowWrapper {
       .icon-arrow {
-        animation: arrowWrapper-arrow 900ms $transition-timing-function both;
-        @keyframes arrowWrapper-arrow {
-          0% {
-            transform: translate(0, 0);
-          }
-          50% {
-            transform: translate(80%, 0);
-          }
-          50.1% {
-            transform: translate(-80%, 0);
-          }
-          100% {
-            transform: translate(0, 0);
-          }
-        }
+        transform: translate(25%, 0);
       }
     }
   }

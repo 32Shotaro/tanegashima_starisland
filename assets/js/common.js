@@ -68,10 +68,63 @@
   }
 
   // パララックス
-  if (document.querySelectorAll('.js-rellax').length) {
-    var rellax = new Rellax('.js-rellax', {
-      speed: -2,
-    });
+  if ($('.js-rellax').length) {
+    $(document).ready(function () {
+      // 読み込み直後に初期位置を設定
+      $('.img-bg.js-rellax').each(function () {
+        const $this = $(this);
+        const section = $this.parent(); // .img-bg が存在するセクション
+    
+        // セクションの位置を取得
+        const sectionTop = section.offset().top;
+        const sectionHeight = section.outerHeight();
+        const windowHeight = $(window).height();
+        const scrollTop = $(window).scrollTop();
+    
+        // 初期位置計算
+        const scrollRange = sectionHeight + windowHeight;
+        const sectionScrollTop = scrollTop - (sectionTop - windowHeight);
+        const percentage = Math.min(Math.max(sectionScrollTop / scrollRange, 0), 1);
+        const translateY = -20 + percentage * 20; // 初期位置を -20% ~ 0% に設定
+    
+        // 初期位置を適用
+        $this.css({
+          transform: `translateY(${translateY}%)`,
+          transition: 'none', // 初期位置設定時はアニメーションを無効化
+        });
+      });
+    
+      // 初期位置設定後に transition を有効化
+      setTimeout(function () {
+        $('.img-bg.js-rellax').css('transition', 'transform 100ms linear');
+      }, 50); // 微小な遅延を加えて transition を有効化
+    
+      // スクロール時の更新処理
+      function updateParallax() {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+    
+        $('.img-bg.js-rellax').each(function () {
+          const $this = $(this);
+          const section = $this.parent();
+          const sectionTop = section.offset().top;
+          const sectionHeight = section.outerHeight();
+          const sectionBottom = sectionTop + sectionHeight;
+    
+          const scrollRange = sectionHeight + windowHeight;
+          const sectionScrollTop = scrollTop - (sectionTop - windowHeight);
+          const percentage = Math.min(Math.max(sectionScrollTop / scrollRange, 0), 1);
+    
+          const translateY = -20 + percentage * 20;
+    
+          $this.css('transform', `translateY(${translateY}%)`);
+        });
+      }
+    
+      $(window).on('scroll', updateParallax);
+      updateParallax(); // 初期化処理
+    });    
+    
   }
 
   // トップページ：コピーライトのアニメーション用JS

@@ -23,17 +23,20 @@
   h4,
   h5,
   h6 {
+    margin: 3em auto 1em;
     font-family: 'Zen Old Mincho', serif;
     color: vars.color(butter);
     line-height: 1.4;
     letter-spacing: 0.1em;
+    @include vars.respond-to(sm, 'max') {
+      margin: 2em auto 1em;
+    }
   }
 
   h2 {
     // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
     width: fit-content;
-    margin: 2em auto 1em;
     padding-bottom: 0.35em;
     font-size: 250%;
     text-align: center;
@@ -48,7 +51,6 @@
     align-items: center;
     column-gap: 0.5em;
     width: fit-content;
-    margin: 2em auto 1em;
     font-size: 180%;
     text-align: center;
     @include vars.respond-to(sm, 'max') {
@@ -69,7 +71,6 @@
     // shame：複数行時のレイアウトがきになる
     border-bottom: 1px solid vars.color(butter);
     width: fit-content;
-    margin: 2em auto 1em;
     padding: 0 1em 1em;
     font-size: 130%;
     text-align: center;
@@ -171,7 +172,7 @@
     background-color: rgba(vars.color(typography), 0.04);
     border-radius: 10px;
     padding: 3em 3.5em;
-    margin: 3em 0;
+    margin: 3.5em 0;
     @include vars.respond-to(sm, 'max') {
       padding: 2em;
     }

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: url(../images/common/main-bg.webp) #0c142b;
+  background: url(../images/common/main-bg.webp) 0 0 / 100px 100px #0c142b;
   font: normal 400 1.4rem / 1.8 'Roboto', 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
   letter-spacing: 0.05em;
   font-feature-settings: 'palt';
@@ -56,12 +56,17 @@ body {
   }
 }
 
-// パララックス
-.js-rellax {
-  // パララックスする背景画像
-  .img-bg {
-    height: 120%;
-  }
+// パララックスする背景画像
+.js-rellax.img-bg {
+  height: 120%;
+  inset: 0 0 auto 0;
+  transition: transform 100ms linear;
+}
+.js-rellax-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
 }
 
 // 流れ星のシェイプ
