@@ -9,7 +9,6 @@
   // ファーストビューと直下セクションのラッパー
   &-fv_top-fv-after-wrapper {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    margin-bottom: -1px;
   }
   // ファーストビュー
   &-fv {

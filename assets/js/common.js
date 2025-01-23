@@ -53,6 +53,27 @@
     });
   });
 
+  //// h4見出しの装飾用のDOM操作
+  // .wp-content内のh4要素
+  if ($('.wp-content h4').length) {
+    $('.wp-content h4').each(function () {
+      $(this).append('<i class="js-titleH4-downArrow"></i>');
+    });
+  }
+  // .title-h4 要素
+  if ($('.title-h4').length) {
+    $('.title-h4').each(function () {
+      $(this).append('<i class="js-titleH4-downArrow"></i>');
+    });
+  }
+
+  // パララックス
+  if (document.querySelectorAll('.js-rellax').length) {
+    var rellax = new Rellax('.js-rellax', {
+      speed: -2,
+    });
+  }
+
   // トップページ：コピーライトのアニメーション用JS
   if ($('.js-animation-copy').length) {
     $('.js-animation-copy').each(function () {
@@ -83,17 +104,6 @@
       $this.html(newText);
     });
   }
-
-  // パララックス
-  // 別プラグインを検討
-  // if (document.querySelectorAll('.js-parallax').length) {
-  //   const images = document.querySelectorAll('.js-parallax');
-  //   images.forEach((image) => {
-  //     new simpleParallax(image, {
-  //       scale: 1.1,
-  //     });
-  //   });
-  // }
 
   // トップページのスワイパー
   if ($('.js-top-event-slide').length) {

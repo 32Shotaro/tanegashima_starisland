@@ -108,16 +108,62 @@
   }
 
   &-h4 {
-    // shame：装飾を実現
     border-bottom: 1px solid vars.color(butter);
-    border-radius: 10px;
     width: fit-content;
     padding: 0 1em 1em;
     font-size: 130%;
     text-align: center;
+    position: relative;
 
     @include vars.respond-to(sm, 'max') {
       font-size: 115%;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      border: 1px solid vars.color(butter);
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: -1px;
+    }
+    &::before {
+      clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0% 100%);
+      left: -10px;
+    }
+    &::after {
+      clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+      right: -10px;
+    }
+
+    // JSで装飾用のDOMを追加
+    .js-titleH4-downArrow {
+      width: 10px;
+      height: 8px;
+      position: absolute;
+      inset: auto auto -8px calc(50% - 5px);
+      z-index: 1;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
+        width: inherit;
+        height: inherit;
+        position: absolute;
+      }
+      &::before {
+        background-color: vars.color(butter);
+        inset: 0;
+        z-index: 0;
+      }
+      &::after {
+        background-color: vars.color(midnight);
+        inset: -2px 0 auto 0;
+        z-index: 1;
+      }
     }
   }
 }
