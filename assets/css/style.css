@@ -34694,6 +34694,16 @@ body::before {
 .top-fv .img-bg {
   height: 120svh;
 }
+.top-fv-after {
+  -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
+  mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
+}
+@media (max-width: 767px) {
+  .top-fv-after {
+    -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center/100% 100% no-repeat;
+    mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center/100% 100% no-repeat;
+  }
+}
 .top-about-item {
   border-radius: 50%;
   width: 554px;

@@ -60,12 +60,12 @@
   // FV以下のコンテンツ
   &-fv-after {
     // maskはローカルでは機能しないので一旦コメントアウト
-    // -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
-    // mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
-    // @include vars.respond-to(sm, 'max') {
-    //   -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
-    //   mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
-    // }
+    -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
+    mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
+    @include vars.respond-to(sm, 'max') {
+      -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
+      mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
+    }
   }
   // 宇宙に一番近い島は、日本一の「星空の島」でした。
   &-about {
