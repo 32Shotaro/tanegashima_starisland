@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_template_part('_components/globalNav'); ?>
-
 <!-- メイン -->
 <main class="main">
   <!-- ファーストビューと直下セクションのラッパー -->

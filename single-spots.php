@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_template_part('_components/globalNav'); ?>
-
 <!-- メイン -->
 <main class="main">
   <!-- 星空スポット詳細 -->
