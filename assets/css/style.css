@@ -34319,11 +34319,11 @@ body::before {
   }
 }
 
-.ul li {
+.ul li, .wp-content_ulWrapper > ul li {
   padding-left: 1.5em;
   position: relative;
 }
-.ul li::before {
+.ul li::before, .wp-content_ulWrapper > ul li::before {
   content: "";
   background-color: #fff7c9;
   border-radius: 50%;
@@ -34332,11 +34332,11 @@ body::before {
   position: absolute;
   inset: calc(0.9em - 3px) auto auto 0;
 }
-.ul li:not(:first-child) {
+.ul li:not(:first-child), .wp-content_ulWrapper > ul li:not(:first-child) {
   margin-top: 1em;
 }
 
-.texts .ul li:not(:first-child) {
+.texts .ul li:not(:first-child), .texts .wp-content_ulWrapper > ul li:not(:first-child) {
   margin-top: 0;
 }
 

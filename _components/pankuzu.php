@@ -6,10 +6,10 @@
       <?php foreach ($pankuzuLists as $i => $list) { ?>
         <li class="d-i" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           <?php if ($list[1] != NULL) { ?>
-            <a class="td-n hov-op65" href="/" itemprop="item"><span itemprop="name"><?= $list[0]; ?></span></a>
+            <a class="td-n hov-op65" href="<?= home_url(); ?><?= $list[1]; ?>" itemprop="item"><span itemprop="name"><?= $list[0]; ?></span></a>
             <meta itemprop="position" content="<?= $i + 1; ?>">｜
           <?php } else { ?>
-            <span itemprop="name"><strong class="fw-b"><?= $list[0]; ?></span>
+            <span itemprop="name"><strong class="fw-n"><?= $list[0]; ?></strong></span>
             <meta itemprop="position" content="<?= $i + 1; ?>">
           <?php } ?>
         </li>

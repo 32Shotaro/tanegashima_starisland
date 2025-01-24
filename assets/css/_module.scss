@@ -228,6 +228,13 @@ img[src$='arrow.svg'] {
   }
 }
 
+// リストスタイルを特定のクラスへ継承
+.wp-content_ulWrapper {
+  > ul {
+    @extend .ul;
+  }
+}
+
 // テキスト内リストのマージン調整
 @at-root .texts .ul li:not(:first-child) {
   margin-top: 0;

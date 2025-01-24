@@ -16,78 +16,56 @@
     <div class="cols cols-1240">
       <div class="col-12">
         <div class="cols nega gutter40 sm-gutter30 rg80 sm-rg40">
-          <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
-            <a class="d-b td-n hov-c-butter hov-hook" href="#">
-              <figure class="ov-h"><img loading="lazy" class="img-fluid-full asp-4-3 hov-hook-scale" src="<?= get_template_directory_uri(); ?>/assets/images/_sample/event-thumb1.webp" width="360" height="240" alt="サムネイル"></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">菓子処渡辺</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </a>
-          </article>
-          <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
-            <a class="d-b td-n hov-c-butter hov-hook" href="#">
-              <figure class="ov-h"><img loading="lazy" class="img-fluid-full asp-4-3 hov-hook-scale" src="<?= get_template_directory_uri(); ?>/assets/images/_sample/event-thumb2.webp" width="360" height="240" alt="サムネイル"></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">星空のチョコレート｜tanesora</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </a>
-          </article>
-          <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
-            <a class="d-b td-n hov-c-butter hov-hook" href="#">
-              <figure class="ov-h"><img loading="lazy" class="img-fluid-full asp-4-3 hov-hook-scale" src="<?= get_template_directory_uri(); ?>/assets/images/_sample/event-thumb3.webp" width="360" height="240" alt="サムネイル"></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">星を鑑賞！陶芸体験</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </a>
-          </article>
-          <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
-            <a class="d-b td-n hov-c-butter hov-hook" href="#">
-              <figure class="ov-h"><img loading="lazy" class="img-fluid-full asp-4-3 hov-hook-scale" src="<?= get_template_directory_uri(); ?>/assets/images/_sample/event-thumb1.webp" width="360" height="240" alt="サムネイル"></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">菓子処渡辺</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </a>
-          </article>
-          <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
-            <a class="d-b td-n hov-c-butter hov-hook" href="#">
-              <figure class="ov-h"><img loading="lazy" class="img-fluid-full asp-4-3 hov-hook-scale" src="<?= get_template_directory_uri(); ?>/assets/images/_sample/event-thumb2.webp" width="360" height="240" alt="サムネイル"></figure>
-              <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140">星空のチョコレート｜tanesora</h3>
-              <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
-              <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-                <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-              </ul>
-            </a>
-          </article>
+          <?php $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 20,
+            'paged' => $paged,
+            'taxonomy' => '',
+          ); ?>
+          <?php query_posts($args); ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+              <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
+                <a class="d-b td-n hov-c-butter hov-hook" href="<?php the_permalink(); ?>">
+                  <figure class="ov-h">
+                    <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
+                    <?php if ($imgset) { ?>
+                      <img loading="lazy" class="spots-thumb w-max asp-4-3 ob-cv js-scroll scroll-view" src="<?php echo $imgset[0]; ?>" width="360" height="240" alt="サムネイル写真">
+                    <?php } else { ?>
+                      <img loading="lazy" class="spots-thumb w-max asp-4-3 ob-cv js-scroll scroll-view" src="<?= get_template_directory_uri(); ?>/assets/images/common/noimg.webp" width="360" height="240" alt="サムネイル写真なし">
+                    <?php } ?>
+                  </figure>
+                  <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140"><?php the_title(); ?></h3>
+                  <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">
+                    <?php
+                    $excerpt = get_the_excerpt();
+                    echo mb_strlen($excerpt) > 65 ? mb_substr($excerpt, 0, 65) . '...' : $excerpt;
+                    ?>
+                  </p>
+                  <?php
+                  // 投稿に紐づけられたカテゴリ（タクソノミー）を取得
+                  $terms = get_the_terms(get_the_ID(), 'category'); // 'category' はデフォルトカテゴリタクソノミー
+                  if (!empty($terms) && !is_wp_error($terms)) : ?>
+                    <ul class="d-f fxw-w g10 sm-g5 pt20 sm-pt15">
+                      <?php foreach ($terms as $term) : ?>
+                        <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12"><?= esc_html($term->name); ?></span></li>
+                      <?php endforeach; ?>
+                    </ul>
+                  <?php else : ?>
+                    <p class="d-f ai-c cg20 bgc-butter bdrs-max h30 mt20 sm-mt15 plr15 fz85 c-midnight lh12">カテゴリが設定されていません。</p>
+                  <?php endif; ?>
+                </a>
+              </article>
+            <?php endwhile; ?>
+          <?php else: ?>
+          <?php endif; ?>
+          <?php wp_reset_query(); ?>
         </div>
       </div>
     </div>
-    <!-- WPページネーション -->
-    <div class="pt120 sm-pt60 js-scroll scroll-view">
-      <div class="cols">
-        <div class="col-12">
-          <p class="ff-enSans fz180 sm-fz150 lh12 ta-c">1 / 3</p>
-          <ul class="d-f fxw-w jc-c g10 pt20">
-            <li><a class="d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w50 h50 ff-enSans fz115 lh1 td-n hov-bgc-typography-alpha5 hov-bdc-butter hov-c-butter" href="#">1</a></li>
-            <li><a class="d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w50 h50 ff-enSans fz115 lh1 td-n hov-bgc-typography-alpha5 hov-bdc-butter hov-c-butter" href="#">2</a></li>
-            <li><a class="d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w50 h50 ff-enSans fz115 lh1 td-n hov-bgc-typography-alpha5 hov-bdc-butter hov-c-butter" href="#">3</a></li>
-            <li><a class="d-f ai-c jc-c bd bdw1 bdc-typography bdrs-max w50 h50 ff-enSans fz115 lh1 td-n hov-bgc-typography-alpha5 hov-bdc-butter hov-c-butter" href="#">&gt;</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <!-- shame：ページネーションの実装 -->
+    <?php if (function_exists('pagination') && $wp_query->max_num_pages > 1) { ?>
+      <?php pagination(); ?>
+    <?php } ?>
   </div>
   <?php get_template_part("_components/pankuzu", null, [["TOP", "/"], ["星空の体験", NULL]]); // パンくずリスト 
   ?>

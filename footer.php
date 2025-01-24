@@ -37,9 +37,10 @@
         </section>
         <!-- 写真 -->
         <div class="footer-cta-pic1 pos-a z1 js-scroll"><img loading="lazy" class="img-bg js-rellax" src="<?= get_template_directory_uri(); ?>/assets/images/common/footer-cta-pic1.webp" width="512" height="523" alt="写真"></div>
-        <!-- 流れ星のシェイプ -->
-        <i class="shape-shootingStar pos-a z2 js-scroll"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ"></i>
-        <i class="shape-shootingStar pos-a z2 js-scroll"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ"></i>
+        <?php get_template_part("_components/parts-shootingStar", null, "pos-a z2"); // 流れ星のシェイプ 
+        ?>
+        <?php get_template_part("_components/parts-shootingStar", null, "pos-a z2"); // 流れ星のシェイプ 
+        ?>
       </div>
       <div class="js-rellax-wrapper"><img loading="lazy" class="img-bg js-rellax" src="<?= get_template_directory_uri(); ?>/assets/images/common/footer-cta-bg.webp" width="1440" height="1572" alt="夜空の背景"></div>
     </div>

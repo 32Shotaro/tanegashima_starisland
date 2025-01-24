@@ -7,7 +7,8 @@
     <div class="cols-fluid-full">
       <div class="col-7 md-col-9 sm-col-12 js-scroll scroll-view"><img loading="lazy" class="w-max asp-16-9 ob-cv" src="<?= get_template_directory_uri(); ?>/assets/images/photo/fv-pic.webp" width="900" height="534" alt="サムネイル写真"></div>
       <div class="col-5 md-col-3 sm-col-12 pos-r">
-        <i class="shape-shootingStar w-fc pos-a t100 sm-t60 l185 md-l120 sm-l280 z2 js-scroll"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ"></i>
+        <?php get_template_part("_components/parts-shootingStar", null, "pos-a t100 sm-t60 l185 md-l120 sm-l280 z2"); // 流れ星のシェイプ 
+        ?>
       </div>
     </div>
     <div class="cols-fluid jc-c cols-1240 rg30 mt-30 sm-mt-20">
@@ -246,7 +247,8 @@
   </section>
   <!-- 天の川に関する豆知識 -->
   <section id="anchor4" class="pt90 sm-pt60 pb130 sm-pb90 pos-r">
-    <i class="shape-shootingStar w-fc pos-a t-30 r150 z2 js-scroll"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ"></i>
+    <?php get_template_part("_components/parts-shootingStar", null, "pos-a t-30 r150 z2"); // 流れ星のシェイプ 
+    ?>
     <div class="cols">
       <div class="col-12">
         <h2 class="title-h2 mlr-a js-scroll scroll-view">天の川に関する豆知識</h2>
@@ -314,7 +316,7 @@
           <div class="cols ai-c nega rg20">
             <div class="col-5 sm-col-12 js-scroll scroll-view"><img loading="lazy" class="img-fluid" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec5-pic1.webp" width="370" height="220" alt="新月の夜"></div>
             <div class="col-7 sm-col-12 js-scroll scroll-view">
-              <h3 class="bgc-butter w-fc ptb8 plr15 ff-jaSerif fz140 sm-fz120 c-midnight lh14 lts01">撮影のタイミングは新月の夜がおすすめ！</h3>
+              <h3 class="bgc-butter w-fc ptb8 plr15 ff-jaSerif fz140 sm-fz120 c-midnight lh14 lts01">撮影のタイミングは<br class="d-n sm-d-i">新月の夜がおすすめ！</h3>
               <p class="pt30 sm-pt20 fz105 sm-fz95">月明かりの影響が少なく、雲が少ない、星空がはっきり見える夜がおすすめ。<br>
                 新月の前後２週間は比較的月が細く影響が少ないので星空の撮影シーズンです。</p>
             </div>

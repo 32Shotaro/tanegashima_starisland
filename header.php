@@ -16,6 +16,7 @@
 </head>
 
 <!-- ヘッダー -->
+<!-- shame：ヘッダーの当たり判定が大きいので調整したい -->
 <header class="header w-max pos-f t0 r0 l0 z10">
   <?php if (is_home()) { ?>
     <h1 class="header-logo"><a class="d-b hov-op65" href="/"><img loading="lazy" class="md-zoom075 sm-zoom055" src="<?= get_template_directory_uri(); ?>/assets/images/common/logo.svg" width="80" height="198" alt="星の島、種子島"></a></h1>

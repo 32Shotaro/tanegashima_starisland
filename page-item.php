@@ -7,7 +7,8 @@
     <div class="cols-fluid-full">
       <div class="col-7 md-col-9 sm-col-12 ord2 sm-ord1 js-scroll scroll-view"><img loading="lazy" class="w-max asp-16-9 ob-cv" src="<?= get_template_directory_uri(); ?>/assets/images/item/fv-pic.webp" width="900" height="534" alt="サムネイル写真"></div>
       <div class="col-5 md-col-3 sm-col-12 pos-r ord1 sm-ord2">
-        <i class="shape-shootingStar w-fc pos-a t100 sm-t60 r-30 z2 js-scroll"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/shape-shootingStar.svg" width="157" height="157" alt="流れ星のシェイプ"></i>
+        <?php get_template_part("_components/parts-shootingStar", null, "pos-a t100 sm-t60 r-30 z2"); // 流れ星のシェイプ 
+        ?>
       </div>
     </div>
     <div class="cols-fluid jc-c cols-1240 rg30 mt-30 sm-mt-20">
@@ -88,7 +89,7 @@
           <div class="cols ai-c nega rg20">
             <div class="col-5 sm-col-12 js-scroll scroll-view"><img loading="lazy" class="img-fluid" src="<?= get_template_directory_uri(); ?>/assets/images/item/sec2-pic1.webp" width="370" height="316" alt="星空鑑賞ツアー"></div>
             <div class="col-7 sm-col-12 js-scroll scroll-view">
-              <h3 class="bgc-butter w-fc ptb8 plr15 ff-jaSerif fz140 sm-fz120 c-midnight lh14 lts01">ガイド付きの星空鑑賞ツアーが安心！</h3>
+              <h3 class="bgc-butter w-fc ptb8 plr15 ff-jaSerif fz140 sm-fz120 c-midnight lh14 lts01">ガイド付きの<br class="d-n sm-d-i">星空鑑賞ツアーが安心！</h3>
               <div class="texts pt30 sm-pt20 fz105 sm-fz95">
                 <p>グッズの用意が大変な方は、島内在住のガイドさんがその日のベストスポットに連れて行ってれる星空鑑賞ツアーに参加してみませんか？</p>
                 <p>「満点の星空の下で、アウトドア体験を。」をコンセプトに、リラックスチェアや、双眼鏡、クーラーボックス、冬場はブランケットなど、特別なひと時を演出するアイテムを多数ご用意。癒しのリラクゼーションBGM（希望制・自然の音に耳を澄ませてみるのも◎）や、種子島産安納芋を使ったおやつと、ドリンクサービスもございます。家族と、ご友人と、恋人と...。満点の星空を独り占めしながら、ゆったりと過ごす体験を、心ゆくまでご堪能ください。</p>
@@ -122,33 +123,9 @@
           スマホやタブレットに保存しておくと便利です。</p>
       </div>
     </div>
-    <div class="cols pt60 sm-pt30 js-scroll scroll-view">
-      <div class="col-12">
-        <a class="d-f md-fxd-c ai-c jc-sb rg20 bd bdw1 bdc-typography mt20 sm-mt40 sm-mlr-10 pt60 md-pt45 sm-pt30 pb60 md-pb40 sm-pb20 plr65 md-plr45 sm-plr30 td-n pos-r hov-hook hov-bdc-butter hov-c-butter hov-animation-bgfill" href="<?= get_template_directory_uri(); ?>/assets/pdf/map.pdf" target="_blank" rel="noopener">
-          <p class="d-f fxd-rr ai-s cg10 pos-a t-20 sm-t-40 r60 sm-r30 z2">
-            <span class="d-b text-v bgc-typography p10 ff-jaSerif fz105 c-midnight lh1 ls02">リバーシブルで</span>
-            <span class="d-b text-v bgc-typography p10 ff-jaSerif fz105 c-midnight lh1 ls02">昼夜楽しめる</span>
-          </p>
-          <p class="d-n md-d-b w-max pb15 ff-jaSerif fz170 c-butter lh14 ls01">星空の<br>周遊マップ</p>
-          <div class="cols nega gutter15 rg15">
-            <figure class="col-6"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/spot/pdf-thumb1.webp" width="284" height="200" alt="星空の周遊マップPDFのサムネイル1"></figure>
-            <figure class="col-6"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/spot/pdf-thumb2.webp" width="284" height="200" alt="星空の周遊マップPDFのサムネイル2"></figure>
-          </div>
-          <div class="md-w-max">
-            <p class="md-d-n ff-jaSerif fz200 c-butter lh14 ls01">星空の<br>周遊マップ</p>
-            <div class="pt15 sm-pt0 ta-r">
-              <div class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="#">
-                <span class="d-b fz95 lh1">PDF ダウンロード</span>
-                <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50 hov-hook-animation-arrowWrapper"><i class="icon-arrow fz150"></i></span>
-              </div>
-            </div>
-          </div>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 l-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 r-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 l-7 z1 hov-hook-bgc-butter"></i>
-        </a>
-      </div>
+    <div class="pt60 sm-pt30">
+      <?php get_template_part("_components/parts-mapPdfLink"); // 星空の周遊マップリンク
+      ?>
     </div>
   </section>
   <!-- 観光の宿泊・交通のポイント -->
@@ -230,7 +207,7 @@
             <div class="cols nega pt45 sm-pt30 js-scroll scroll-view">
               <div class="col-10 md-col-11 sm-col-12">
                 <a class="d-f ai-c jc-sb cg15 bd bdw1 bdc-typography ptb20 sm-ptb15 plr40 sm-plr30 lh120 td-n pos-r hov-hook hov-bdc-butter hov-c-butter hov-animation-bgfill" href="https://kouendouri-tanegashima.com/" target="_blank" rel="noopener">
-                  <span class="ff-jaSerif fz115 sm-fz100">コウエンドウリタネガシマ<span class="fz85"> (外部リンク)</span></span>
+                  <span class="ff-jaSerif fz115 sm-fz100">コウエンドウリタネガシマ<br class="d-n sm-d-i"><span class="fz85"> (外部リンク)</span></span>
                   <i class="icon-arrow fz150"></i>
                   <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 l-7 z1 hov-hook-bgc-butter"></i>
                   <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r-7 z1 hov-hook-bgc-butter"></i>
