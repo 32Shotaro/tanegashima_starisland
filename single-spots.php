@@ -9,9 +9,9 @@
         <figure class="sm-mlr-30 js-scroll scroll-view">
           <?php $imgset = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
           <?php if ($imgset) { ?>
-            <img loading="lazy" class="img-fluid-full" src="<?php echo $imgset[0]; ?>" width="1240" height="630" alt="サムネイル写真">
+            <img loading="lazy" class="img-fluid-full asp-16-9 ob-cv" src="<?php echo $imgset[0]; ?>" width="1240" height="630" alt="サムネイル写真">
           <?php } else { ?>
-            <img loading="lazy" class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/common/noimg.webp" width="1240" height="630" alt="サムネイル写真">
+            <img loading="lazy" class="img-fluid-full asp-16-9 ob-cv" src="<?= get_template_directory_uri(); ?>/assets/images/common/noimg.webp" width="1240" height="630" alt="サムネイル写真">
           <?php } ?>
         </figure>
         <div class="pos-r">

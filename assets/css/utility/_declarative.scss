@@ -9,17 +9,20 @@
 @mixin generate-utility($prefix, $property, $values) {
   // グローバルクラス生成
   @each $key, $value in $values {
+    // シングルクォーテーションを取り除く
+    $processed-value: if(type-of($value) == 'string', unquote($value), $value);
+
     @if $key == 'default' {
       // `default`の場合はクラス名から`-default`を省略
       @if type-of($property) == 'list' {
         .#{$prefix} {
           @each $prop in $property {
-            #{$prop}: $value;
+            #{$prop}: $processed-value;
           }
         }
       } @else {
         .#{$prefix} {
-          #{$property}: $value;
+          #{$property}: $processed-value;
         }
       }
     } @else {
@@ -27,12 +30,12 @@
       @if type-of($property) == 'list' {
         .#{$prefix}-#{$key} {
           @each $prop in $property {
-            #{$prop}: $value;
+            #{$prop}: $processed-value;
           }
         }
       } @else {
         .#{$prefix}-#{$key} {
-          #{$property}: $value;
+          #{$property}: $processed-value;
         }
       }
     }
@@ -42,17 +45,20 @@
   @each $breakpoint, $size in vars.$breakpoints {
     @include vars.respond-to($breakpoint, 'max') {
       @each $key, $value in $values {
+        // シングルクォーテーションを取り除く
+        $processed-value: if(type-of($value) == 'string', unquote($value), $value);
+
         @if $key == 'default' {
           // `default`の場合はクラス名から`-default`を省略
           @if type-of($property) == 'list' {
             .#{$breakpoint}-#{$prefix} {
               @each $prop in $property {
-                #{$prop}: $value !important;
+                #{$prop}: $processed-value !important;
               }
             }
           } @else {
             .#{$breakpoint}-#{$prefix} {
-              #{$property}: $value !important;
+              #{$property}: $processed-value !important;
             }
           }
         } @else {
@@ -60,12 +66,12 @@
           @if type-of($property) == 'list' {
             .#{$breakpoint}-#{$prefix}-#{$key} {
               @each $prop in $property {
-                #{$prop}: $value !important;
+                #{$prop}: $processed-value !important;
               }
             }
           } @else {
             .#{$breakpoint}-#{$prefix}-#{$key} {
-              #{$property}: $value !important;
+              #{$property}: $processed-value !important;
             }
           }
         }
@@ -73,6 +79,7 @@
     }
   }
 }
+
 
 // ディスプレイ
 @include generate-utility(

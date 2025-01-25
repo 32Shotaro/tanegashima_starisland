@@ -9,12 +9,12 @@
 // 	wp_die('ただいまメンテナンス中です。<br>サイトは問題なく表示されますが、管理画面からの更新を一時的に行えないように設定しております。<br>恐れ入りますが、少々お待ちください。');
 // }
 
-//rel="prev"を無効
+// rel="prev"を無効
 add_filter('wpseo_prev_rel_link', '__return_false');
-//rel="next"を無効
+// rel="next"を無効
 add_filter('wpseo_next_rel_link', '__return_false');
 
-//wp-block-library読み込み停止
+// wp-block-library読み込み停止
 function remove_unuse_css()
 {
   wp_dequeue_style('wp-block-library');
@@ -23,7 +23,7 @@ function remove_unuse_css()
 }
 add_action('wp_enqueue_scripts', 'remove_unuse_css', 9999);
 
-//admin barを消す
+// admin barを消す
 function disable_admin_bar()
 {
   return false;
@@ -38,10 +38,10 @@ function custom_wp_mail_from_name($original_email_from)
   return get_bloginfo('name') . "サイト"; // サイト名を表示名として使用
 }
 
-//自動でアップグレード無効化
+// 自動でアップグレード無効化
 add_filter('automatic_updater_disabled', '__return_true');
 
-//headから情報を消す
+// headから情報を消す
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'rsd_link');
@@ -52,7 +52,7 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 remove_action('wp_head', 'feed_links', 2);
 remove_action('wp_head', 'feed_links_extra', 3);
 
-//管理画面上で、選択したカテゴリが上に表示される現象を削除
+// 管理画面上で、選択したカテゴリが上に表示される現象を削除
 function keep_category_order($args, $post_id = null)
 {
   $args['checked_ontop'] = false;
@@ -60,7 +60,7 @@ function keep_category_order($args, $post_id = null)
 }
 add_action('wp_terms_checklist_args', 'keep_category_order');
 
-//ダッシュボードの表示を消す。
+// ダッシュボードの表示を消す。
 function example_remove_dashboard_widgets()
 {
   global $wp_meta_boxes;
@@ -69,7 +69,7 @@ function example_remove_dashboard_widgets()
 add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets');
 
 
-//ダッシュボードに表示を追加。
+// ダッシュボードに表示を追加。
 function my_dashboard_setup()
 {
   global $wp_meta_boxes;
@@ -83,11 +83,11 @@ function welcome_widget()
 add_action('wp_dashboard_setup', 'my_dashboard_setup');
 
 
-//4.2から標準搭載のtwemoji.jsのjsとcssを無効化
+// 4.2から標準搭載のtwemoji.jsのjsとcssを無効化
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles', 10);
 
-//セルフピンバックを送らない
+// セルフピンバックを送らない
 function no_self_ping(&$links)
 {
   $home = home_url();
@@ -98,15 +98,16 @@ function no_self_ping(&$links)
 add_action('pre_ping', 'no_self_ping');
 
 
-//エディター拡張関係
-//ビジュアルエディタボタン拡張
+// エディター拡張関係
+// ビジュアルエディタボタン拡張
 function ilc_mce_buttons($buttons)
 {
   array_push($buttons, "backcolor", "copy", "cut", "paste", "fontsizeselect");
   return $buttons;
 }
 add_filter("mce_buttons", "ilc_mce_buttons");
-//エディターの設定
+
+// エディターの設定
 function change_editor_font()
 {
   echo "<style type='text/css'>
@@ -123,14 +124,14 @@ function change_editor_font()
 }
 add_action("admin_print_styles", "change_editor_font");
 
-//リビジョンを最大5までに制限
+// リビジョンを最大5までに制限
 function set_revision_store_number($num)
 {
   return 5;
 }
 add_filter('wp_revisions_to_keep', 'set_revision_store_number');
 
-//投稿詳細ページのみ、パーマリンクをリライトする。
+// 投稿詳細ページのみ、パーマリンクをリライトする。
 function add_article_post_permalink($permalink)
 {
   $permalink = '/posts' . $permalink;
@@ -147,13 +148,13 @@ function add_article_post_rewrite_rules($post_rewrite)
 }
 add_filter('post_rewrite_rules', 'add_article_post_rewrite_rules');
 
-//ページネーション
+// ページネーション
 function pagination()
 {
   get_template_part("_components/pagenation");
 }
 
-//管理画面に独自CSSの使用
+// 管理画面に独自CSSの使用
 function admin_css()
 {
   echo '<link rel="stylesheet" type="text/css" href="' . site_url() . '/css/_admin.css">';
@@ -163,13 +164,13 @@ add_action('admin_head', 'admin_css');
 
 if (!current_user_can('level_10')) {
 
-  //バージョンアップを消す
+  // バージョンアップを消す
   add_filter('pre_site_transient_update_core', '__return_zero');
   remove_action('wp_version_check', 'wp_version_check');
   remove_action('admin_init', '_maybe_update_core');
 
 
-  //フッターのバージョン情報を非表示
+  // フッターのバージョン情報を非表示
   function remove_footer_version()
   {
     remove_filter('update_footer', 'core_update_footer');
@@ -208,7 +209,7 @@ if (!current_user_can('level_10')) {
   add_action('wp_before_admin_bar_render', 'add_new_item_in_admin_bar');
 
 
-  //フッターにwordpressの表記をしない。
+  // フッターにwordpressの表記をしない。
   function custom_admin_footer()
   {
     echo '';
@@ -216,7 +217,7 @@ if (!current_user_can('level_10')) {
   add_filter('admin_footer_text', 'custom_admin_footer');
 
 
-  //パーマリンクを表示しない。
+  // パーマリンクを表示しない。
   function my_return_false()
   {
     return false;
@@ -224,7 +225,7 @@ if (!current_user_can('level_10')) {
   add_filter('get_sample_permalink_html', 'my_return_false');
 }
 
-//固定ページ一覧でパーマリンクの列を追加
+// 固定ページ一覧でパーマリンクの列を追加
 function add_permalink_column_to_pages($columns)
 {
   $columns['permalink'] = 'パーマリンク';
@@ -246,7 +247,7 @@ add_action('manage_pages_custom_column', 'show_permalink_column_for_pages', 10, 
 //	任意設定(全ユーザー)
 //==============================================
 
-//投稿の名称変更
+// 投稿の名称変更
 function customize_menu()
 {
   global $menu;
@@ -259,7 +260,7 @@ function customize_menu()
 add_action('admin_menu', 'customize_menu');
 
 
-//投稿一覧ページのカラムを削除
+// 投稿一覧ページのカラムを削除
 function custom_columns($columns)
 {
   //unset($columns['cb']); // チェックボックス
@@ -281,7 +282,7 @@ add_filter('manage_posts_columns', 'custom_columns');
 
 if (!current_user_can('level_10')) {
 
-  //   ユーザーのメニューを消す		
+  // ユーザーのメニューを消す		
   function remove_menus()
   {
     global $menu;
@@ -392,8 +393,8 @@ foreach ($vals as $key => $val) {
       'query_var' => true,
       'rewrite' => array('slug' => $val['slug'], 'with_front' => false),
       'capability_type' => 'post',
-      'hierarchical' => false, // Set to false unless you need a hierarchical structure (like pages)
-      'menu_position' => 5, // Adjust position in admin menu if necessary
+      'hierarchical' => false,
+      'menu_position' => 5,
       'supports' => $val['support']
     );
     register_post_type($key, $args);
@@ -479,3 +480,17 @@ function hide_block_editor($use_block_editor, $post_type)
   if ($post_type === 'post' || $post_type === 'page') return false;
   return $use_block_editor;
 }
+
+function customize_taxonomy_spots_cat_posts_per_page($query)
+{
+  // 管理画面やメインクエリでない場合は除外
+  if (is_admin() || !$query->is_main_query()) {
+    return;
+  }
+
+  // タクソノミー `spots-cat` ページの場合
+  if (is_tax('spots-cat')) {
+    $query->set('posts_per_page', 6); // 表示件数を 10 件に設定
+  }
+}
+add_action('pre_get_posts', 'customize_taxonomy_spots_cat_posts_per_page');

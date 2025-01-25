@@ -2976,23 +2976,23 @@
 }
 
 .asp-16-9 {
-  aspect-ratio: "16 / 9";
+  aspect-ratio: 16 / 9;
 }
 
 .asp-4-3 {
-  aspect-ratio: "4 / 3";
+  aspect-ratio: 4 / 3;
 }
 
 .asp-3-2 {
-  aspect-ratio: "3 / 2";
+  aspect-ratio: 3 / 2;
 }
 
 .asp-8-5 {
-  aspect-ratio: "8 / 5";
+  aspect-ratio: 8 / 5;
 }
 
 .asp-5-3 {
-  aspect-ratio: "5 / 3";
+  aspect-ratio: 5 / 3;
 }
 
 @media (max-width: 998px) {
@@ -3000,19 +3000,19 @@
     aspect-ratio: 1 !important;
   }
   .md-asp-16-9 {
-    aspect-ratio: "16 / 9" !important;
+    aspect-ratio: 16 / 9 !important;
   }
   .md-asp-4-3 {
-    aspect-ratio: "4 / 3" !important;
+    aspect-ratio: 4 / 3 !important;
   }
   .md-asp-3-2 {
-    aspect-ratio: "3 / 2" !important;
+    aspect-ratio: 3 / 2 !important;
   }
   .md-asp-8-5 {
-    aspect-ratio: "8 / 5" !important;
+    aspect-ratio: 8 / 5 !important;
   }
   .md-asp-5-3 {
-    aspect-ratio: "5 / 3" !important;
+    aspect-ratio: 5 / 3 !important;
   }
 }
 @media (max-width: 767px) {
@@ -3020,19 +3020,19 @@
     aspect-ratio: 1 !important;
   }
   .sm-asp-16-9 {
-    aspect-ratio: "16 / 9" !important;
+    aspect-ratio: 16 / 9 !important;
   }
   .sm-asp-4-3 {
-    aspect-ratio: "4 / 3" !important;
+    aspect-ratio: 4 / 3 !important;
   }
   .sm-asp-3-2 {
-    aspect-ratio: "3 / 2" !important;
+    aspect-ratio: 3 / 2 !important;
   }
   .sm-asp-8-5 {
-    aspect-ratio: "8 / 5" !important;
+    aspect-ratio: 8 / 5 !important;
   }
   .sm-asp-5-3 {
-    aspect-ratio: "5 / 3" !important;
+    aspect-ratio: 5 / 3 !important;
   }
 }
 .ord1 {
@@ -34415,6 +34415,12 @@ body::before {
   animation-play-state: running;
 }
 
+.header {
+  pointer-events: none;
+}
+.header * {
+  pointer-events: auto;
+}
 .header-logo {
   background-color: #0c142b;
   width: 130px;

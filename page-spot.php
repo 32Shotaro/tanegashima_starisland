@@ -25,17 +25,17 @@
     </div>
   </div>
   <!-- 星空スポット一覧 -->
+  <?php $args = array(
+    'post_type' => 'spots',
+    'posts_per_page' => 6,
+    'paged' => $paged,
+    'taxonomy' => '',
+  ); ?>
+  <?php query_posts($args); ?>
   <div class="spot pt90 sm-pt60">
     <div class="cols-filld-full plr10">
       <div class="col-12">
         <div class="cols nega gutter10 rg70 sm-rg65">
-          <?php $args = array(
-            'post_type' => 'spots',
-            'posts_per_page' => -1,
-            'paged' => $paged,
-            'taxonomy' => '',
-          ); ?>
-          <?php query_posts($args); ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
                 <figure><a class="d-b ov-h hov-hook" href="<?php the_permalink(); ?>">
@@ -76,14 +76,13 @@
             <?php endwhile; ?>
           <?php else: ?>
           <?php endif; ?>
-          <?php wp_reset_query(); ?>
         </div>
       </div>
     </div>
-    <!-- shame：ページネーションの実装 -->
     <?php if (function_exists('pagination') && $wp_query->max_num_pages > 1) { ?>
       <?php pagination(); ?>
     <?php } ?>
+    <?php wp_reset_query(); ?>
   </div>
   <!-- 星空の周遊マップ -->
   <div class="pt160 md-fz110 sm-pt60 pb200 md-pb130 sm-pb60">

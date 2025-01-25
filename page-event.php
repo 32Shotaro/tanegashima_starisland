@@ -12,17 +12,17 @@
     </div>
   </div>
   <!-- 星空の体験一覧 -->
+  <?php $args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 9,
+    'paged' => $paged,
+    'taxonomy' => '',
+  ); ?>
+  <?php query_posts($args); ?>
   <div class="spot pt90 sm-pt60 pb200 md-pb130 sm-pb60">
     <div class="cols cols-1240">
       <div class="col-12">
         <div class="cols nega gutter40 sm-gutter30 rg80 sm-rg40">
-          <?php $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 20,
-            'paged' => $paged,
-            'taxonomy' => '',
-          ); ?>
-          <?php query_posts($args); ?>
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <article class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
                 <a class="d-b td-n hov-c-butter hov-hook" href="<?php the_permalink(); ?>">
@@ -58,15 +58,14 @@
             <?php endwhile; ?>
           <?php else: ?>
           <?php endif; ?>
-          <?php wp_reset_query(); ?>
         </div>
       </div>
     </div>
-    <!-- shame：ページネーションの実装 -->
     <?php if (function_exists('pagination') && $wp_query->max_num_pages > 1) { ?>
       <?php pagination(); ?>
     <?php } ?>
   </div>
+  <?php wp_reset_query(); ?>
   <?php get_template_part("_components/pankuzu", null, [["TOP", "/"], ["星空の体験", NULL]]); // パンくずリスト 
   ?>
 </main>
