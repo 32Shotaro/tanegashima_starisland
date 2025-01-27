@@ -15,7 +15,7 @@
       <div class="col-5 md-col-10 sm-col-12">
         <p class="ff-enSerif fz500 md-fz400 sm-fz315 lh11 js-animation-copy js-scroll">ITEM LIST</p>
         <h2 class="pt20 sm-pt10 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls01 js-animation-copy js-scroll">星空鑑賞におすすめのグッズ<br>便利情報</h2>
-        <ul class="d-f fxd-c rg15 sm-rg10 pt60 md-pt45 sm-pt30 c-butter lh140">
+        <ul class="d-f fxd-c rg15 sm-rg10 pt60 md-pt45 sm-pt30 c-butter lh14">
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor1"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/arrow-butter.svg" width="20" height="16" alt="矢印"><span class="td-u">おすすめグッズ</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor2"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/arrow-butter.svg" width="20" height="16" alt="矢印"><span class="td-u">星空観賞ツアー</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor3"><img loading="lazy" src="<?= get_template_directory_uri(); ?>/assets/images/common/arrow-butter.svg" width="20" height="16" alt="矢印"><span class="td-u">星空マップ</span></a></li>

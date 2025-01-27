@@ -59,9 +59,12 @@
   }
   // FV以下のコンテンツ
   &-fv-after {
+    background-color: red;
     // maskはローカルでは機能しないので一旦コメントアウト
     -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
     mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
+    will-change: -webkit-mask, mask;
+    backface-visibility: hidden;
     @include vars.respond-to(sm, 'max') {
       -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
       mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
@@ -80,7 +83,7 @@
       }
       &::after {
         content: '';
-        background: url(../images/common/main-bg.webp);
+        background: url(../images/common/main-bg.webp) 0 0 / 100px 100px #0c142b;
         width: 100%;
         height: 100%;
         position: absolute;

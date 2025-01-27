@@ -34,7 +34,7 @@
                       <img loading="lazy" class="spots-thumb w-max asp-4-3 ob-cv js-scroll scroll-view" src="<?= get_template_directory_uri(); ?>/assets/images/common/noimg.webp" width="360" height="240" alt="サムネイル写真なし">
                     <?php } ?>
                   </figure>
-                  <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140"><?php the_title(); ?></h3>
+                  <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh14"><?php the_title(); ?></h3>
                   <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">
                     <?php
                     $excerpt = get_the_excerpt();

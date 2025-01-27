@@ -24,7 +24,7 @@
       <img loading="lazy" class="img-bg js-rellax" src="<?= get_template_directory_uri(); ?>/assets/images/top/fv-bgi.webp" width="1440" height="1572" alt="夜空の背景">
     </div>
     <!-- FV以下のコンテンツ -->
-    <div class="top-fv-after pb120 pos-r ov-h">
+    <div id="canvas" class="top-fv-after pb120 pos-r ov-h">
       <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
       <section class="top-about pt60">
         <div class="cols jc-c">
@@ -53,8 +53,8 @@
           <div class="col-12">
             <div class="pos-r">
               <h2 class="top-movie-copy d-f fxd-rr ai-s cg30 sm-cg15 pos-a l-40 md-l-20 sm-l0 z2">
-                <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r js-scroll scroll-view">日本一の星空を</span>
-                <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 pos-r js-scroll scroll-view">贅沢に眺めよう</span>
+                <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 ws-nw pos-r js-scroll scroll-view">日本一の星空を</span>
+                <span class="d-b text-v bgc-butter p15 sm-p8 ff-jaSerif fz285 md-fz230 sm-fz180 c-midnight lh1 ls02 ws-nw pos-r js-scroll scroll-view">贅沢に眺めよう</span>
               </h2>
               <div class="sm-mlr-30 js-scroll scroll-view">
                 <video class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/top/movie.mp4" poster="<?= get_template_directory_uri(); ?>/assets/images/top/movie-poster.webp" preload="none" controls></video>
@@ -187,7 +187,7 @@
                           <img loading="lazy" class="spots-thumb w-max asp-4-3 ob-cv js-scroll scroll-view" src="<?= get_template_directory_uri(); ?>/assets/images/common/noimg.webp" width="360" height="240" alt="サムネイル写真なし">
                         <?php } ?>
                       </figure>
-                      <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh140"><?php the_title(); ?></h3>
+                      <h3 class="pt30 sm-pt25 sm-pt15 ff-jaSerif fz140 sm-fz130 lh14"><?php the_title(); ?></h3>
                       <p class="pt15 sm-pt10 fz105 sm-fz95 lh2 lc4 sm-lc2">
                         <?php
                         $excerpt = get_the_excerpt();
@@ -252,7 +252,7 @@
             <p class="bgc-butter ptb8 sm-ptb6 plr15 sm-plr10 ff-jaSerif fz140 sm-fz105 c-midnight lh12 lts015">飛行機</p>
             <p class="d-f cg15 sm-cg10"><a class="d-f ai-c cg20 sm-cg15 bd bdw1 bdc-butter bdrs-max h30 plr15 sm-plr10 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://www.jac.co.jp/tourism/tanegashima/" target="_blank" rel="noopener">JAC<i class="d-b bgc-butter bdrs-max w5 h5"></i></a></p>
           </dt>
-          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh140">
+          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh14">
             <p class="fxs0 lc1">鹿児島空港</p>
             <i class="fxg1 bdt bdw1 bdc-typography"></i>
             <p class="d-f fxs0 cg30">
@@ -268,7 +268,7 @@
               <a class="d-f ai-c cg20 sm-cg15 bd bdw1 bdc-butter bdrs-max h30 plr15 sm-plr10 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://www.tykousoku.jp/fare_time/" target="_blank" rel="noopener">高速船<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
             </p>
           </dt>
-          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh140">
+          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh14">
             <p class="fxs0 lc1">鹿児島港</p>
             <i class="fxg1 bdt bdw1 bdc-typography"></i>
             <p class="d-f fxs0 cg30">
@@ -285,7 +285,7 @@
               <a class="d-f ai-c cg20 sm-cg15 bd bdw1 bdc-butter bdrs-max h30 plr15 sm-plr10 fz85 c-butter lh12 td-n hov-bgc-typography-alpha5" href="https://www.yakushimaferry.com/" target="_blank" rel="noopener">ハイビスカス<i class="d-b bgc-butter bdrs-max w5 h5"></i></a>
             </p>
           </dt>
-          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh140">
+          <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh14">
             <p class="fxs0 lc1">鹿児島港</p>
             <i class="fxg1 bdt bdw1 bdc-typography"></i>
             <p class="d-f fxs0 cg30">
@@ -297,7 +297,7 @@
       </div>
       <div class="col-12 ord3 sm-ord3 js-scroll scroll-view">
         <section class="bgc-typography-alpha2 bdrs10 pt40 pb40 sm-pb30 plr40 sm-plr30 pos-r">
-          <h3 class="ff-jaSerif fz130 sm-fz115 c-butter lh140 ls015 pos-a t-10 l40 sm-l30">鹿児島までのアクセス</h3>
+          <h3 class="ff-jaSerif fz130 sm-fz115 c-butter lh14 ls015 pos-a t-10 l40 sm-l30">鹿児島までのアクセス</h3>
           <div class="d-f fxd-c rg15 sm-fz85">
             <dl class="d-f cg15">
               <dt class="fxs0 bgc-butter h-max ptb8 sm-ptb5 plr15 sm-plr10 c-midnight lh16">飛行機</dt>

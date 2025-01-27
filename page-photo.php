@@ -15,7 +15,7 @@
       <div class="col-5 md-col-10 sm-col-12">
         <p class="ff-enSerif fz500 md-fz400 sm-fz315 lh11 js-animation-copy js-scroll">TECHNIQUE</p>
         <h2 class="pt20 sm-pt10 ff-jaSerif fz180 md-fz160 sm-fz140 c-butter lh14 ls01 js-animation-copy js-scroll">星空撮影のテクニック</h2>
-        <ul class="d-f fxd-c rg15 sm-rg10 pt60 md-pt45 sm-pt30 c-butter lh140">
+        <ul class="d-f fxd-c rg15 sm-rg10 pt60 md-pt45 sm-pt30 c-butter lh14">
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor1"><i class="icon-arrow fz150"></i><span class="td-u">必要なアイテム</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor2"><i class="icon-arrow fz150"></i><span class="td-u">一眼カメラでの星空撮影</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor3"><i class="icon-arrow fz150"></i><span class="td-u">スマホでの星空撮影</span></a></li>
@@ -75,7 +75,7 @@
         <div class="col-12">
           <h2 class="title-h2 js-scroll scroll-view">一眼カメラでの星空撮影</h2>
           <section class="pt60 sm-pt30">
-            <h3 class="ff-jaSerif fz130 sm-fz115 lh140 ls015 js-scroll scroll-view">[ 基本設定 ]</h3>
+            <h3 class="ff-jaSerif fz130 sm-fz115 lh14 ls015 js-scroll scroll-view">[ 基本設定 ]</h3>
             <ul class="d-f fxd-c rg10 sm-rg15 pt25 sm-pt15">
               <li class="js-scroll scroll-view">
                 <dl class="d-f sm-fxd-c ai-c sm-ai-s cg25 sm-cg15 rg10">
@@ -127,7 +127,7 @@
         <div class="col-12">
           <h2 class="title-h2 js-scroll scroll-view">スマホでの星空撮影</h2>
           <section class="pt60 sm-pt30">
-            <h3 class="ff-jaSerif fz130 sm-fz115 lh140 ls015 js-scroll scroll-view">[ 基本設定 ]</h3>
+            <h3 class="ff-jaSerif fz130 sm-fz115 lh14 ls015 js-scroll scroll-view">[ 基本設定 ]</h3>
             <ul class="d-f fxd-c rg10 sm-rg15 pt25 sm-pt15">
               <li class="js-scroll scroll-view">
                 <dl class="d-f sm-fxd-c ai-c sm-ai-s cg25 sm-cg15 rg10">
@@ -164,7 +164,7 @@
             </ul>
           </section>
           <section class="pt60 sm-pt30">
-            <h3 class="ff-jaSerif fz130 sm-fz115 lh140 ls015 js-scroll scroll-view">[ 推奨アプリ ]</h3>
+            <h3 class="ff-jaSerif fz130 sm-fz115 lh14 ls015 js-scroll scroll-view">[ 推奨アプリ ]</h3>
             <ul class="d-f fxd-c rg10 sm-rg15 pt25 sm-pt15">
               <li class="js-scroll scroll-view">
                 <dl class="d-f sm-fxd-c ai-c sm-ai-s cg25 sm-cg15 rg10">

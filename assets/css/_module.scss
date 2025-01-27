@@ -15,7 +15,7 @@
 
 // 背景画像
 .bg-main {
-  background: url(../images/common/main-bg.webp);
+  background: url(../images/common/main-bg.webp) 0 0 / 100px 100px #0c142b;
 }
 
 // --------------------
@@ -322,6 +322,8 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 
 // スクロールで文字が1文字ずつアニメーション
 .js-animation-copy {
+  display: flex;
+  flex-wrap: wrap;
   > span {
     display: inline-block;
     animation: copy-view 900ms $transition-timing-function both paused;
@@ -342,6 +344,10 @@ $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     > span {
       animation-play-state: running;
     }
+  }
+  // 中央揃え
+  &.ta-c {
+    justify-content: center;
   }
 }
 

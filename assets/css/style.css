@@ -110,7 +110,7 @@
   font-size: inherit; /* フォントサイズを継承 */
   font-weight: inherit; /* フォントウェイトを継承 */
   line-height: calc(1em + 0.5rem);
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 :where(hr) {
@@ -34159,7 +34159,7 @@ body::before {
 }
 
 .bg-main {
-  background: url(../images/common/main-bg.webp);
+  background: url(../images/common/main-bg.webp) 0 0/100px 100px #0c142b;
 }
 
 .texts > *:not(:first-child) {
@@ -34395,6 +34395,10 @@ body::before {
   animation-play-state: running;
 }
 
+.js-animation-copy {
+  display: flex;
+  flex-wrap: wrap;
+}
 .js-animation-copy > span {
   display: inline-block;
   animation: copy-view 900ms cubic-bezier(0.16, 1, 0.3, 1) both paused;
@@ -34413,6 +34417,9 @@ body::before {
 }
 .js-animation-copy.js-scroll.is-scrolled > span {
   animation-play-state: running;
+}
+.js-animation-copy.ta-c {
+  justify-content: center;
 }
 
 .header {
@@ -34466,7 +34473,7 @@ body::before {
 }
 .gNav::after {
   content: "";
-  background: url(../images/common/main-bg.webp);
+  background: url(../images/common/main-bg.webp) 0 0/100px 100px #0c142b;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -34562,7 +34569,7 @@ body::before {
 }
 .footer-cta-item_list::after, .footer-cta-photo_technique::after {
   content: "";
-  background: url(../images/common/main-bg.webp);
+  background: url(../images/common/main-bg.webp) 0 0/100px 100px #0c142b;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -34701,8 +34708,11 @@ body::before {
   height: 120svh;
 }
 .top-fv-after {
+  background-color: red;
   -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
   mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
+  will-change: -webkit-mask, mask;
+  backface-visibility: hidden;
 }
 @media (max-width: 767px) {
   .top-fv-after {
@@ -34724,7 +34734,7 @@ body::before {
 }
 .top-about-item::after {
   content: "";
-  background: url(../images/common/main-bg.webp);
+  background: url(../images/common/main-bg.webp) 0 0/100px 100px #0c142b;
   width: 100%;
   height: 100%;
   position: absolute;
