@@ -59,7 +59,7 @@
           </a>
         </div>
         <div class="col-6 sm-col-12">
-          <a class="d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n pos-r hov-hook hov-bdc-butter hov-c-butter" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener">
+          <a class="d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n pos-r hov-hook hov-bdc-butter hov-c-butter" href="https://www.instagram.com/tanegashima.travel/" target="_blank" rel="noopener">
             <span class="ff-jaSerif fz115 sm-fz95">観光協会 公式instagram</span>
             <i class="icon-arrow fz150"></i>
             <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r45 z1 hov-hook-bgc-butter"></i>
@@ -76,7 +76,7 @@
             <li><a class="d-b td-n hov-c-butter hov-animation-bgfill" href="/spot">星空スポット</a></li>
             <li><a class="d-b td-n hov-c-butter hov-animation-bgfill" href="/event">星空の体験</a></li>
             <li><a class="d-b td-n hov-c-butter hov-animation-bgfill" href="/photo">星空撮影のテクニック</a></li>
-            <li><a class="d-b td-n hov-c-butter hov-animation-bgfill" href="/item">星空鑑賞にすすめのグッズ</a></li>
+            <li><a class="d-b td-n hov-c-butter hov-animation-bgfill" href="/item">おすすめのグッズ</a></li>
           </ul>
         </div>
         <div class="col-12 d-n sm-d-b"><i class="d-b bdt bdw1 bdc-typography"></i></div>
@@ -86,7 +86,7 @@
             <ul class="d-f cg10">
               <li><a class="d-f ai-c jc-c bdrs-max w30 h30 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><i class="icon-facebook fz160"></i></a></li>
               <li><a class="d-f ai-c jc-c bdrs-max w30 h30 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><i class="icon-youtube fz160"></i></a></li>
-              <li><a class="d-f ai-c jc-c bdrs-max w30 h30 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
+              <li><a class="d-f ai-c jc-c bdrs-max w30 h30 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima.travel/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
             </ul>
           </div>
           <p class="pt20 ff-jaSerif fz115 sm-fz95">〒891-3111 鹿児島県西之表市西町49-1<br>西之表港ターミナル（待合所）</p>

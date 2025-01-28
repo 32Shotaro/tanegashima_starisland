@@ -13,12 +13,12 @@
         <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-animation-bgfill" href="/spot">星空スポット</a></li>
         <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-animation-bgfill" href="/event">星空の体験</a></li>
         <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-animation-bgfill" href="/photo">星空撮影のテクニック</a></li>
-        <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-animation-bgfill" href="/item">星空鑑賞にすすめのグッズ</a></li>
+        <li><a class="d-b ptb10 plr15 td-n hov-c-butter hov-animation-bgfill" href="/item">おすすめのグッズ</a></li>
       </ul>
       <ul class="d-f cg5 pt15">
         <li><a class="d-f ai-c jc-c bdrs-max w60 h60 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><i class="icon-facebook fz160"></i></a></li>
         <li><a class="d-f ai-c jc-c bdrs-max w60 h60 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><i class="icon-youtube fz160"></i></a></li>
-        <li><a class="d-f ai-c jc-c bdrs-max w60 h60 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
+        <li><a class="d-f ai-c jc-c bdrs-max w60 h60 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima.travel/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
       </ul>
     </div>
   </nav>
@@ -29,6 +29,6 @@
     <li class="pb10 text-v ff-enSans fz85 lh14 ls02">SNS</li>
     <li><a class="d-f ai-c jc-c bdrs-max w35 h35 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><i class="icon-facebook fz160"></i></a></li>
     <li><a class="d-f ai-c jc-c bdrs-max w35 h35 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><i class="icon-youtube fz160"></i></a></li>
-    <li><a class="d-f ai-c jc-c bdrs-max w35 h35 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
+    <li><a class="d-f ai-c jc-c bdrs-max w35 h35 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima.travel/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
   </ul>
 <?php } ?>

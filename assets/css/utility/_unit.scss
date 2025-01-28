@@ -89,7 +89,6 @@
 }
 
 // オーダー
-// shame：コンパイルエラー回避用の(1, 1, 1)が未解決です
 @include generate-utility('ord', 'order', ((1, 1, 1), (1, 12, 1)), null);
 
 // ギャップ

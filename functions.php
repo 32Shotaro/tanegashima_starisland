@@ -490,7 +490,7 @@ function customize_taxonomy_spots_cat_posts_per_page($query)
 
   // タクソノミー `spots-cat` ページの場合
   if (is_tax('spots-cat')) {
-    $query->set('posts_per_page', 6); // 表示件数を 10 件に設定
+    $query->set('posts_per_page', 9); // 表示件数を 10 件に設定
   }
 }
 add_action('pre_get_posts', 'customize_taxonomy_spots_cat_posts_per_page');

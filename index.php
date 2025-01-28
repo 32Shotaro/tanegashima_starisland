@@ -14,7 +14,7 @@
       <ul class="d-f fxd-c rg10 sm-rg0 pos-a r30 sm-r15 b60 sm-b30 z1">
         <li><a class="d-f ai-c jc-c bdrs-max w45 h45 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.facebook.com/profile.php?id=100081276648823&locale=ja_JP" target="_blank" rel="noopener"><i class="icon-facebook fz160"></i></a></li>
         <li><a class="d-f ai-c jc-c bdrs-max w45 h45 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://youtube.com/channel/UC1OGBkf-D8TkQMcPz6E2jNQ?si=3ZZJ7vo743YeE2tL" target="_blank" rel="noopener"><i class="icon-youtube fz160"></i></a></li>
-        <li><a class="d-f ai-c jc-c bdrs-max w45 h45 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima_starisland/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
+        <li><a class="d-f ai-c jc-c bdrs-max w45 h45 td-n hov-bgc-typography-alpha5 hov-c-butter" href="https://www.instagram.com/tanegashima.travel/" target="_blank" rel="noopener"><i class="icon-instagram fz160"></i></a></li>
       </ul>
       <!-- スクロールUI -->
       <div class="scroll-ui d-f fxd-c ai-c rg15 pos-a l30 sm-l15 b60 sm-b30">
@@ -24,7 +24,7 @@
       <img loading="lazy" class="img-bg js-rellax" src="<?= get_template_directory_uri(); ?>/assets/images/top/fv-bgi.webp" width="1440" height="1572" alt="夜空の背景">
     </div>
     <!-- FV以下のコンテンツ -->
-    <div id="canvas" class="top-fv-after pb120 pos-r ov-h">
+    <div class="top-fv-after pb120 pos-r ov-h">
       <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
       <section class="top-about pt60">
         <div class="cols jc-c">

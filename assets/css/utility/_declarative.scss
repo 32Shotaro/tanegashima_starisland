@@ -204,8 +204,6 @@ $border-properties: (
   )
 );
 
-// shame：ボックスシャドウ
-
 // 幅
 @include generate-utility(
   'w',

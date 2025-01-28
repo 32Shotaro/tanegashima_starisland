@@ -59,8 +59,7 @@
   }
   // FV以下のコンテンツ
   &-fv-after {
-    background-color: red;
-    // maskはローカルでは機能しないので一旦コメントアウト
+    // maskはローカルでは機能しない
     -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
     mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
     will-change: -webkit-mask, mask;

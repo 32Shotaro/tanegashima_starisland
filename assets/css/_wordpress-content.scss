@@ -31,6 +31,9 @@
     @include vars.respond-to(sm, 'max') {
       margin: 2em auto 1em;
     }
+    > b, strong {
+      font-weight: normal;
+    }
   }
 
   h2 {
@@ -145,8 +148,67 @@
     list-style-type: decimal;
   }
 
-  // リンク
-  // a {}
+  // リンク（ボタン）
+  em > a {
+    $transition-duration: 600ms;
+    $transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    // d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n pos-r hov-hook hov-bdc-butter hov-c-butter
+    // ff-jaSerif fz115 sm-fz95
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/common/arrow.svg) right 40px center / 21px 21px no-repeat;
+    border: 1px solid vars.color(typography);
+    border-radius: 9999px;
+    width: fit-content;
+    margin: 3em auto 1em;
+    padding: 20px 80px 20px 40px;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 115%;
+    font-style: normal;
+    line-height: 1.2;
+    text-decoration: none;
+    position: relative;
+    transition: border-color $transition-duration $transition-timing-function,
+      color $transition-duration $transition-timing-function;
+    @include vars.respond-to(sm, 'max') {
+      background-size: 17px 17px;
+      background-position: right 30px center;
+      margin: 2em auto 1em;
+      padding: 15px 60px 15px 30px;
+      font-size: 95%;
+    }
+    &:hover {
+      background-image: url(../images/common/arrow-butter.svg);
+      border-color: vars.color(butter);
+      color: vars.color(butter);
+      &::before,
+      &::after {
+        background-color: vars.color(butter);
+      }
+    }
+    &::before,
+    &::after {
+      // d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r45 z1 hov-hook-bgc-butter
+      // d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 l45 z1 hov-hook-bgc-butter
+      content: "";
+      display: block;
+      background-color: vars.color(typography);
+      border: 4px solid vars.color(midnight);
+      border-radius: 9999px;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      z-index: 1;
+      transition: background-color $transition-duration $transition-timing-function;
+    }
+    &::before {
+      inset: -7px 45px auto auto;
+    }
+    &::after {
+      inset: auto auto -7px 45px;
+    }
+  }
 
   // ボタンスタイル
   button,

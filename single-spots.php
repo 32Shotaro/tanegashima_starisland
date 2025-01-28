@@ -20,15 +20,17 @@
           <h1 class="mt-60 sm-mt-30 ff-jaSerif fz500 md-fz320 sm-fz280 lh16 js-animation-copy js-scroll"><?php the_title(); ?></h1>
           <div class="d-f sm-d-b ai-c js-scroll scroll-view">
             <p class="ff-enSans fz130 pt5 sm-fz100"><?php the_field('title_en'); ?></p>
-            <ul class="fxw-w g10 sm-g5 sm-pt10 pl20 sm-pl0">
-              <li><span class="d-f sm-d-ib ai-c cg20 bgc-butter bdrs-max h30 sm-h30 sm-ptb3 plr15 fz85 c-midnight lh12 lh19">南種子町</span></li>
-            </ul>
+            <?php $terms = get_the_terms(get_the_ID(), 'spots-cat');
+            if (!empty($terms) && !is_wp_error($terms)) { ?>
+              <ul class="fxw-w g10 sm-g5 sm-pt10 pl20 sm-pl0">
+                <li><span class="d-f sm-d-ib ai-c cg20 bgc-butter bdrs-max h30 sm-h30 sm-ptb3 plr15 fz85 c-midnight lh12 lh19"><?= $terms[0]->name; ?></span></li>
+              </ul>
+            <?php } ?>
           </div>
         </div>
       </div>
     </div>
     <div class="pt100 md-pt80 sm-pt70">
-      <!-- shame：一部スタイルの調整と検証 -->
       <div class="js-scroll scroll-view">
         <div class="cols jc-c gutter100 md-gutter50 sm-gutter30">
           <div class="col-12">

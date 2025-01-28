@@ -27,7 +27,7 @@
   <!-- 星空スポット一覧 -->
   <?php $args = array(
     'post_type' => 'spots',
-    'posts_per_page' => 6,
+    'posts_per_page' => 9,
     'paged' => $paged,
     'taxonomy' => '',
   ); ?>

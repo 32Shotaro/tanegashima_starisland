@@ -20,7 +20,6 @@
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor2"><i class="icon-arrow fz150"></i><span class="td-u">一眼カメラでの星空撮影</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor3"><i class="icon-arrow fz150"></i><span class="td-u">スマホでの星空撮影</span></a></li>
           <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor4"><i class="icon-arrow fz150"></i><span class="td-u">天の川に関する豆知識</span></a></li>
-          <li><a class="d-if ai-c cg20 sm-cg15 td-n hov-bgc-typography-alpha5 hov-animation-bgfill js-scroll scroll-view" href="#anchor5"><i class="icon-arrow fz150"></i><span class="td-u">おすすめスポット</span></a></li>
         </ul>
       </div>
       <div class="col-7 md-col-10 sm-col-12">
@@ -325,39 +324,6 @@
       </div>
     </div>
     <div class="js-rellax-wrapper"><img loading="lazy" class="img-bg js-rellax" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec5-bgi.webp" width="1440" height="1640" alt="夜空の背景"></div>
-  </section>
-  <!-- 種子島でのおすすめ撮影スポット -->
-  <section id="anchor5" class="ptb130 sm-ptb90">
-    <div class="cols">
-      <div class="col-12">
-        <h2 class="title-h2 mlr-a js-scroll scroll-view">種子島でのおすすめ<br class="d-n sm-d-i">撮影スポット</h2>
-        <p class="pt45 sm-pt30 fz105 sm-fz95 ta-c sm-ta-l js-scroll scroll-view">種子島には光害が少なく、星空撮影に適したスポットが多くあります。<br class="sm-d-n">撮影時は安全を最優先し、周囲の自然環境を尊重しましょう。</p>
-        <div class="cols nega jc-c gutter35 rg30 pt45 sm-pt30">
-          <section class="col-5 md-col-6 sm-col-12 js-scroll scroll-view">
-            <figure><img loading="lazy" class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec6-pic1.webp" width="323" height="240" alt="長浜海岸"></figure>
-            <h3 class="pt20 sm-pt15 ff-jaSerif fz140 sm-fz130 c-butter lh14 ls01">長浜海岸</h3>
-            <p class="pt15 sm-fz95 lh18">広い視界と海の反射が天の川を引き立てます。</p>
-          </section>
-          <section class="col-5 md-col-6 sm-col-12 js-scroll scroll-view">
-            <figure><img loading="lazy" class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec6-pic2.webp" width="323" height="240" alt="千座の岩屋"></figure>
-            <h3 class="pt20 sm-pt15 ff-jaSerif fz140 sm-fz130 c-butter lh14 ls01">千座の岩屋</h3>
-            <p class="pt15 sm-fz95 lh18">天の川と洞窟の独特な組み合わせが狙えます。</p>
-          </section>
-        </div>
-      </div>
-    </div>
-    <div class="cols jc-c pt80 sm-pt60 js-scroll scroll-view">
-      <div class="col-6 md-col-8 sm-col-12">
-        <a class="d-f ai-c jc-sb cg15 bd bdw1 bdc-typography ptb20 sm-ptb15 plr40 sm-plr30 lh120 td-n pos-r hov-hook hov-bdc-butter hov-c-butter hov-animation-bgfill" href="/spot">
-          <span class="ff-jaSerif fz115 sm-fz100">星空スポット一覧はこちら</span>
-          <i class="icon-arrow fz150"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 l-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 r-7 z1 hov-hook-bgc-butter"></i>
-          <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 l-7 z1 hov-hook-bgc-butter"></i>
-        </a>
-      </div>
-    </div>
   </section>
   <!-- 成澤広幸先生について -->
   <section class="ptb130 sm-ptb90 pos-r">

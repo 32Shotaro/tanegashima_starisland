@@ -135,14 +135,14 @@
       var newText = '';
       var delay = 0;
       var animationDuration = 800;
-
+  
       // <br> または <br をそのまま維持しつつ、文字だけを処理
       var charArray = htmlContent.split(/(<br\s*\/?>)/gi);
-
+  
       charArray.forEach(function (chunk) {
         if (chunk.match(/<br\s*\/?>/gi)) {
-          // <br> タグはそのまま追加
-          newText += chunk;
+          // <br> タグを .js-animation-copy-breakに変換
+          newText += `<span class="js-animation-copy-break"></span>`;
         } else {
           // 通常の文字を1文字ずつ処理
           for (var i = 0; i < chunk.length; i++) {
@@ -152,7 +152,7 @@
           }
         }
       });
-
+  
       // 処理後のHTMLを設定
       $this.html(newText);
     });

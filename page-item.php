@@ -206,7 +206,7 @@
             </div>
             <div class="cols nega pt45 sm-pt30 js-scroll scroll-view">
               <div class="col-10 md-col-11 sm-col-12">
-                <a class="d-f ai-c jc-sb cg15 bd bdw1 bdc-typography ptb20 sm-ptb15 plr40 sm-plr30 lh120 td-n pos-r hov-hook hov-bdc-butter hov-c-butter hov-animation-bgfill" href="https://kouendouri-tanegashima.com/" target="_blank" rel="noopener">
+                <a class="d-f ai-c jc-sb cg15 bd bdw1 bdc-typography ptb20 sm-ptb15 plr40 sm-plr30 lh120 td-n pos-r hov-hook hov-bdc-butter hov-c-butter hov-animation-bgfill" href="https://tanechoco.theshop.jp/items/88079297" target="_blank" rel="noopener">
                   <span class="ff-jaSerif fz115 sm-fz100">コウエンドウリタネガシマ<br class="d-n sm-d-i"><span class="fz85"> (外部リンク)</span></span>
                   <i class="icon-arrow fz150"></i>
                   <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 l-7 z1 hov-hook-bgc-butter"></i>
@@ -273,7 +273,6 @@
               <h3 class="bgc-butter w-fc ptb8 plr15 ff-jaSerif fz140 sm-fz120 c-midnight lh14 lts01">星空マップをダウンロード</h3>
               <p class="pt30 sm-pt15 fz105 sm-fz95">事前にPDFをダウンロードしておくか、西之表港で配布されているマップを入手するのがおすすめです。</p>
               <div class="pt30 sm-pt15 ta-r">
-                <!-- shame：リンク先 -->
                 <a class="d-if ai-c cg20 sm-cg15 td-n hov-c-butter hov-hook" href="<?= get_template_directory_uri(); ?>/assets/pdf/map.pdf" target="_blank" rel="noopener">
                   <span class="d-b ff-jaSerif fz95 lh1">星空マップPDFダウンロード</span>
                   <span class="d-f ai-c jc-c bgc-typography-alpha5 bdrs-max w65 sm-w50 h60 sm-h50 hov-hook-animation-arrowWrapper"><i class="icon-arrow fz150"></i></span>

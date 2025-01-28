@@ -19,17 +19,24 @@
       </div>
       <div class="col-5 sm-col-12 ptb40 md-ptb30 sm-ptb25 plr80 md-plr45 sm-plr30">
         <h1 class="ff-jaSerif fz285 md-fz225 sm-fz180 lh16 js-animation-copy js-scroll"><?php the_title(); ?></h1>
-        <ul class="d-f fxw-w g10 sm-g5 pt35 sm-pt20 js-scroll scroll-view">
-          <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">南種子町</span></li>
-          <li><span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">グルメ</span></li>
-        </ul>
+        <?php
+        $categories = get_the_category();
+        if ($categories) : ?>
+          <ul class="d-f fxw-w g10 sm-g5 pt35 sm-pt20 js-scroll scroll-view">
+            <?php foreach ($categories as $category) : ?>
+              <li>
+                <span class="d-f ai-c cg20 bgc-butter bdrs-max h30 plr15 fz85 c-midnight lh12">
+                  <?php echo esc_html($category->name); ?>
+                </span>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
       </div>
     </div>
     <div class="pt130 md-pt80 sm-pt45">
       <div class="cols">
         <div class="col-12">
-          <!-- shame：一部スタイルの調整と検証 -->
-          <!-- shame：外部リンクの処理はどうしよう？ -->
           <div class="wp-content js-scroll scroll-view">
             <?php the_content(); ?>
           </div>
