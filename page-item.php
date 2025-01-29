@@ -147,7 +147,7 @@
               <dl>
                 <dt class="d-f ai-c jc-c fxs0 bd bdw1 bdc-butter bdrs-max w-fc h40 plr20 c-butter">人気エリア</dt>
                 <dd class="texts pt15 fz105 sm-fz95">
-                  <p>西之表市は港や主要観光スポットへのアクセスが良好。</p>
+                  <p>西之表市・中種子町・南種子町それぞれ観光スポットや飲食店が点在しており、どこの市町もおすすめです！</p>
                 </dd>
               </dl>
               <dl>
