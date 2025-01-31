@@ -233,7 +233,7 @@
           <section class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
             <figure><img loading="lazy" class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec4-pic2.webp" width="323" height="240" alt="ホワイトバランスの調整"></figure>
             <h3 class="pt20 sm-pt15 ff-jaSerif fz140 sm-fz130 c-butter lh14 ls01">ホワイトバランスの調整</h3>
-            <p class="pt15 sm-fz95 lh18">前景に山や木などの風景を入れることで、写真に深みを持たせる。星をたくさんいれた構図と、風景を多めに入れた構図の２つを意識して撮影してみましょう。</p>
+            <p class="pt15 sm-fz95 lh18">星空の色合いを好みに合わせて調整する。青すぎると星の色が消されてしまうので気を付けよう。</p>
           </section>
           <section class="col-4 md-col-6 sm-col-12 js-scroll scroll-view">
             <figure><img loading="lazy" class="img-fluid-full" src="<?= get_template_directory_uri(); ?>/assets/images/photo/sec4-pic3.webp" width="323" height="240" alt="ノイズ除去"></figure>

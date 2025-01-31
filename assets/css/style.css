@@ -34714,8 +34714,8 @@ body::before {
 .top-fv-after {
   -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
   mask: url(../images/top/top-fv-after-bg-shape.webp) center/100% 100% no-repeat;
-  will-change: -webkit-mask, mask;
-  backface-visibility: hidden;
+  will-change: transform;
+  transform: translateZ(0);
 }
 @media (max-width: 767px) {
   .top-fv-after {
@@ -34832,7 +34832,7 @@ body::before {
 }
 @media (max-width: 767px) {
   .wp-content h2 {
-    font-size: 180%;
+    font-size: 160%;
   }
 }
 .wp-content h3 {
@@ -34845,7 +34845,7 @@ body::before {
 }
 @media (max-width: 767px) {
   .wp-content h3 {
-    font-size: 140%;
+    font-size: 130%;
   }
 }
 .wp-content h3::before, .wp-content h3::after {

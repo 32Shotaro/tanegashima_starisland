@@ -62,8 +62,8 @@
     // maskはローカルでは機能しない
     -webkit-mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
     mask: url(../images/top/top-fv-after-bg-shape.webp) center / 100% 100% no-repeat;
-    will-change: -webkit-mask, mask;
-    backface-visibility: hidden;
+    will-change: transform;
+    transform: translateZ(0);
     @include vars.respond-to(sm, 'max') {
       -webkit-mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
       mask: url(../images/top/top-fv-after-bg-shape-sm.webp) center / 100% 100% no-repeat;
