@@ -25,6 +25,16 @@
     </div>
     <!-- FV以下のコンテンツ -->
     <div class="top-fv-after pb120 pos-r ov-h">
+      <svg viewBox="0 0 1440 1641" style="width:0;height:0;">
+        <clipPath id="top-fv-after-bg-shape" clipPathUnits="objectBoundingBox" style="transform: scale(calc(1/1440), calc(1/1641));">
+          <path d="M0 96.0648V1640.11H1440V96.0648C1440 96.0648 1150 0.107727 720 0.107727C290 0.107727 0 96.0648 0 96.0648Z" transform="translate(0 0)"></path>
+        </clipPath>
+      </svg>
+      <svg viewBox="0 0 390 1591" style="width:0;height:0;">
+        <clipPath id="top-fv-after-bg-shape-sm" clipPathUnits="objectBoundingBox" style="transform: scale(calc(1/390), calc(1/1591));">
+          <path d="M0 47.0063V1590.78H390V47.0063C390 47.0063 311.458 0.777771 195 0.777771C78.5417 0.777771 0 47.0063 0 47.0063Z" transform="translate(0 0)"></path>
+        </clipPath>
+      </svg>
       <!-- 宇宙に一番近い島は、日本一の「星空の島」でした。 -->
       <section class="top-about pt60">
         <div class="cols jc-c">
