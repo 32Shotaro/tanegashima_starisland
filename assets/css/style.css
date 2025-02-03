@@ -34070,27 +34070,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  position: relative;
-}
-body::before {
-  content: "";
-  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0.05) 2px, transparent 1px, transparent 33.333%);
-  background-size: 100% 100%; /* 背景サイズを調整 */
-  width: clamp(375px, 80vw, 885px);
-  height: 100%;
-  position: absolute;
-  inset: 0 auto 0 50%;
-  z-index: -1;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-@media screen and (min-width: 885px) {
-  body::before {
-    width: clamp(375px, 80vw, 100vw);
-  }
-}
-
 .cols-1240 {
   max-width: 1360px;
 }

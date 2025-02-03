@@ -20,25 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  position: relative;
-  &::before {
-    content: '';
-    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, /* 線の開始 */ rgba(255, 255, 255, 0.05) 2px, /* 線の太さ */ transparent 1px, /* 線の終わり */ transparent calc(33.333%) /* 次の線の間隔 */);
-    background-size: 100% calc(100%); /* 背景サイズを調整 */
-    width: clamp(375px, 80vw, 885px);
-    height: 100%;
-    position: absolute;
-    inset: 0 auto 0 50%;
-    z-index: -1;
-    transform: translateX(-50%);
-    pointer-events: none;
-    @media screen and (min-width: 885px) {
-      width: clamp(375px, 80vw, 100vw);
-    }
-  }
-}
-
 // 幅の広いコンテナ
 .cols-1240 {
   max-width: 1360px;
