@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
   <meta name="robots" content="index, follow">
   <!-- Google tag (gtag.js) -->
-  <script async src=“https://www.googletagmanager.com/gtag/js?id=G-Z7LNZ313NW”></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7LNZ313NW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
