@@ -52,7 +52,7 @@
       <div class="cols nega jc-c rg20">
         <div class="col-6 sm-col-12">
           <a class="d-f ai-c jc-sb bd bdw1 bdc-typography bdrs-max ptb20 sm-ptb15 plr40 sm-plr30 lh12 td-n pos-r hov-hook hov-bdc-butter hov-c-butter" href="https://www.instagram.com/explore/search/keyword/?q=%23%E6%98%9F%E3%81%AE%E5%B3%B6%E7%A8%AE%E5%AD%90%E5%B3%B6" target="_blank" rel="noopener">
-            <span class="ff-jaSerif fz115 sm-fz95">#星の種子島 で投稿してね！</span>
+            <span class="ff-jaSerif fz115 sm-fz95">#星の島種子島 で投稿してね！</span>
             <i class="icon-arrow fz150"></i>
             <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a t-7 r45 z1 hov-hook-bgc-butter"></i>
             <i class="d-b bgc-typography bd bdw4 bdc-midnight bdrs-max w14 h14 pos-a b-7 l45 z1 hov-hook-bgc-butter"></i>

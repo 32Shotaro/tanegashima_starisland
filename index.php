@@ -296,7 +296,7 @@
             </p>
           </dt>
           <dd class="d-f ai-c cg20 pt15 fz105 sm-fz100 lh14">
-            <p class="fxs0 lc1">鹿児島港</p>
+            <p class="fxs0 lc1">鹿児島港・谷山港</p>
             <i class="fxg1 bdt bdw1 bdc-typography"></i>
             <p class="d-f fxs0 cg30">
               <span class="lc1">西之表港</span>
